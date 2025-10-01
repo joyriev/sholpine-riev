@@ -6,9 +6,9 @@
           <img src="{{ 'logo.png' | asset_img_url: 'master' }}" alt="{{ shop.name }}">
         </div>
         <div>
-          <h4 class="uppercase font-bold mb-4">{{ settings.footer_menu_1.title }}</h4>
+          <h4 class="uppercase font-bold mb-4">{{ section.settings.footer_menu_1.title }}</h4>
           <ul class="space-y-2 text-gray-400">
-            {% for link in settings.footer_menu_1.links %}
+            {% for link in section.settings.footer_menu_1.links %}
               <li>
                 <a href="{{ link.url }}">
                   {{ link.title }}
@@ -18,9 +18,9 @@
           </ul>
         </div>
         <div>
-          <h4 class="uppercase font-bold mb-4">{{ settings.footer_menu_2.title }}</h4>
+          <h4 class="uppercase font-bold mb-4">{{ section.settings.footer_menu_2.title }}</h4>
           <ul class="space-y-2 text-gray-400">
-            {% for link in settings.footer_menu_2.links %}
+            {% for link in section.settings.footer_menu_2.links %}
               <li>
                 <a href="{{ link.url }}">
                   {{ link.title }}
@@ -32,7 +32,7 @@
         <div>
           <h4 class="uppercase font-bold mb-4">Contact Us</h4>
           <div class="space-y-4 [&_strong]:text-gray-400">
-            {{ settings.contact_information }}
+            {{ section.settings.contact_information }}
           </div>
         </div>
       </div>
