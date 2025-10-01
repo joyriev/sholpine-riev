@@ -11,6 +11,22 @@
   "name": "Header",
   "type": "header",
   "sections": {
+    "marquee_labels_RXa7d3": {
+      "type": "marquee-labels",
+      "blocks": {
+        "label_d6gVkK": {
+          "type": "label",
+          "settings": {
+            "label": "Free Shipping"
+          }
+        }
+      },
+      "block_order": [
+        "label_d6gVkK"
+      ],
+      "name": "Marquee Labels",
+      "settings": {}
+    },
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
@@ -30,11 +46,6 @@
     },
     "navigation": {
       "type": "navigation",
-      "settings": {}
-    },
-    "marquee_labels_RXa7d3": {
-      "type": "marquee-labels",
-      "name": "Marquee Labels",
       "settings": {}
     }
   },
