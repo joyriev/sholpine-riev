@@ -1,14 +1,67 @@
-<div class="w-full bg-slate-600 text-white">
-	<div class="container mx-auto flex flex-row justify-center space-x-12 uppercase py-2 px-4">
-		{% for link in linklists.footer.links %}
-			<a href="{{ link.url }}">{{ link.title }}</a>
-		{% endfor %}
-	</div>
-</div>
-<div class="w-full bg-slate-800 text-white">
-	<div class="container mx-auto flex flex-row justify-center space-x-4 p-4">
-		<p>Copyright @ This Store</p>
-		<p>|</p>
-		<p >Website By My Company</p>
-	</div>
-</div>
+<footer class="bg-black text-white">
+  <div class="py-12">
+    <div class="container">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-y-8">
+        <div>
+          <img src="{{ 'logo.png' | asset_img_url: 'master' }}" alt="{{ shop.name }}">
+        </div>
+        <div>
+          <h4 class="uppercase font-bold mb-4">{{ settings.footer_menu_1.title }}</h4>
+          <ul class="space-y-2 text-gray-400">
+            {% for link in settings.footer_menu_1.links %}
+              <li>
+                <a href="{{ link.url }}">
+                  {{ link.title }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div>
+          <h4 class="uppercase font-bold mb-4">{{ settings.footer_menu_2.title }}</h4>
+          <ul class="space-y-2 text-gray-400">
+            {% for link in settings.footer_menu_2.links %}
+              <li>
+                <a href="{{ link.url }}">
+                  {{ link.title }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div>
+          <h4 class="uppercase font-bold mb-4">Contact Us</h4>
+          <div class="space-y-4 [&_strong]:text-gray-400">
+            {{ settings.contact_information }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "id": "logo",
+        "type": "image_picker",
+        "label": "Logo"
+      }, {
+        "id": "footer_menu_1",
+        "type": "link_list",
+        "label": "Footer menu 1"
+      }, {
+        "id": "footer_menu_2",
+        "type": "link_list",
+        "label": "Footer menu 2"
+      }, {
+        "type": "richtext",
+        "id": "contact_information",
+        "label": "Contact Information"
+      }
+
+    ]
+  }
+{% endschema %}
