@@ -18,24 +18,25 @@ export default defineConfig(({ mode }) => {
       }),
     ],
     build: {
+      outDir: ".",
+      emptyOutDir: false,
       minify: isProduction ? "esbuild" : false,
       sourcemap: !isProduction,
       rollupOptions: {
         output: {
+          dir: ".",
           entryFileNames: isProduction
-            ? "assets/[name]-[hash].min.js"
-            : "assets/[name].js",
+            ? "assets/theme.min.js"
+            : "assets/theme.js",
           chunkFileNames: isProduction
-            ? "assets/[name]-[hash].min.js"
+            ? "assets/[name].min.js"
             : "assets/[name].js",
           assetFileNames: ({ name }) => {
-            if (/\.[a-z]+$/.test(name)) {
-              const ext = name.split(".").pop();
-              return isProduction
-                ? `assets/[name]-[hash].min.${ext}`
-                : `assets/[name].${ext}`;
+            const ext = name.split('.').pop();
+            if (ext === 'css') {
+              return isProduction ? 'assets/theme.min.css' : 'assets/theme.css';
             }
-            return "assets/[name]-[hash][extname]";
+            return isProduction ? 'assets/[name].min[extname]' : 'assets/[name][extname]';
           },
         },
       },
