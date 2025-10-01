@@ -1,9 +1,12 @@
 <footer class="bg-black text-white">
-  <div class="py-12">
+  <div class="py-14">
     <div class="container">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-y-8">
-        <div>
-          <img src="{{ 'logo.png' | asset_img_url: 'master' }}" alt="{{ shop.name }}">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-12">
+        <div class="col-span-2 md:col-span-1 flex justify-center md:justify-start items-start">
+          <img
+            src="{{ section.settings.logo | image_url: width: 100 }}"
+            alt="{{ shop.name }}"
+            class="w-32 h-auto">
         </div>
         <div>
           <h4 class="uppercase font-bold mb-4">{{ section.settings.footer_menu_1.title }}</h4>
@@ -29,13 +32,30 @@
             {% endfor %}
           </ul>
         </div>
-        <div>
+        <div class="col-span-2 md:col-span-1">
           <h4 class="uppercase font-bold mb-4">Contact Us</h4>
-          <div class="space-y-4 [&_strong]:text-gray-400">
+          <div class="space-y-4 [&_strong]:text-gray-400 text-sm">
             {{ section.settings.contact_information }}
           </div>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="py-8 border-t border-gray-800">
+    <div class="container text-center text-sm space-y-4 text-gray-400 max-w-screen-md">
+      <div class="footer__payment">
+        <span class="absolute overflow-hidden w-1 h-1 m-1 p-0 border-0 clip-rect-0 word-wrap-normal">Payment Methods:</span>
+        <ul class="flex gap-2 justify-center flex-wrap" role="list">
+          {%- for type in shop.enabled_payment_types -%}
+            <li>
+              {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+            </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+      <p>TryScent is an independent fragrance house. Our products are not affiliated with, endorsed by, or produced by any of the brands or designers mentioned.         
+        Any references are for descriptive purposes only.</p>
+      <p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.</p>
     </div>
   </div>
 </footer>
