@@ -1,14 +1,27 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-	"name": "Footer",
-	"type": "footer",
-	"sections": {
-		"footer": {
-			"type": "footer",
-			"settings": {
-			}
-		}
-	},
-	"order": [
-		"footer"
-	]
- }
+  "name": "Footer",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "settings": {
+        "logo": "shopify://shop_images/logo-white.svg",
+        "footer_menu_1": "footer",
+        "footer_menu_2": "top-sellers",
+        "contact_information": "<p>Address:1231 Pacific Boulevard, Vancouver, Canada<br/><br/>Phone:+18883736114<br/><br/>Email:hello@tryscent.co<br/><br/>TryScent is a subsidiary of the Search People Enterprises Canada</p>"
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}
