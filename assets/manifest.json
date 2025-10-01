@@ -1,0 +1,12 @@
+{
+  "src/entrypoints/theme.css": {
+    "file": "theme.14524d3f.min.css",
+    "isEntry": true,
+    "src": "src/entrypoints/theme.css"
+  },
+  "src/entrypoints/theme.js": {
+    "file": "theme.296b6a42.min.js",
+    "isEntry": true,
+    "src": "src/entrypoints/theme.js"
+  }
+}

@@ -8,10 +8,15 @@
   },
   "keywords": [],
   "scripts": {
-    "dev": "concurrently --raw --kill-others --passthrough-arguments \"npm run shopify:dev {@}\" \"npm run vite:dev\" --",
+    "dev": "cross-env NODE_ENV=development concurrently --raw --kill-others --passthrough-arguments \"npm run shopify:dev {@}\" \"npm run vite:dev\" --",
     "shopify:dev": "shopify theme dev --theme-editor-sync",
     "vite:dev": "vite",
-    "build": "vite build"
+    "build": "cross-env NODE_ENV=production vite build",
+    "preview": "vite preview",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
   },
   "dependencies": {
     "@alpinejs/collapse": "^3.13.3",

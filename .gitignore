@@ -1,5 +1,57 @@
+# System Files
 .DS_Store
 ._*
 .Trashes
-node_modules
-assets/manifest.json
+
+# Dependencies
+node_modules/
+.shopify
+
+# Build outputs
+/dist
+/build
+/assets/*.map
+/assets/*.LICENSE.txt
+!/assets/*.min.*
+/assets/*.css
+!/assets/*.min.css
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Shopify
+config.yml
+config/settings_data.json
+config/settings_schema.json
+
+# Vite
+.cache/
+.temp/
+*.local
+
+# Misc
+*.log
+*.tmp
+*.tmp.*
+*~
+
+# Local Netlify folder if it exists
+.netlify
