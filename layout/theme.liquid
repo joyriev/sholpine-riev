@@ -28,19 +28,20 @@
 
     <title>{{ shop.name }}</title>
 
-    {%- liquid
-      render 'vite-tag' with 'theme.css'
-      render 'vite-tag' with 'theme.js'
-    -%}
+    <link
+      href="{{ 'theme.css' | asset_url }}"
+      rel="stylesheet"
+      type="text/css"
+      media="all" />
 
     {{ content_for_header }}
   </head>
 
   <body>
     {% sections 'header-group' %}
-
     {{ content_for_layout }}
-
     {% sections 'footer-group' %}
+
+    <script src="{{ 'theme.js' | asset_url }}"></script>
   </body>
 </html>
