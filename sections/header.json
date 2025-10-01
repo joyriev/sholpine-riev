@@ -1,5 +1,5 @@
 {
-	"name": "Navigation",
+	"name": "Header",
 	"type": "header",
 	"sections": {
 		"announcement-bar": {
