@@ -12,9 +12,6 @@ node_modules/
 /build
 /assets/*.map
 /assets/*.LICENSE.txt
-!/assets/*.min.*
-/assets/*.css
-!/assets/*.min.css
 
 # Environment variables
 .env
