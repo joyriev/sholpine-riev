@@ -14,9 +14,34 @@
           height=""
           width="">
       </a>
-      <div>
-        <button>
+      <div class="flex gap-4 items-center [&_svg]:size-5 [&_svg]:transition-all [&_svg]:duration-300">
+        <button class="size-10 bg-rose-100 rounded-full grid place-items-center hover:bg-rose-200 [&:hover_svg]:size-6">
           {{ 'icon-search.svg' | inline_asset_content }}
+        </button>
+        {%- if shop.customer_accounts_enabled -%}
+          <a
+            href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
+            class="size-10 bg-sky-100 rounded-full grid place-items-center [&:hover_svg]:size-6"
+            rel="nofollow">
+            {%- if customer and customer.has_avatar? -%}
+              {{ customer | avatar }}
+            {%- else -%}
+              {{ 'icon-account.svg' | inline_asset_content }}
+            {%- endif -%}
+
+            <span class="sr-only">
+              {%- liquid
+                if customer
+                  echo 'Account'
+                else
+                  echo 'Log In'
+                endif
+              -%}
+            </span>
+          </a>
+        {%- endif -%}
+        <button class="size-10 bg-indigo-100 rounded-full grid place-items-center [&:hover_svg]:size-6">
+          {{ 'icon-cart.svg' | inline_asset_content }}
         </button>
       </div>
     </div>
