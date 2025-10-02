@@ -9,11 +9,11 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        recoleta: ["Recoleta", "serif"],
-        circle: ["CircularStd", "sans-serif"],
+        heading: ["Spectral", "serif"],
+        body: ["Poppins", "sans-serif"],
       },
       colors: {
-        blackPurple: "#2a2447",
+        offWhite: "#f7f5f4",
         darkPurple: "#6A2786",
         purple: "#9151B7",
         litePurple: "#E8D7EF",

@@ -4,9 +4,28 @@
 
 [x-cloak] { display: none !important; }
 
+@layer base {
+	body {
+		@apply font-body;
+	}
+}
+
 @layer components {
 	.container {
 		@apply mx-auto px-4 max-w-screen-xl;
 	}
 }
-	
+
+.animate-move-left {
+    animation: move-left 50s linear infinite
+}
+
+@keyframes move-left {
+    0% {
+        transform: translateX(0)
+    }
+
+    to {
+        transform: translateX(-50%)
+    }
+}
