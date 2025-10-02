@@ -32,18 +32,21 @@
         "label_yJphg9": {
           "type": "label",
           "settings": {
+            "icon": "shopify://shop_images/verified-svgrepo-com.svg",
             "label": "100% AUTHENTIC"
           }
         },
         "label_nYhF3R": {
           "type": "label",
           "settings": {
+            "icon": "shopify://shop_images/achievement-svgrepo-com.svg",
             "label": "EXPERT-CURATED COLLECTIONS"
           }
         },
         "label_RqnDUx": {
           "type": "label",
           "settings": {
+            "icon": "shopify://shop_images/money-back-business-warranty-satisfaction-marketing-guaranted-svgrepo-com.svg",
             "label": "RISK-FREE 60 DAYS MONEY BACK GUARANTEE"
           }
         }
