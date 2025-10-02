@@ -23,9 +23,9 @@
             href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
             class="size-10 bg-sky-100 rounded-full grid place-items-center hover:bg-sky-200 [&:hover_svg]:size-6 [&_.avatar-wrapper]:!p-0"
             rel="nofollow">
-            {%- assign first_initial = customer.first_name | first | upcase -%}
-            {%- if first_initial -%}
-              <span class="font-medium text-black text-xl">{{ first_initial }}</span>
+            {%- assign initial = customer.first_name | default: customer.last_name | default: customer.email | first | upcase -%}
+            {%- if customer -%}
+              <span class="font-medium text-black text-xl">{{ initial }}</span>
             {%- else -%}
               {{ 'icon-account.svg' | inline_asset_content }}
             {%- endif -%}
