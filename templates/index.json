@@ -23,7 +23,7 @@
       "type": "most-popular",
       "settings": {
         "title": "Most Popular",
-        "collection": "all"
+        "collection": "frontpage"
       }
     }
   },
