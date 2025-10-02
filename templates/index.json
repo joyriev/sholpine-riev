@@ -18,9 +18,17 @@
         "buttons": "resources",
         "reviews": "4.8 from 10,977 reviews"
       }
+    },
+    "most-popular": {
+      "type": "most-popular",
+      "settings": {
+        "title": "Most Popular",
+        "collection": "all"
+      }
     }
   },
   "order": [
-    "home-hero"
+    "home-hero",
+    "most-popular"
   ]
 }

@@ -1,0 +1,60 @@
+<div class="py-12 md:py-20">
+  <div class="container">
+    <h2 class="text-center font-heading text-5xl font-bold mb-12">{{ section.settings.title }}</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {% liquid
+        assign collection = section.settings.collection | default: collections.all
+      %}
+      {% for product in collection.products %}
+        <div>
+          <div class="mb-6">
+            <img
+              src="{{ product.featured_image | image_url: width: 300 }}"
+              alt="{{ product.title }}"
+              class="w-full aspect-square object-cover rounded-2xl"
+              width=""
+              height="">
+          </div>
+          <div class="flex items-center gap-2">
+            <img
+              src="{{ 'rating-stars.svg' | asset_url }}"
+              alt="*****"
+              width="66"
+              height="13">
+            <span class="leading-none inline-block pt-1">({{ product.metafields.custom.reviews }})</span>
+          </div>
+          <h3 class="font-heading text-xl font-bold my-2">{{ product.title }}</h3>
+          <p>{{ product.price | money }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Most Popular",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "background_image",
+        "label": "Background Image"
+      }, {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Most Popular"
+      }, {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Most Popular"
+      }
+    ]
+  }
+
+{% endschema %}
