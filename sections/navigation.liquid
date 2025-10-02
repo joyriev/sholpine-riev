@@ -1,7 +1,24 @@
-<div class="w-full bg-slate-600 text-white">
-	<div class="container mx-auto flex flex-row justify-center space-x-12 uppercase py-2 px-4">
-		{% for link in linklists.main-menu.links %}
-			<a href="{{ link.url }}">{{ link.title }}</a>
-		{% endfor %}
-	</div>
+<div class="py-4 border-b border-gray-200">
+  <div class="container">
+    <div class="flex items-center justify-between">
+      <nav>
+        {% for link in linklists.main-menu.links %}
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        {% endfor %}
+      </nav>
+      <a href="{{ routes.root_url }}">
+        <img
+          src="{{ settings.logo.image | image_url: width: 300 }}"
+          alt="{{ settings.logo.alt }}"
+          class="max-w-[120px] h-auto"
+          height=""
+          width="">
+      </a>
+      <div>
+        <button>
+          {{ 'icon-search.svg' | inline_asset_content }}
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
