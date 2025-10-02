@@ -1,8 +1,49 @@
-<h1>Hello world, I am home hero</h1>
+<div class="py-4">
+  <div class="container">
+    <div class="rounded-3xl p-4 md:p-12 bg-gradient-to-r from-sky-50 to-rose-100" style="background-image: url({{ section.settings.background_image | image_url }})">
+      <h2>{{ section.settings.title }}</h2>
+      <p>{{ section.settings.subtitle }}</p>
+      <div>
+        {% for button in section.settings.buttons.links %}
+          <a href="{{ button.url }}" class="btn">{{ button.title }}</a>
+        {% endfor %}
+      </div>
+      <div>
+        {{ section.settings.reviews }}
+      </div>
+    </div>
+  </div>
+</div>
 
 {% schema %}
   {
     "name": "Home Hero",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "background_image",
+        "label": "Background Image"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle"
+      },
+      {
+        "type": "link_list",
+        "id": "buttons",
+        "label": "Buttons"
+      }, {
+        "type": "text",
+        "id": "reviews",
+        "label": "Reviews"
+      }
+    ],
     "presets": [
       {
         "name": "Home Hero"
