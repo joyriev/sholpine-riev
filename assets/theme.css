@@ -766,6 +766,9 @@ video {
 .uppercase {
   text-transform: uppercase;
 }
+.tracking-wide {
+  letter-spacing: 0.025em;
+}
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity, 1));
@@ -823,9 +826,22 @@ video {
     justify-content: flex-start;
   }
 
+  .md\:gap-20 {
+    gap: 80px;
+  }
+
+  .md\:pl-20 {
+    padding-left: 80px;
+  }
+
   .md\:text-xs {
     font-size: 12px;
     line-height: 16px;
+  }
+
+  .md\:text-sm {
+    font-size: 14px;
+    line-height: 20px;
   }
 }
 

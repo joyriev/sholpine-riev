@@ -6,5 +6,20 @@
     "theme_author": "THEME_AUTHOR",
     "theme_documentation_url": "https://THEME_DOCUMENTATION_URL.com/",
     "theme_support_url": "https://THEME_SUPPORT_URL.com/"
+  }, 
+  {
+    "name": "Logo and Favicon",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Select Logo"
+      },
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Select Favicon",
+      }
+    ]
   }
 ]
