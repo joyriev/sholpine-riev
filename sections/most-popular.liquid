@@ -5,8 +5,8 @@
       {% liquid
         assign collection = section.settings.collection | default: collections.all
       %}
-      {% for product in collection.products %}
-        <div>
+      {% for product in collection.products limit: 10 %}
+        <a href="{{ product.url }}">
           <div class="mb-6">
             <img
               src="{{ product.featured_image | image_url: width: 300 }}"
@@ -25,7 +25,7 @@
           </div>
           <h3 class="font-heading text-xl font-bold my-2">{{ product.title }}</h3>
           <p>{{ product.price | money }}</p>
-        </div>
+        </a>
       {% endfor %}
     </div>
   </div>
