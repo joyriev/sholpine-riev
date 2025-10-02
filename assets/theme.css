@@ -609,6 +609,9 @@ video {
   min-height: -moz-fit-content;
   min-height: fit-content;
 }
+.min-h-\[70vh\] {
+  min-height: 70vh;
+}
 .w-1 {
   width: 4px;
 }
@@ -617,6 +620,9 @@ video {
 }
 .w-full {
   width: 100%;
+}
+.w-24 {
+  width: 96px;
 }
 .max-w-\[120px\] {
   max-width: 120px;
@@ -648,6 +654,9 @@ video {
 .items-center {
   align-items: center;
 }
+.justify-end {
+  justify-content: flex-end;
+}
 .justify-center {
   justify-content: center;
 }
@@ -675,6 +684,11 @@ video {
   --tw-space-y-reverse: 0;
   margin-top: calc(16px * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(16px * var(--tw-space-y-reverse));
+}
+.space-y-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(24px * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(24px * var(--tw-space-y-reverse));
 }
 .overflow-hidden {
   overflow: hidden;
@@ -747,11 +761,33 @@ video {
   --tw-gradient-to: rgb(240 249 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
+.from-yellow-950 {
+  --tw-gradient-from: #422006 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(66 32 6 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+.from-sky-100 {
+  --tw-gradient-from: #e0f2fe var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(224 242 254 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
 .to-sky-100 {
   --tw-gradient-to: #e0f2fe var(--tw-gradient-to-position);
 }
 .to-rose-100 {
   --tw-gradient-to: #ffe4e6 var(--tw-gradient-to-position);
+}
+.to-orange-400 {
+  --tw-gradient-to: #fb923c var(--tw-gradient-to-position);
+}
+.to-indigo-300 {
+  --tw-gradient-to: #a5b4fc var(--tw-gradient-to-position);
+}
+.bg-cover {
+  background-size: cover;
+}
+.bg-center {
+  background-position: center;
 }
 .p-0 {
   padding: 0px;
@@ -785,8 +821,14 @@ video {
 .pl-12 {
   padding-left: 48px;
 }
+.pt-1 {
+  padding-top: 4px;
+}
 .text-center {
   text-align: center;
+}
+.font-heading {
+  font-family: Spectral, serif;
 }
 .text-3xl {
   font-size: 30px;
@@ -804,6 +846,22 @@ video {
   font-size: 20px;
   line-height: 28px;
 }
+.text-4xl {
+  font-size: 36px;
+  line-height: 40px;
+}
+.text-7xl {
+  font-size: 72px;
+  line-height: 1;
+}
+.text-2xl {
+  font-size: 24px;
+  line-height: 32px;
+}
+.text-5xl {
+  font-size: 48px;
+  line-height: 1;
+}
 .font-bold {
   font-weight: 700;
 }
@@ -815,6 +873,9 @@ video {
 }
 .uppercase {
   text-transform: uppercase;
+}
+.leading-none {
+  line-height: 1;
 }
 .tracking-wide {
   letter-spacing: 0.025em;

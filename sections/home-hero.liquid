@@ -1,15 +1,22 @@
 <div class="py-4">
   <div class="container">
-    <div class="rounded-3xl p-4 md:p-12 bg-gradient-to-r from-sky-50 to-rose-100" style="background-image: url({{ section.settings.background_image | image_url }})">
-      <h2>{{ section.settings.title }}</h2>
-      <p>{{ section.settings.subtitle }}</p>
-      <div>
-        {% for button in section.settings.buttons.links %}
-          <a href="{{ button.url }}" class="btn">{{ button.title }}</a>
-        {% endfor %}
-      </div>
-      <div>
-        {{ section.settings.reviews }}
+    <div class="rounded-3xl p-4 md:p-12 bg-gradient-to-r from-sky-100 to-indigo-300 flex flex-col justify-center min-h-[70vh] bg-cover bg-center" style="background-image: url({{ section.settings.background_image | image_url: width: 1280 }})">
+      <div class="space-y-6">
+        <h1 class="text-3xl font-bold">{{ section.settings.title }}</h1>
+        <p class="text-4xl uppercase tracking-wide">{{ section.settings.subtitle }}</p>
+        <div class="flex items-center gap-2">
+          <a href="/collection/all" class="inline-block px-8 py-4 rounded-full bg-black text-white">SHOP ALL</a>
+          <a href="/blogs/news" class="inline-block px-8 py-4 rounded-full bg-black text-white">DISCOVER</a>
+        </div>
+        <div class="flex items-center gap-2">
+          <img
+            class="w-24 h-auto"
+            src="{{ 'rating-stars.svg' | asset_url }}"
+            alt="*****"
+            width="66"
+            height="13">
+          <span class="leading-none inline-block pt-1">{{ section.settings.reviews }}</span>
+        </div>
       </div>
     </div>
   </div>
