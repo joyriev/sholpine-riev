@@ -11,7 +11,13 @@
   "sections": {
     "home-hero": {
       "type": "home-hero",
-      "settings": {}
+      "settings": {
+        "background_image": "shopify://shop_images/hero-banner-21-d.png",
+        "title": "Designer Perfumes",
+        "subtitle": "Without The Pricetag",
+        "buttons": "resources",
+        "reviews": "4.8 from 10,977 reviews"
+      }
     }
   },
   "order": [
