@@ -21,7 +21,7 @@
         {%- if shop.customer_accounts_enabled -%}
           <a
             href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
-            class="size-10 bg-sky-100 rounded-full grid place-items-center [&:hover_svg]:size-6"
+            class="size-10 bg-sky-100 rounded-full grid place-items-center hover:bg-sky-200 [&:hover_svg]:size-6 [&_.avatar-wrapper]:!p-0"
             rel="nofollow">
             {%- if customer and customer.has_avatar? -%}
               {{ customer | avatar }}
@@ -40,7 +40,7 @@
             </span>
           </a>
         {%- endif -%}
-        <button class="size-10 bg-indigo-100 rounded-full grid place-items-center [&:hover_svg]:size-6">
+        <button class="size-10 bg-indigo-100 rounded-full grid place-items-center hover:bg-indigo-200 [&:hover_svg]:size-6">
           {{ 'icon-cart.svg' | inline_asset_content }}
         </button>
       </div>
