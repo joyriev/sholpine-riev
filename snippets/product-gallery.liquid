@@ -1,0 +1,41 @@
+<div class="product-gallery sticky top-8">
+  <!-- Main Swiper -->
+  <div class="flex gap-3">
+    <!-- Thumbnails (vertical) -->
+    <div class="swiper product-thumbs w-20 h-[500px]">
+      <div class="swiper-wrapper">
+        {% for media in product.media %}
+          <div class="swiper-slide cursor-pointer overflow-hidden">
+            <img
+              src="{{ media | image_url: width: 100, height: 100 }}"
+              alt="{{ media.alt }}"
+              width="100"
+              height="100"
+              class="w-full h-full object-cover rounded-2xl">
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Main gallery -->
+    <div class="swiper product-main flex-1 relative rounded-3xl border">
+      <div class="swiper-wrapper">
+        {% for media in product.media %}
+          <div class="swiper-slide">
+            <img
+              src="{{ media | image_url: width: 800, height: 800 }}"
+              alt="{{ media.alt }}"
+              width="800"
+              height="800"
+              class="w-full h-auto object-cover rounded-3xl">
+          </div>
+        {% endfor %}
+      </div>
+
+      <!-- Navigation -->
+      <div class="swiper-button-next absolute top-auto bottom-4 right-4 z-10 grid place-items-center text-black size-10 bg-rose-100 rounded-full [&_svg]:size-5 [&_svg]:transition-all [&:hover_svg]:size-6 "></div>
+      <div class="swiper-button-prev absolute top-auto bottom-4 right-[72px] z-10 grid place-items-center rotate-180 text-black size-10 bg-sky-100 rounded-full [&_svg]:size-5 [&_svg]:transition-all [&:hover_svg]:size-6"></div>
+    </div>
+  </div>
+
+</div>

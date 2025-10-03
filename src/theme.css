@@ -8,12 +8,19 @@
 	body {
 		@apply font-body;
 	}
+    button {
+        @apply font-body;
+    }
 }
 
 @layer components {
 	.container {
 		@apply mx-auto px-4 max-w-screen-xl;
 	}
+}
+
+.swiper-slide-thumb-active img {
+    @apply border-2 border-indigo-500 p-0.5;
 }
 
 .animate-move-left {

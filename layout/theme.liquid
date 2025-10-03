@@ -54,6 +54,22 @@
     {{ content_for_layout }}
     {% sections 'footer-group' %}
 
+    {% comment %} Cart {% endcomment %}
+    <div x-data>
+      <h1 x-show="$store.cart.loading">Loading...</h1>
+      <template x-for="item in $store.cart.items">
+        <div>
+          <img
+            :src="item.image"
+            height="100"
+            width="100">
+          <h2 x-text="item.title"></h2>
+          <p x-text="item.price"></p>
+          <p x-text="item.quantity"></p>
+        </div>
+      </template>
+    </div>
+
     <script defer src="{{ 'theme.js' | asset_url }}"></script>
   </body>
 </html>
