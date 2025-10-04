@@ -1,7 +1,12 @@
 import Alpine from "alpinejs";
 import { formatMoney } from "./utills";
+// What if this file is not laoding inside the product page?
 
 document.addEventListener("alpine:init", () => {
+  if (typeof selectedVariantPrice === "undefined") {
+    return;
+  }
+
   Alpine.store("product", {
     price: selectedVariantPrice,
     selectedVariant: selectedVariant,
@@ -31,6 +36,7 @@ document.addEventListener("alpine:init", () => {
             return {
               ...item,
               price: formatMoney(item.price),
+              line_price: formatMoney(item.line_price),
             };
           });
 

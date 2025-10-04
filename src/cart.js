@@ -15,6 +15,7 @@ document.addEventListener("alpine:init", () => {
         return {
           ...item,
           price: formatMoney(item.price),
+          line_price: formatMoney(item.line_price),
         };
       });
 
@@ -23,6 +24,7 @@ document.addEventListener("alpine:init", () => {
     },
 
     updateItems(items) {
+      console.log(items);
       this.items = items;
     },
 

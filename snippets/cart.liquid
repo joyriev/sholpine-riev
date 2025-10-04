@@ -1,119 +1,57 @@
-<!-- Overlay -->
-<div class="fixed inset-0 bg-black opacity-50 z-40"></div>
-
-<!-- Slide Cart Drawer -->
-<div x-show="$store.cart.isOpen" class="fixed top-0 right-0 h-full w-full max-w-md bg-white shadow-2xl z-50 flex flex-col">
-
-  <!-- Header -->
-  <div class="flex items-center justify-between p-6 border-b">
-    <div class="flex items-center gap-3">
-      <h2 class="text-4xl font-bold">Cart</h2>
-      <span class="w-2 h-2 bg-black rounded-full"></span>
-      <span class="text-4xl font-bold" x-text="$store.cart.totalItems"></span>
-    </div>
-    <button class="p-2 hover:bg-gray-100 rounded-lg transition-colors">
-      <svg
-        class="w-6 h-6"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24">
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M6 18L18 6M6 6l12 12" />
-      </svg>
-    </button>
-  </div>
-
-  <!-- Scrollable Content -->
-  <div class="flex-1 overflow-y-auto">
-
-    <!-- Free Shipping Progress -->
-    <div class="p-6 border-b">
-      <p class="text-center text-lg mb-4">
-        You're
-        <span class="font-bold">$152.00</span>
-        away from free shipping!
-      </p>
-      <div class="relative">
-        <!-- Progress Bar -->
-        <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
-          <div class="h-full bg-teal-500 w-1/4"></div>
-        </div>
-
-        <!-- Progress Milestones -->
-        <div class="flex justify-between mt-4">
-          <div class="flex flex-col items-center">
-            <div class="w-14 h-14 rounded-full border-4 border-teal-500 bg-white flex items-center justify-center">
-              <svg
-                class="w-7 h-7 text-teal-500"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-              </svg>
-            </div>
-            <span class="text-sm mt-2 font-medium">Free Shipping</span>
-          </div>
-          <div class="flex flex-col items-center">
-            <div class="w-14 h-14 rounded-full border-4 border-gray-300 bg-white flex items-center justify-center">
-              <svg
-                class="w-7 h-7 text-gray-300"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
-              </svg>
-            </div>
-            <span class="text-sm mt-2 font-medium">5% Off</span>
-          </div>
-        </div>
+<div x-data>
+  <div
+    x-cloak
+    @click="$store.cart.isOpen = false"
+    :class="$store.cart.isOpen ? 'left-0 opacity-50' : 'left-full opacity-0'"
+    class="fixed top-0 h-full w-full bg-black z-40 transition-all duration-300"></div>
+  <div
+    x-cloak
+    :class="$store.cart.isOpen ? 'right-0' : 'right-[-28rem]'"
+    class="fixed top-0 h-full w-full max-w-md bg-white shadow-2xl z-50 flex flex-col transition-all duration-300">
+    <!-- Header -->
+    <div class="flex items-center justify-between p-6 border-b">
+      <div class="flex items-center gap-3">
+        <h2 class="text-4xl font-bold">Cart</h2>
+        <span class="w-2 h-2 bg-black rounded-full"></span>
+        <span class="text-4xl font-bold" x-text="$store.cart.totalItems"></span>
       </div>
+      <button @click="$store.cart.isOpen = false" class="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
     </div>
 
-    <!-- Cart Item -->
-    <div class="p-6 border-b">
-      <div class="flex gap-4">
-        <div class="w-40 h-40 bg-gray-200 rounded-lg overflow-hidden flex-shrink-0">
-          <img
-            src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=200&h=200&fit=crop"
-            alt="5 Panel Camp Cap"
-            class="w-full h-full object-cover">
-        </div>
-        <div class="flex-1 flex flex-col">
-          <div class="flex justify-between items-start mb-2">
-            <div>
-              <h3 class="text-xl font-semibold mb-1">5 Panel Camp Cap</h3>
-              <p class="text-gray-500">Color: Heather Green</p>
-            </div>
-            <button class="p-2 hover:bg-gray-100 rounded-lg transition-colors">
-              <svg
-                class="w-5 h-5 text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-              </svg>
-            </button>
+    <!-- Scrollable Content -->
+    <div class="flex-1 overflow-y-auto">
+
+      <!-- Free Shipping Progress -->
+      <div class="p-6 border-b">
+        <p class="text-center text-lg mb-4">
+          You're
+          <span class="font-bold">$152.00</span>
+          away from free shipping!
+        </p>
+        <div class="relative">
+          <!-- Progress Bar -->
+          <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+            <div class="h-full bg-teal-500 w-1/4"></div>
           </div>
-          <div class="flex items-center justify-between mt-auto">
-            <div class="flex items-center border border-gray-300 rounded">
-              <button class="px-4 py-3 hover:bg-gray-100 transition-colors">
+
+          <!-- Progress Milestones -->
+          <div class="flex justify-between mt-4">
+            <div class="flex flex-col items-center">
+              <div class="w-14 h-14 rounded-full border-4 border-teal-500 bg-white flex items-center justify-center">
                 <svg
-                  class="w-4 h-4"
+                  class="w-7 h-7 text-teal-500"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24">
@@ -121,13 +59,15 @@
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
-                    d="M20 12H4" />
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
-              </button>
-              <span class="px-6 py-3 font-medium border-x border-gray-300">1</span>
-              <button class="px-4 py-3 hover:bg-gray-100 transition-colors">
+              </div>
+              <span class="text-sm mt-2 font-medium">Free Shipping</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <div class="w-14 h-14 rounded-full border-4 border-gray-300 bg-white flex items-center justify-center">
                 <svg
-                  class="w-4 h-4"
+                  class="w-7 h-7 text-gray-300"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24">
@@ -135,59 +75,109 @@
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
-                    d="M12 4v16m8-8H4" />
+                    d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
                 </svg>
-              </button>
+              </div>
+              <span class="text-sm mt-2 font-medium">5% Off</span>
             </div>
-            <span class="text-2xl font-bold">$48.00</span>
           </div>
         </div>
       </div>
-      <template x-for="product in $store.cart.items">
-        <h1 x-text="product.title"></h1>
-      </template>
-    </div>
 
-    <!-- Recommendations -->
-    <div class="p-6 border-b">
-      <h3 class="text-2xl font-bold text-center mb-6">You'll love these</h3>
-
-      <div class="">
-
-        <!-- Product Card -->
-        <div class="bg-cyan-50 rounded-lg p-6">
-          <div class="flex gap-6 items-center">
-            <div class="w-48 h-48 bg-white rounded-lg overflow-hidden flex-shrink-0">
+      <!-- Cart Item -->
+      <div class="p-6 border-b flex flex-col gap-6 [&_.border-b:last-child]:border-b-0 [&_.border-b:last-child]:pb-0">
+        <template x-for="product in $store.cart.items">
+          <div class="flex gap-4 border-b pb-6">
+            <div class="size-24 bg-gray-200 rounded-lg overflow-hidden flex-shrink-0">
               <img
-                src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=200&h=200&fit=crop"
-                alt="Whitney Pullover"
+                :src="product.image"
+                :alt="product.title"
+                height="96"
+                width="96"
                 class="w-full h-full object-cover">
             </div>
-            <div class="flex-1">
-              <h4 class="text-2xl font-bold mb-2">Whitney Pullover</h4>
-              <p class="text-2xl font-bold mb-4">$138.00</p>
-              <div class="flex gap-3">
-                <select class="flex-1 px-4 py-3 border border-gray-300 rounded bg-white text-base">
-                  <option>S</option>
-                  <option>M</option>
-                  <option>L</option>
-                  <option>XL</option>
-                </select>
-                <button class="flex-1 bg-black text-white py-3 rounded font-medium hover:bg-gray-800 transition-colors">
-                  Add
+            <div class="flex-1 flex flex-col">
+              <div class="flex justify-between items-start mb-2">
+                <div>
+                  <h3 class="font-semibold mb-1 line-clamp-1" x-text="product.title"></h3>
+                  <p class="text-gray-500">
+                    <span x-text="product.variant_title"></span>
+                    -
+                    <span x-text="product.price"></span>
+                  </p>
+                </div>
+                <button class="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+                  <svg
+                    class="w-5 h-5 text-gray-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                  </svg>
                 </button>
+              </div>
+              <div class="flex items-center justify-between mt-auto">
+                <div class="flex items-center border border-gray-300 rounded">
+                  <button class="px-3 py-2 hover:bg-gray-100 transition-colors">
+                    -
+                  </button>
+                  <span class="px-4 py-2 font-medium border-x border-gray-300" x-text="product.quantity"></span>
+                  <button class="px-3 py-2 hover:bg-gray-100 transition-colors">
+                    +
+                  </button>
+                </div>
+                <span class="text-lg font-bold" x-text="product.line_price"></span>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+
+      <!-- Recommendations -->
+      <div class="p-6 border-b">
+        <h3 class="text-2xl font-bold text-center mb-6">You'll love these</h3>
+
+        <div class="">
+
+          <!-- Product Card -->
+          <div class="bg-cyan-50 rounded-lg p-6">
+            <div class="flex gap-6 items-center">
+              <div class="w-48 h-48 bg-white rounded-lg overflow-hidden flex-shrink-0">
+                <img
+                  src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=200&h=200&fit=crop"
+                  alt="Whitney Pullover"
+                  class="w-full h-full object-cover">
+              </div>
+              <div class="flex-1">
+                <h4 class="text-2xl font-bold mb-2">Whitney Pullover</h4>
+                <p class="text-2xl font-bold mb-4">$138.00</p>
+                <div class="flex gap-3">
+                  <select class="flex-1 px-4 py-3 border border-gray-300 rounded bg-white text-base">
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                    <option>XL</option>
+                  </select>
+                  <button class="flex-1 bg-black text-white py-3 rounded font-medium hover:bg-gray-800 transition-colors">
+                    Add
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Checkout Button -->
-  <div class="p-6 border-t bg-white">
-    <button class="w-full bg-black text-white py-4 rounded font-medium text-lg hover:bg-gray-800 transition-colors">
-      Checkout • $48.00
-    </button>
+    <!-- Checkout Button -->
+    <div class="p-6 border-t bg-white">
+      <button class="w-full bg-black text-white py-4 rounded font-medium text-lg hover:bg-gray-800 transition-colors">
+        Checkout • $48.00
+      </button>
+    </div>
   </div>
 </div>
