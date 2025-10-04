@@ -10,21 +10,19 @@ document.addEventListener("alpine:init", () => {
       const response = await fetch(window.Shopify.routes.root + "cart.js");
       const data = await response.json();
 
-      this.updateItems(data.items);
-      this.loading = false;
-    },
-
-    updateItems(items) {
-      const formattedItems = items.map((item) => {
+      const formattedItems = data.items.map((item) => {
         return {
           ...item,
           price: formatMoney(item.price),
         };
       });
 
-      console.log(formattedItems);
+      this.updateItems(formattedItems);
+      this.loading = false;
+    },
 
-      this.items = formattedItems;
+    updateItems(items) {
+      this.items = items;
     },
 
     get totalItems() {

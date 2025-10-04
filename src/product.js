@@ -1,4 +1,5 @@
 import Alpine from "alpinejs";
+import { formatMoney } from "./utills";
 
 document.addEventListener("alpine:init", () => {
   Alpine.store("product", {
@@ -26,8 +27,30 @@ document.addEventListener("alpine:init", () => {
       })
         .then((response) => response.json())
         .then((data) => {
-          // TODO: Attention this is returning only the added item not the full cart
-          Alpine.store("cart").updateItems(data.items);
+          const formattedItems = data.items.map((item) => {
+            return {
+              ...item,
+              price: formatMoney(item.price),
+            };
+          });
+
+          const cart = Alpine.store("cart");
+
+          // Create a map of existing items by id for quick lookup
+          const existingItemsMap = new Map(
+            cart.items.map((item) => [item.id, item])
+          );
+
+          // Update or add items from formattedItems
+          formattedItems.forEach((newItem) => {
+            existingItemsMap.set(newItem.id, newItem);
+          });
+
+          // Convert the map values back to an array
+          const mergedItems = Array.from(existingItemsMap.values());
+
+          // Update the cart with the merged items
+          cart.updateItems(mergedItems);
           this.loading = false;
         })
         .catch((error) => {
