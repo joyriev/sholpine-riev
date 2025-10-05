@@ -36,7 +36,7 @@ document.addEventListener("alpine:init", () => {
             return {
               ...item,
               price: formatMoney(item.price),
-              line_price: formatMoney(item.line_price),
+              line_price_formatted: formatMoney(item.line_price),
             };
           });
 
