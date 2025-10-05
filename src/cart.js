@@ -3,7 +3,7 @@ import { formatMoney } from "./utills";
 
 document.addEventListener("alpine:init", () => {
   Alpine.store("cart", {
-    isOpen: false,
+    isOpen: true,
     items: [],
     loading: true,
     // Initialize cart on page load

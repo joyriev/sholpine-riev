@@ -21,5 +21,15 @@
         "label": "Select Favicon",
       }
     ]
+  },
+  {
+    "name": "Cart",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "cart_upsell",
+        "label": "Cart upsell collection",
+      }
+    ]
   }
 ]

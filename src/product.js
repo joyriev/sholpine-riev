@@ -58,6 +58,7 @@ document.addEventListener("alpine:init", () => {
           // Update the cart with the merged items
           cart.updateItems(mergedItems);
           this.loading = false;
+          cart.isOpen = true;
         })
         .catch((error) => {
           console.error(error);
