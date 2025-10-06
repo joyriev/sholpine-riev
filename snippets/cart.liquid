@@ -103,8 +103,12 @@
                     <span x-text="product.price"></span>
                   </p>
                 </div>
-                <button class="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+                <button
+                  @click="$store.cart.changeItem(product.key)"
+                  :disabled="$store.cart.isRemoving === product.key"
+                  class="p-2 hover:bg-gray-100 rounded-lg transition-colors flex disabled:cursor-not-allowed">
                   <svg
+                    x-show="$store.cart.isRemoving !== product.key"
                     class="w-5 h-5 text-gray-400"
                     fill="none"
                     stroke="currentColor"
@@ -115,16 +119,34 @@
                       stroke-width="2"
                       d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                   </svg>
+                  <div
+                    x-show="$store.cart.isRemoving === product.key"
+                    class="text-gray-500 inline-block size-5 animate-spin rounded-full border-2 border-solid border-current border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite]"
+                    role="status">
+                    <span class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Loading...</span>
+                  </div>
                 </button>
               </div>
               <div class="flex items-center justify-between mt-auto">
                 <div class="flex items-center border border-gray-300 rounded">
-                  <button class="px-3 py-1 hover:bg-gray-100 transition-colors">
-                    -
+                  <button
+                    @click="$store.cart.changeItem(product.key, 'decrease', product.quantity - 1)"
+                    :disabled="$store.cart.isDecreasing === product.key || product.quantity === 1"
+                    class="size-8 flex justify-center items-center hover:bg-gray-100 transition-colors disabled:cursor-not-allowed">
+                    <span x-show="$store.cart.isDecreasing !== product.key">-</span>
+                    <div x-show="$store.cart.isDecreasing === product.key" class="text-gray-500 inline-block size-5 animate-spin rounded-full border-2 border-solid border-current border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite]">
+                      <span class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Loading...</span>
+                    </div>
                   </button>
-                  <span class="px-4 py-1 font-medium border-x border-gray-300" x-text="product.quantity"></span>
-                  <button class="px-3 py-1 hover:bg-gray-100 transition-colors">
-                    +
+                  <span class="h-8 w-10 flex justify-center items-center font-medium border-x border-gray-300" x-text="product.quantity"></span>
+                  <button
+                    @click="$store.cart.changeItem(product.key, 'increase', product.quantity + 1)"
+                    :disabled="$store.cart.isIncreasing === product.key"
+                    class="size-8 flex justify-center items-center hover:bg-gray-100 transition-colors disabled:cursor-not-allowed">
+                    <span x-show="$store.cart.isIncreasing !== product.key">+</span>
+                    <div x-show="$store.cart.isIncreasing === product.key" class="text-gray-500 inline-block size-5 animate-spin rounded-full border-2 border-solid border-current border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite]">
+                      <span class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Loading...</span>
+                    </div>
                   </button>
                 </div>
                 <span class="text-lg font-bold" x-text="product.line_price_formatted"></span>

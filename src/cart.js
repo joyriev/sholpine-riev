@@ -25,28 +25,44 @@ document.addEventListener("alpine:init", () => {
       this.items = items;
     },
 
-    removeItem(id) {
-      this.isRemoving = id;
+    changeItem(key, type = "remove", quantity = 0) {
+      if (type === "remove") {
+        this.isRemoving = key;
+      } else if (type === "increase") {
+        this.isIncreasing = key;
+      } else if (type === "decrease") {
+        this.isDecreasing = key;
+      }
       fetch(window.Shopify.routes.root + "cart/change.js", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          id,
-          quantity: 0,
+          id: key,
+          quantity,
         }),
       })
         .then((response) => response.json())
         .then((data) => {
-          console.log(data);
+          const formattedItems = data.items.map((item) => {
+            return {
+              ...item,
+              price: formatMoney(item.price),
+              line_price_formatted: formatMoney(item.line_price),
+            };
+          });
 
-          this.updateItems(data.items);
+          this.updateItems(formattedItems);
           this.isRemoving = "";
+          this.isIncreasing = "";
+          this.isDecreasing = "";
         })
         .catch((error) => {
           console.error(error);
           this.isRemoving = "";
+          this.isIncreasing = "";
+          this.isDecreasing = "";
         });
     },
     // Initialize cart on page load
