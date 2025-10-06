@@ -3,7 +3,7 @@ import { formatItems, formatMoney } from "./utills";
 
 document.addEventListener("alpine:init", () => {
   Alpine.store("cart", {
-    isOpen: true,
+    isOpen: false,
     items: [],
     loading: true,
     isRemoving: "",
