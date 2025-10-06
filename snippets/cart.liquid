@@ -158,45 +158,55 @@
         </template>
       </div>
       {% comment %} Cart Upsell {% endcomment %}
-      <div class="p-6">
-        <h3 class="text-2xl font-bold text-center mb-4">You'll love these</h3>
-        <div class="">
-          <!-- Product Card -->
-          <div class="rounded-lg p-3 border">
-            <div class="flex gap-6 items-center">
-              <div class="size-24 bg-white rounded-lg overflow-hidden flex-shrink-0">
-                <img
-                  height="96"
-                  width="96"
-                  src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=200&h=200&fit=crop"
-                  alt="Whitney Pullover"
-                  class="w-full h-full object-cover">
-              </div>
-              <div class="flex-1">
-                <h4 class="font-bold text-lg mb-1 line-clamp-1">Whitney Pullover</h4>
-                <p class="text-gray-500">30ML</p>
-                <div class="flex gap-3 items-center">
-                  <p class="flex-grow font-bold text-lg">$138.00</p>
-                  <button class="flex-1 bg-black text-white py-2 rounded-full font-medium hover:bg-gray-800 transition-colors">
-                    Add
-                  </button>
+      {% if settings.cart_upsell and settings.cart_upsell.products_count > 0 %}
+        <div class="p-6">
+          <h3 class="text-2xl font-bold text-center mb-4">You'll love these</h3>
+          <div class="flex flex-col gap-4">
+            <template x-for="product in $store.cart.upsellProducts">
+              <div class="rounded-lg p-3 border">
+                <div class="flex gap-6 items-center">
+                  <div class="size-24 bg-white rounded-lg overflow-hidden flex-shrink-0">
+                    <img
+                      height="96"
+                      width="96"
+                      :src="product.image"
+                      :alt="product.title"
+                      class="w-full h-full object-cover">
+                  </div>
+                  <div class="flex-1">
+                    <h4 class="font-bold text-lg mb-1 line-clamp-1" x-text="product.title"></h4>
+                    <p class="text-gray-500">50ML</p>
+                    <div class="flex gap-3 items-center justify-between">
+                      <p class="font-bold text-lg" x-text="product.price"></p>
+                      <button @click="$store.cart.addToCart(product.id)" class="bg-black text-white p-2 px-4 w-auto rounded-full font-medium hover:bg-gray-800 transition-colors">
+                        Add
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+            </template>
           </div>
         </div>
-      </div>
-      <script>
-        const upsellProducts = [
-          {% for product in collections.upsell.products %}
-            {
-              title: "{{ product.title }}",
-              price: "{{ product.price }}",
-              image: "{{ product.featured_image | image_url: width: 200, height: 200 }}",
-            },
-          {% endfor %}
-        ];
-      </script>
+        <script>
+          const upsellProducts = [
+            {% for product in settings.cart_upsell.products | limit: 5 %}
+              {%  assign selected_variant = product.variants.first %}
+              {% for variant in product.variants %}
+                {% if variant.title == '50ML' %}
+                  {% assign selected_variant = variant %}
+                {% endif %}
+              {% endfor %}
+              {
+                id: {{ selected_variant.id }},
+                title: "{{ product.title }}",
+                price: "{{ selected_variant.price }}",
+                image: "{{ product.featured_image | image_url: width: 200, height: 200 }}",
+              },
+            {% endfor %}
+          ];
+        </script>
+      {% endif %}
     </div>
     {% comment %} Checkout Button {% endcomment %}
     <div class="p-6 border-t bg-white">

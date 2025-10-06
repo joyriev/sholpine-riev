@@ -837,6 +837,9 @@ video {
 .w-10 {
   width: 40px;
 }
+.w-auto {
+  width: auto;
+}
 .max-w-\[120px\] {
   max-width: 120px;
 }
