@@ -26,6 +26,11 @@
     "name": "Cart",
     "settings": [
       {
+        "type": "checkbox",
+        "id": "cart_progress",
+        "label": "Enable cart progress"
+      },
+      {
         "type": "collection",
         "id": "cart_upsell",
         "label": "Cart upsell collection",

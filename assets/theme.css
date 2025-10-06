@@ -694,6 +694,9 @@ video {
 .mb-8 {
   margin-bottom: 32px;
 }
+.mt-12 {
+  margin-top: 48px;
+}
 .line-clamp-1 {
   overflow: hidden;
   display: -webkit-box;
@@ -851,6 +854,9 @@ video {
 }
 .flex-shrink-0 {
   flex-shrink: 0;
+}
+.flex-grow {
+  flex-grow: 1;
 }
 .rotate-180 {
   --tw-rotate: 180deg;
@@ -1115,6 +1121,9 @@ video {
 .\!p-0 {
   padding: 0px !important;
 }
+.p-3 {
+  padding: 12px;
+}
 .px-2 {
   padding-left: 8px;
   padding-right: 8px;
@@ -1186,6 +1195,9 @@ video {
 }
 .pt-7 {
   padding-top: 28px;
+}
+.pr-2 {
+  padding-right: 8px;
 }
 .text-center {
   text-align: center;
