@@ -8,4 +8,14 @@ const formatMoney = (
   }).format(cents / 100);
 };
 
-export { formatMoney };
+const formatItems = (items) => {
+  return items.map((item) => {
+    return {
+      ...item,
+      price: formatMoney(item.price),
+      line_price_formatted: formatMoney(item.line_price),
+    };
+  });
+};
+
+export { formatMoney, formatItems };

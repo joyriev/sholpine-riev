@@ -1,6 +1,5 @@
 import Alpine from "alpinejs";
-import { formatMoney } from "./utills";
-// What if this file is not laoding inside the product page?
+import { formatItems } from "./utills";
 
 document.addEventListener("alpine:init", () => {
   if (typeof selectedVariantPrice === "undefined") {
@@ -32,14 +31,7 @@ document.addEventListener("alpine:init", () => {
       })
         .then((response) => response.json())
         .then((data) => {
-          const formattedItems = data.items.map((item) => {
-            return {
-              ...item,
-              price: formatMoney(item.price),
-              line_price_formatted: formatMoney(item.line_price),
-            };
-          });
-
+          const formattedItems = formatItems(data.items);
           const cart = Alpine.store("cart");
 
           // Create a map of existing items by id for quick lookup

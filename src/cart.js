@@ -1,5 +1,5 @@
 import Alpine from "alpinejs";
-import { formatMoney } from "./utills";
+import { formatItems, formatMoney } from "./utills";
 
 document.addEventListener("alpine:init", () => {
   Alpine.store("cart", {
@@ -45,15 +45,7 @@ document.addEventListener("alpine:init", () => {
       })
         .then((response) => response.json())
         .then((data) => {
-          const formattedItems = data.items.map((item) => {
-            return {
-              ...item,
-              price: formatMoney(item.price),
-              line_price_formatted: formatMoney(item.line_price),
-            };
-          });
-
-          this.updateItems(formattedItems);
+          this.updateItems(formatItems(data.items));
           this.isRemoving = "";
           this.isIncreasing = "";
           this.isDecreasing = "";
@@ -69,16 +61,7 @@ document.addEventListener("alpine:init", () => {
     async init() {
       const response = await fetch(window.Shopify.routes.root + "cart.js");
       const data = await response.json();
-
-      const formattedItems = data.items.map((item) => {
-        return {
-          ...item,
-          price: formatMoney(item.price),
-          line_price_formatted: formatMoney(item.line_price),
-        };
-      });
-
-      this.updateItems(formattedItems);
+      this.updateItems(formatItems(data.items));
       this.loading = false;
     },
   });
