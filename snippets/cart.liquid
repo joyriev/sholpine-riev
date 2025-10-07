@@ -178,8 +178,14 @@
                     <p class="text-gray-500">50ML</p>
                     <div class="flex gap-3 items-center justify-between">
                       <p class="font-bold text-lg" x-text="product.price"></p>
-                      <button @click="$store.cart.addToCart(product.id)" class="bg-black text-white p-2 px-4 w-auto rounded-full font-medium hover:bg-gray-800 transition-colors">
-                        Add
+                      <button
+                        @click="$store.cart.addToCart(product.id)"
+                        :disabled="$store.cart.adding === product.id"
+                        class="bg-black text-white p-2 px-4 w-auto rounded-full font-medium flex items-center gap-1.5 hover:bg-gray-800 transition-colors disabled:cursor-not-allowed">
+                        <span>Add</span>
+                        <div x-show="$store.cart.adding === product.id" class="text-gray-500 inline-block size-5 animate-spin rounded-full border-2 border-solid border-current border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite]">
+                          <span class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Loading...</span>
+                        </div>
                       </button>
                     </div>
                   </div>
