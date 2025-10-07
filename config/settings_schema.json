@@ -36,5 +36,15 @@
         "label": "Cart upsell collection",
       }
     ]
+  },
+  {
+    "name": "Search",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "search_modal_collection",
+        "label": "Search modal collection"
+      }
+    ]
   }
 ]

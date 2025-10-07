@@ -1,0 +1,20 @@
+<a href="{{ product.url }}">
+  <div class="mb-6">
+    <img
+      src="{{ product.featured_image | image_url: width: 300 }}"
+      alt="{{ product.title }}"
+      class="w-full aspect-square object-cover rounded-2xl"
+      width=""
+      height="">
+  </div>
+  <div class="flex items-center gap-2">
+    <img
+      src="{{ 'rating-stars.svg' | asset_url }}"
+      alt="*****"
+      width="66"
+      height="13">
+    <span class="leading-none inline-block pt-1">({{ product.metafields.custom.reviews }})</span>
+  </div>
+  <h3 class="font-heading text-xl font-bold my-2">{{ product.title }}</h3>
+  <p>{{ product.price | money }}</p>
+</a>

@@ -1,0 +1,86 @@
+<div
+  x-data
+  x-show="$store.search.open"
+  x-transition:enter="transition ease-out duration-100"
+  x-transition:enter-start="opacity-0"
+  x-transition:enter-end="opacity-100"
+  x-transition:leave="transition ease-in duration-100"
+  x-transition:leave-start="opacity-100"
+  x-transition:leave-end="opacity-0"
+  class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[9999]"
+  x-cloak>
+  <div @click.away="$store.search.open = false" class="bg-white rounded-lg p-6 max-w-2xl w-full mx-4 h-[90vh] flex flex-col relative">
+    <button @click="$store.search.open = false" class="absolute -top-3 -right-3 size-8 bg-teal-100 text-black [&:hover_span]:scale-110 rounded-full flex items-center justify-center border-0 text-3xl cursor-pointer transition">
+      <span class="[rotate:-45deg] size-5 transition duration-150">
+        {{- 'icon-plus.svg' | inline_asset_content -}}
+      </span>
+    </button>
+
+    <form @submit.prevent="$store.search.goToSearch" class="relative">
+      <input
+        type="text"
+        x-model="$store.search.query"
+        x-ref="searchInput"
+        @input.debounce.300ms="$store.search.fetchResults"
+        x-init="
+            $watch('$store.search.open', isOpen => {
+                if (isOpen) {
+                    setTimeout(() => $el.focus(), 10);
+                }
+            });
+        "
+        placeholder="Search products..."
+        class="w-full border-0 border-b-2 pl-1 pb-2 focus:outline-none focus:ring-0 focus:border-rose-300" />
+      <button type="submit" class="absolute right-3 top-1/2 -translate-y-1/2">
+        <span class="inline-block size-5">
+          {{ 'icon-search.svg' | inline_asset_content }}
+        </span>
+      </button>
+    </form>
+
+    {% comment %} Product Grid {% endcomment %}
+    <div class="flex-1 overflow-y-auto pt-1 -mx-2 px-2">
+      <h3 class="text-xl font-semibold my-4">
+        <span x-text="$store.search.query.length < 2 ? 'Trending now' : `Showing results for &quot;${$store.search.query}&quot;`"></span>
+      </h3>
+      <div x-show="$store.search.loading" class="my-3 text-sm text-gray-500">Searching...</div>
+      <div x-show="!$store.search.loading && $store.search.results.length === 0 && $store.search.query.length > 2" class="my-3 text-sm text-gray-500">No results found.</div>
+
+      <div x-show="$store.search.results.length > 0" class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <template x-for="result in $store.search.results">
+          <a class="block border p-4 rounded-xl" :href="result.url">
+            <div class="mb-6">
+              <img
+                :src="result.image"
+                alt="result.title"
+                class="w-full aspect-square object-cover rounded-2xl"
+                width=""
+                height="">
+            </div>
+            <h3 class="text-lg font-bold my-2 leading-snug line-clamp-2">{{ product.title }}</h3>
+            <p>{{ product.price | money }}</p>
+          </a>
+        </template>
+      </div>
+
+      {% if settings.search_modal_collection and settings.search_modal_collection.products_count > 0 %}
+        <div x-show="$store.search.query.length < 2" class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          {% for product in settings.search_modal_collection.products limit: 6 %}
+            <a class="block border p-4 rounded-xl" href="{{ product.url }}">
+              <div class="mb-6">
+                <img
+                  src="{{ product.featured_image | image_url: width: 300 }}"
+                  alt="{{ product.title }}"
+                  class="w-full aspect-square object-cover rounded-2xl"
+                  width=""
+                  height="">
+              </div>
+              <h3 class="text-lg font-bold my-2 leading-snug line-clamp-2">{{ product.title }}</h3>
+              <p>{{ product.price | money }}</p>
+            </a>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

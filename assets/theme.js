@@ -400,6 +400,16 @@ eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var alp
 
 /***/ }),
 
+/***/ "./src/search.js":
+/*!***********************!*\
+  !*** ./src/search.js ***!
+  \***********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var alpinejs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! alpinejs */ \"./node_modules/alpinejs/dist/module.esm.js\");\n\ndocument.addEventListener(\"alpine:init\", () => {\n  alpinejs__WEBPACK_IMPORTED_MODULE_0__[\"default\"].store(\"search\", {\n    query: \"\",\n    open: false,\n    loading: false,\n    results: [],\n    fetchResults: async function() {\n      const search = alpinejs__WEBPACK_IMPORTED_MODULE_0__[\"default\"].store(\"search\");\n      if (search.query.length < 2) {\n        search.results = [];\n        return;\n      }\n      search.loading = true;\n      try {\n        const res = await fetch(\n          `/search/suggest.json?q=${encodeURIComponent(\n            search.query\n          )}&resources[type]=product`\n        );\n        const data = await res.json();\n        search.results = data.resources.results.products.map((product) => ({\n          id: product.id,\n          title: product.title,\n          url: product.url,\n          image: product.image ? product.image : product.featured_image?.url || null\n        }));\n      } catch (err) {\n        console.error(err);\n        search.results = [];\n      } finally {\n        search.loading = false;\n      }\n    },\n    goToSearch() {\n      const search = alpinejs__WEBPACK_IMPORTED_MODULE_0__[\"default\"].store(\"search\");\n      if (search.query.trim()) {\n        window.location.href = `/search?q=${encodeURIComponent(\n          search.query.trim()\n        )}`;\n      }\n    }\n  });\n});\n\n\n//# sourceURL=webpack://shopify-theme-development/./src/search.js?\n}");
+
+/***/ }),
+
 /***/ "./src/theme.css":
 /*!***********************!*\
   !*** ./src/theme.css ***!
@@ -416,7 +426,7 @@ eval("{__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-ext
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var alpinejs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! alpinejs */ \"./node_modules/alpinejs/dist/module.esm.js\");\n/* harmony import */ var _theme_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./theme.css */ \"./src/theme.css\");\n/* harmony import */ var _product_gallery_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./product-gallery.js */ \"./src/product-gallery.js\");\n/* harmony import */ var _cart_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./cart.js */ \"./src/cart.js\");\n/* harmony import */ var _product_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./product.js */ \"./src/product.js\");\n\n\n\n\n\nwindow.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_0__[\"default\"];\nalpinejs__WEBPACK_IMPORTED_MODULE_0__[\"default\"].start();\n\n\n//# sourceURL=webpack://shopify-theme-development/./src/theme.js?\n}");
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var alpinejs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! alpinejs */ \"./node_modules/alpinejs/dist/module.esm.js\");\n/* harmony import */ var _theme_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./theme.css */ \"./src/theme.css\");\n/* harmony import */ var _product_gallery_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./product-gallery.js */ \"./src/product-gallery.js\");\n/* harmony import */ var _cart_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./cart.js */ \"./src/cart.js\");\n/* harmony import */ var _product_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./product.js */ \"./src/product.js\");\n/* harmony import */ var _search_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./search.js */ \"./src/search.js\");\n\n\n\n\n\n\nwindow.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_0__[\"default\"];\nalpinejs__WEBPACK_IMPORTED_MODULE_0__[\"default\"].start();\n\n\n//# sourceURL=webpack://shopify-theme-development/./src/theme.js?\n}");
 
 /***/ }),
 
