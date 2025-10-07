@@ -1,4 +1,5 @@
 import Alpine from "alpinejs";
+import { formatMoney } from "./utills";
 
 document.addEventListener("alpine:init", () => {
   Alpine.store("search", {
@@ -31,6 +32,7 @@ document.addEventListener("alpine:init", () => {
           image: product.image
             ? product.image
             : product.featured_image?.url || null,
+          price: formatMoney(product.price),
         }));
       } catch (err) {
         console.error(err);
