@@ -19,16 +19,13 @@
         "reviews": "4.8 from 10,977 reviews"
       }
     },
-    "most-popular": {
-      "type": "most-popular",
-      "settings": {
-        "title": "Most Popular",
-        "collection": "tryscent"
-      }
+    "home-details": {
+      "type": "home-details",
+      "settings": {}
     }
   },
   "order": [
     "home-hero",
-    "most-popular"
+    "home-details"
   ]
 }

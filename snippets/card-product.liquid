@@ -1,20 +1,29 @@
-<a href="{{ product.url }}">
-  <div class="mb-6">
+<a href="{{ product.url }}" class="block border bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition">
+  <div class="relative bg-blue-300 h-64">
+    <span class="absolute top-3 left-3 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">SAVE $55.00!</span>
+    <span class="absolute top-3 right-3 bg-blue-400 text-white text-xs font-bold px-3 py-1 rounded-full">NEW!</span>
     <img
       src="{{ product.featured_image | image_url: width: 300 }}"
-      alt="{{ product.title }}"
-      class="w-full aspect-square object-cover rounded-2xl"
+      alt="Product"
+      height=""
       width=""
-      height="">
+      class="w-full h-full object-contain object-center">
+    <button class="hidden absolute bottom-3 right-3 bg-black text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-800">
+      <span class="text-xl">+</span>
+    </button>
   </div>
-  <div class="flex items-center gap-2">
-    <img
-      src="{{ 'rating-stars.svg' | asset_url }}"
-      alt="*****"
-      width="66"
-      height="13">
-    <span class="leading-none inline-block pt-1">({{ product.metafields.custom.reviews }})</span>
+  <div class="p-4">
+    <div class="flex items-center gap-1 mb-2">
+      <span class="text-yellow-400">★★★★★</span>
+      <span class="text-sm text-gray-600">5.0/5</span>
+    </div>
+    <h3 class="font-bold mb-1 line-clamp-1">{{ product.title }}</h3>
+    <p class="text-sm text-gray-600 mb-2">"...{{ product.metafields.custom.nuta }}..."</p>
+    <div class="flex items-center gap-2">
+      <span class="font-bold text-lg">{{ product.price | money }}</span>
+      {% if product.compare_at_price > product.price %}
+        <span class="text-gray-500 line-through text-sm">{{ product.compare_at_price | money }}</span>
+      {% endif %}
+    </div>
   </div>
-  <h3 class="font-heading text-xl font-bold my-2">{{ product.title }}</h3>
-  <p>{{ product.price | money }}</p>
 </a>

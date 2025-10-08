@@ -1,0 +1,326 @@
+<div class="container mx-auto px-4 py-8">
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+    <div class="flex items-start gap-3">
+      <div class="text-3xl">📦</div>
+      <div>
+        <h3 class="font-bold text-sm">Free Returns</h3>
+        <p class="text-xs text-gray-600">No questions asked.</p>
+      </div>
+    </div>
+    <div class="flex items-start gap-3">
+      <div class="text-3xl">🍊</div>
+      <div>
+        <h3 class="font-bold text-sm">6,000,000+ Bottles</h3>
+        <p class="text-xs text-gray-600">over 6M bottles sold worldwide.</p>
+      </div>
+    </div>
+    <div class="flex items-start gap-3">
+      <div class="text-3xl">👁️</div>
+      <div>
+        <h3 class="font-bold text-sm">100,000+ Reviews</h3>
+        <p class="text-xs text-gray-600">over 100,000 5+ star reviews.</p>
+      </div>
+    </div>
+    <div class="flex items-start gap-3">
+      <div class="text-3xl">🌸</div>
+      <div>
+        <h3 class="font-bold text-sm">Viral fragrance brand</h3>
+        <p class="text-xs text-gray-600">10+ views & dazzling social reviews.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Press Mentions -->
+<div class="bg-gray-100 py-12">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      <div class="text-center">
+        <h4 class="font-serif text-2xl mb-3">ELOQUENT</h4>
+        <p class="text-sm text-gray-700">"Everything I've ordered smells amazing and the scent really lasts!"</p>
+      </div>
+      <div class="text-center">
+        <h4 class="font-serif text-2xl mb-3">VOGUE</h4>
+        <p class="text-sm text-gray-700">"A lovely pick for holiday vibes or a quick, charming gift."</p>
+      </div>
+      <div class="text-center">
+        <h4 class="font-serif text-2xl mb-3">COSMOPOLITAN</h4>
+        <p class="text-sm text-gray-700">"This feels so authentic, and last longer than we thought."</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% assign trending_collection = collections['tryscent'] %}
+<div class="container mx-auto px-4 py-16">
+  <div class="flex items-center justify-between mb-8 max-w-6xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold">Trending now!</h2>
+    <div class="flex gap-2">
+      <button class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center hover:bg-gray-400">←</button>
+      <button class="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center hover:bg-gray-800">→</button>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+    {% for product in trending_collection.products limit: 8 %}
+      <div class="swiper-slide">
+        {% render 'card-product'
+          , product: product %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- Category Cards -->
+<div class="container mx-auto px-4 py-16">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+    <!-- Women's Collection -->
+    <div class="relative rounded-3xl overflow-hidden bg-purple-200 h-64">
+      <img
+        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23dac5f7' width='400' height='300'/%3E%3C/svg%3E"
+        alt="Women"
+        class="w-full h-full object-cover">
+      <div class="absolute inset-0 p-8 flex flex-col justify-between">
+        <div>
+          <h2 class="text-4xl font-bold mb-1">WOMENS</h2>
+          <p class="text-sm">Perfume collection</p>
+        </div>
+        <button class="bg-white text-black px-6 py-2 rounded-full font-medium text-sm w-fit flex items-center gap-2 hover:bg-gray-50">
+          Women
+          <span>→</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Men's Collection -->
+    <div class="relative rounded-3xl overflow-hidden bg-blue-200 h-64">
+      <img
+        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23b8e0f6' width='400' height='300'/%3E%3C/svg%3E"
+        alt="Men"
+        class="w-full h-full object-cover">
+      <div class="absolute inset-0 p-8 flex flex-col justify-between">
+        <div>
+          <h2 class="text-4xl font-bold mb-1">MENS</h2>
+          <p class="text-sm">Perfume collection</p>
+        </div>
+        <button class="bg-white text-black px-6 py-2 rounded-full font-medium text-sm w-fit flex items-center gap-2 hover:bg-gray-50">
+          Men
+          <span>→</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Unisex Collection -->
+    <div class="relative rounded-3xl overflow-hidden bg-yellow-300 h-64">
+      <img
+        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23f5d165' width='400' height='300'/%3E%3C/svg%3E"
+        alt="Unisex"
+        class="w-full h-full object-cover">
+      <div class="absolute inset-0 p-8 flex flex-col justify-between">
+        <div>
+          <h2 class="text-4xl font-bold mb-1">UNISEX</h2>
+          <p class="text-sm">Perfume collection</p>
+        </div>
+        <button class="bg-white text-black px-6 py-2 rounded-full font-medium text-sm w-fit flex items-center gap-2 hover:bg-gray-50">
+          Unisex
+          <span>→</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- New Drops Section -->
+<div class="container mx-auto px-4 py-16">
+  <h2 class="text-4xl font-bold mb-8 text-center">New drops</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+    <!-- Mini Bundle -->
+    <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition">
+      <div class="relative bg-gray-200 h-64">
+        <span class="absolute top-3 left-3 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">SAVE $120!</span>
+        <span class="absolute top-3 right-3 bg-blue-400 text-white text-xs font-bold px-3 py-1 rounded-full">NEW!</span>
+        <img
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect fill='%23e5e7eb' width='300' height='300'/%3E%3C/svg%3E"
+          alt="Product"
+          class="w-full h-full object-cover">
+        <button class="absolute bottom-3 right-3 bg-black text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-800">
+          <span class="text-xl">+</span>
+        </button>
+      </div>
+      <div class="p-4">
+        <h3 class="font-bold mb-2">Mini Bundle</h3>
+        <div class="flex items-center gap-2">
+          <span class="font-bold text-lg">$130.00</span>
+          <span class="text-gray-500 line-through text-sm">$250.00</span>
+          <span class="bg-red-100 text-red-600 text-xs font-bold px-2 py-1 rounded">SAVE $120.00</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- October Bundle - Women's -->
+    <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition">
+      <div class="relative bg-gray-200 h-64">
+        <span class="absolute top-3 left-3 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">SAVE $40!</span>
+        <span class="absolute top-3 right-3 bg-blue-400 text-white text-xs font-bold px-3 py-1 rounded-full">NEW!</span>
+        <img
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect fill='%23e5e7eb' width='300' height='300'/%3E%3C/svg%3E"
+          alt="Product"
+          class="w-full h-full object-cover">
+        <button class="absolute bottom-3 right-3 bg-black text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-800">
+          <span class="text-xl">+</span>
+        </button>
+      </div>
+      <div class="p-4">
+        <h3 class="font-bold mb-2">October Bundle - Women's</h3>
+        <div class="flex items-center gap-2">
+          <span class="font-bold text-lg">$110.00</span>
+          <span class="text-gray-500 line-through text-sm">$150.00</span>
+          <span class="bg-red-100 text-red-600 text-xs font-bold px-2 py-1 rounded">SAVE $40.00</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- October Bundle - Men's -->
+    <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition">
+      <div class="relative bg-gray-200 h-64">
+        <span class="absolute top-3 left-3 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">SAVE $55.00!</span>
+        <span class="absolute top-3 right-3 bg-blue-400 text-white text-xs font-bold px-3 py-1 rounded-full">NEW!</span>
+        <img
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect fill='%23e5e7eb' width='300' height='300'/%3E%3C/svg%3E"
+          alt="Product"
+          class="w-full h-full object-cover">
+        <button class="absolute bottom-3 right-3 bg-black text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-800">
+          <span class="text-xl">+</span>
+        </button>
+      </div>
+      <div class="p-4">
+        <h3 class="font-bold mb-2">October Bundle - Men's</h3>
+        <div class="flex items-center gap-2">
+          <span class="font-bold text-lg">$110.00</span>
+          <span class="text-gray-500 line-through text-sm">$165.00</span>
+          <span class="bg-red-100 text-red-600 text-xs font-bold px-2 py-1 rounded">SAVE $55.00</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Diamond Glint -->
+    <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition">
+      <div class="relative bg-blue-300 h-64">
+        <span class="absolute top-3 left-3 bg-black text-white text-xs font-bold px-3 py-1 rounded-full">WOMEN</span>
+        <span class="absolute top-3 right-3 bg-blue-400 text-white text-xs font-bold px-3 py-1 rounded-full">NEW!</span>
+        <img
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect fill='%2393c5fd' width='300' height='300'/%3E%3C/svg%3E"
+          alt="Product"
+          class="w-full h-full object-cover">
+        <button class="absolute bottom-3 right-3 bg-black text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-800">
+          <span class="text-xl">+</span>
+        </button>
+      </div>
+      <div class="p-4">
+        <div class="flex items-center gap-1 mb-2">
+          <span class="text-yellow-400">★★★★★</span>
+          <span class="text-sm text-gray-600">5.0/5</span>
+        </div>
+        <h3 class="font-bold mb-1">Diamond Glint</h3>
+        <p class="text-xs text-gray-600 mb-2">Inspired by Poco Rabanne Lady Million</p>
+        <span class="font-bold text-lg">$50.00</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Shop Scent Type Section -->
+<div class="bg-blue-50 py-16">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-bold text-center mb-12">Shop scent type</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+      <!-- Gourmand Scents -->
+      <div class="bg-white rounded-3xl overflow-hidden">
+        <div class="bg-teal-100 h-48 flex items-center justify-center">
+          <img
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200'%3E%3Crect fill='%2399f6e4' width='300' height='200'/%3E%3C/svg%3E"
+            alt="Gourmand"
+            class="w-full h-full object-cover">
+        </div>
+        <div class="p-6 text-center">
+          <h3 class="font-bold text-xl mb-4">Gourmand Scents</h3>
+          <button class="bg-black text-white px-8 py-3 rounded-full font-medium w-full hover:bg-gray-800">SHOP NOW</button>
+        </div>
+      </div>
+
+      <!-- Floral Scents -->
+      <div class="bg-white rounded-3xl overflow-hidden">
+        <div class="bg-pink-100 h-48 flex items-center justify-center">
+          <img
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200'%3E%3Crect fill='%23fce7f3' width='300' height='200'/%3E%3C/svg%3E"
+            alt="Floral"
+            class="w-full h-full object-cover">
+        </div>
+        <div class="p-6 text-center">
+          <h3 class="font-bold text-xl mb-4">Floral Scents</h3>
+          <button class="bg-black text-white px-8 py-3 rounded-full font-medium w-full hover:bg-gray-800">SHOP NOW</button>
+        </div>
+      </div>
+
+      <!-- Masculine Scents -->
+      <div class="bg-white rounded-3xl overflow-hidden">
+        <div class="bg-red-600 h-48 flex items-center justify-center">
+          <img
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200'%3E%3Crect fill='%23dc2626' width='300' height='200'/%3E%3C/svg%3E"
+            alt="Masculine"
+            class="w-full h-full object-cover">
+        </div>
+        <div class="p-6 text-center">
+          <h3 class="font-bold text-xl mb-4">Masculine Scents</h3>
+          <button class="bg-black text-white px-8 py-3 rounded-full font-medium w-full hover:bg-gray-800">SHOP NOW</button>
+        </div>
+      </div>
+
+      <!-- Fresh Scents -->
+      <div class="bg-white rounded-3xl overflow-hidden">
+        <div class="bg-blue-200 h-48 flex items-center justify-center">
+          <img
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200'%3E%3Crect fill='%23bfdbfe' width='300' height='200'/%3E%3C/svg%3E"
+            alt="Fresh"
+            class="w-full h-full object-cover">
+        </div>
+        <div class="p-6 text-center">
+          <h3 class="font-bold text-xl mb-4">Fresh Scents</h3>
+          <button class="bg-black text-white px-8 py-3 rounded-full font-medium w-full hover:bg-gray-800">SHOP NOW</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-12">
+      <button class="inline-flex items-center gap-2 font-bold text-lg hover:underline">
+        SHOP FULL RANGE
+        <span class="w-6 h-6 bg-black text-white rounded-full inline-flex items-center justify-center text-sm">→</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Side Button -->
+<div class="fixed left-0 top-1/2 -translate-y-1/2 bg-pink-500 text-white px-3 py-6 rounded-r-lg font-bold text-sm writing-mode-vertical hover:bg-pink-600 cursor-pointer">
+  MYSTERY DISCOUNT
+</div>
+
+<style>
+  .writing-mode-vertical {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Home Details",
+    "settings": [],
+    "presets": [
+      {
+        "name": "Home Details"
+      }
+    ]
+  }
+{% endschema %}
