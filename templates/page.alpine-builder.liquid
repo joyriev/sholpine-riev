@@ -126,15 +126,43 @@
                 class="px-4 py-2 rounded font-semibold border border-solid cursor-pointer bg-white border-gray-200">Women's</button>
             </div>
             <!-- Search -->
-            <div class="relative">
-              <input
-                type="text"
-                x-model="$store.bundleBuilder.searchText"
-                placeholder="Find your perfume"
-                class="w-full p-2.5 pl-10 h-10 bg-gray-100 rounded border-0 border-solid focus:border-2 focus:border-indigo-400 focus:outline-none focus:ring-0">
-              <span class="absolute top-2.5 left-2.5 size-5">
-                {{- 'icon-search.svg' | inline_asset_content -}}
-              </span>
+            <div class="grid grid-cols-2 gap-4">
+              <select x-model="$store.bundleBuilder.selectedBrand" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:border-2 focus:border-teal-400 block w-full p-2.5 h-10 focus:outline-none focus:ring-0">
+                <option selected value="">Shop By Brand</option>
+                <option value="Creed">Creed</option>
+                <option value="Dior">Dior</option>
+                <option value="Maison Francis Kurkdjian">Maison Francis Kurkdjian</option>
+                <option value="Tom Ford">Tom Ford</option>
+                <option value="Chanel">Chanel</option>
+                <option value="Armani">Armani</option>
+                <option value="Louis Vuitton">Louis Vuitton</option>
+                <option value="Jean Paul Gaultier">Jean Paul Gaultier</option>
+                <option value="Xerjoff">Xerjoff</option>
+                <option value="Versace">Versace</option>
+                <option value="Paco Rabanne">Paco Rabanne</option>
+                <option value="Valentino">Valentino</option>
+                <option value="YSL">YSL</option>
+                <option value="Prada">Prada</option>
+                <option value="Carolina Herrera">Carolina Herrera</option>
+                <option value="Giorgio Armani">Giorgio Armani</option>
+                <option value="Initio">Initio</option>
+                <option value="Hermes">Hermes</option>
+                <option value="Montale">Montale</option>
+                <option value="Kilian">Kilian</option>
+                <option value="Issey Miyake">Issey Miyake</option>
+                <option value="Lancôme">Lancôme</option>
+                <option value="Parfums de Marly">Parfums de Marly</option>
+              </select>
+              <div class="relative">
+                <input
+                  type="text"
+                  x-model="$store.bundleBuilder.searchText"
+                  placeholder="Find your perfume"
+                  class="w-full p-2.5 pl-10 h-10 bg-white rounded border border-solid focus:border-2 focus:border-indigo-400 focus:outline-none focus:ring-0">
+                <span class="absolute top-2.5 left-2.5 size-5">
+                  {{- 'icon-search.svg' | inline_asset_content -}}
+                </span>
+              </div>
             </div>
           </div>
           <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -152,13 +180,8 @@
                   <div class="relative mt-2 flex-1">
                     <p class="text-gray-600 text-sm absolute -top-6 right-0 my-0" x-text="$store.bundleBuilder.selectedVariant">50ml</p>
                     <h4 class="font-bold text-gray-900 my-1" x-text="product.name"></h4>
-                    <div class="flex items-center">
-                      <img
-                        src="{{ 'rating-stars.svg' | asset_url }}"
-                        alt="*****"
-                        height="13"
-                        width="66">
-                      <span class="text-gray-600 text-sm ml-1">(<span x-text="product.ratingCount"></span>)</span>
+                    <div class="my-2 text-sm text-gray-600">
+                      "...<span x-text="product.nuta"></span>..."
                     </div>
                     <p class="text-gray-900 font-semibold mb-2 mt-0" x-html="product.variants[$store.bundleBuilder.selectedVariant].originalPrice"></p>
                   </div>
@@ -166,17 +189,17 @@
                     x-show="!$store.bundleBuilder.isProductSelected(product.id)"
                     @click="$store.bundleBuilder.addProduct(product)"
                     :disabled="$store.bundleBuilder.selectedProductsLength >= $store.bundleBuilder.bundleLength"
-                    class="w-full text-white text-lg bg-green-700 py-2.5 px-4 rounded-full font-bold transition-colors border-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
+                    class="w-full text-lg bg-sky-200 font-semibold py-2.5 px-4 rounded-full transition-colors border-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
                     Add +
                   </button>
                   <template x-if="$store.bundleBuilder.isProductSelected(product.id)">
                     <div class="flex justify-between items-center p-1 rounded-full border border-solid border-gray-200">
-                      <button @click="$store.bundleBuilder.removeProduct(product.id)" class="text-white text-lg bg-green-700 size-10 rounded-full font-bold transition-colors border-0 cursor-pointer">-</button>
+                      <button @click="$store.bundleBuilder.removeProduct(product.id)" class="bg-rose-200 text-lg size-10 rounded-full font-bold transition-colors border-0 cursor-pointer">-</button>
                       <span x-text="$store.bundleBuilder.getProductQuantity(product.id)" class="font-bold text-xl"></span>
                       <button
                         :disabled="$store.bundleBuilder.selectedProductsLength >= $store.bundleBuilder.bundleLength"
                         @click="$store.bundleBuilder.addProduct(product)"
-                        class="text-white text-lg bg-green-700 size-10 rounded-full font-bold transition-colors border-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">+</button>
+                        class="bg-sky-200 text-lg size-10 rounded-full font-bold transition-colors border-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">+</button>
                     </div>
                   </template>
                 </div>
@@ -190,13 +213,13 @@
             {% comment %} Progress {% endcomment %}
             <div class="bg-gray-200 rounded-full relative">
               <div
-                class="bg-green-600 rounded-full h-4 !block transition-all duration-300"
+                class="bg-indigo-300 rounded-full h-4 !block transition-all duration-300"
                 role="progressbar"
                 :style="{ width: $store.bundleBuilder.progressWidth }"></div>
               <div class="absolute -top-1 left-0 w-full flex justify-between px-2">
                 <template x-for="i in $store.bundleBuilder.bundleLength">
                   <span
-                    class="w-6 h-6 flex items-center justify-center text-green-700 border-2 border-solid text-xs font-bold rounded-full"
+                    class="w-6 h-6 flex items-center justify-center border-2 border-solid text-xs font-bold rounded-full"
                     x-text="i"
                     :class="$store.bundleBuilder.selectedProductsLength >= i ? 'bg-gray-800 text-white border-gray-800' : (i > $store.bundleBuilder.paidProductsLength ? 'bg-white text-gray-800 border-indigo-400' : 'bg-white text-gray-800 border-gray-200')"></span>
                 </template>
@@ -206,11 +229,7 @@
               <div class="space-y-2 my-8">
                 <template x-for="product in $store.bundleBuilder.selectedProducts" :key="product.data.id">
                   <div class="flex items-center gap-3 p-3 border border-solid border-gray-200 rounded-lg bg-white relative">
-                    <button
-                      class=font-bold
-                      cursor-pointer
-                      border-0" @click="
-                      $store.bundleBuilder.deleteProduct(product.data.id)">×</button>
+                    <button class="font-bold cursor-pointer border-0" @click="$store.bundleBuilder.deleteProduct(product.data.id)">×</button>
                     <img
                       :src="product.data.image"
                       :alt="product.data.name"
@@ -222,10 +241,10 @@
                       <p class="my-0 text-sm" x-text="$store.bundleBuilder.selectedVariant"></p>
                     </div>
                     <div class="p-1 rounded-full border border-solid border-gray-200 flex items-center justify-between gap-2">
-                      <button class="bg-green-700 text-white size-6 rounded-full font-bold cursor-pointer border-0" @click="$store.bundleBuilder.removeProduct(product.data.id)">-</button>
+                      <button class="bg-rose-200 size-6 rounded-full font-bold cursor-pointer border-0" @click="$store.bundleBuilder.removeProduct(product.data.id)">-</button>
                       <span class="leading-none" x-text="product.quantity"></span>
                       <button
-                        class="bg-green-700 text-white size-6 rounded-full font-bold cursor-pointer border-0 disabled:opacity-50 disabled:cursor-not-allowed"
+                        class="bg-sky-200 size-6 rounded-full font-bold cursor-pointer border-0 disabled:opacity-50 disabled:cursor-not-allowed"
                         :disabled="$store.bundleBuilder.selectedProductsLength >= $store.bundleBuilder.bundleLength"
                         @click="$store.bundleBuilder.addProduct(product.data)">+</button>
                     </div>
@@ -238,7 +257,7 @@
             </div>
             <button
               @click="$store.bundleBuilder.addBundleToCart()"
-              class="w-full text-white text-xl bg-green-700 py-3 px-4 rounded-full font-bold transition-colors border-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+              class="w-full text-xl bg-sky-200 py-3 px-4 rounded-full font-bold transition-colors border-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
               :disabled="$store.bundleBuilder.selectedProductsLength < $store.bundleBuilder.bundleLength">
               <span x-text="$store.bundleBuilder.selectedProductsLength >= $store.bundleBuilder.bundleLength ? 'CHECKOUT' : `ADD ${$store.bundleBuilder.bundleLength - $store.bundleBuilder.selectedProductsLength} MORE SCENT${$store.bundleBuilder.bundleLength - $store.bundleBuilder.selectedProductsLength > 1 ? 'S' : ''}`"></span>
             </button>
@@ -250,9 +269,9 @@
         <button
           @click="$store.bundleBuilder.showMobileCart = true"
           class="w-full py-3 px-7 text-xl rounded-full font-bold border-0 cursor-pointer transition-colors flex justify-between items-center"
-          :class="$store.bundleBuilder.selectedProductsLength < $store.bundleBuilder.bundleLength ? 'cursor-not-allowed bg-gray-200 text-gray-800' : 'bg-green-700 text-white'">
+          :class="$store.bundleBuilder.selectedProductsLength < $store.bundleBuilder.bundleLength ? 'cursor-not-allowed bg-gray-200 text-gray-800' : 'bg-sky-200'">
           <span>Review Bundle</span>
-          <div class="text-base px-2 py-1 rounded bg-black/10">
+          <div class="text-base px-2 py-1 rounded bg-black/5">
             <span x-text="$store.bundleBuilder.selectedProductsLength">0</span>
             /
             <span x-text="$store.bundleBuilder.bundleLength">0</span>
@@ -265,17 +284,17 @@
         class="md:hidden fixed h-screen w-screen z-[999999] left-0 top-0 bg-white p-6 pb-14 flex flex-col gap-6">
         <div class="flex justify-between items-center border-0 border-b border-solid border-gray-200 pb-4">
           <h2 class="text-base font-bold tracking-tight my-0" x-text="$store.bundleBuilder.selectedProductsLength + ' Scents in your bundle'"></h2>
-          <button @click="$store.bundleBuilder.showMobileCart = false" class="text-gray-800 font-bold py-2 px-3 bg-white border border-solid border-gray-200 rounded-full cursor-pointer">Keep Shopping</button>
+          <button @click="$store.bundleBuilder.showMobileCart = false" class="text-gray-800 text-xs font-medium uppercase py-2 px-3 bg-white border border-solid border-gray-200 rounded-full cursor-pointer">Keep Shopping</button>
         </div>
         <div class="bg-gray-200 rounded-full relative">
           <div
-            class="bg-green-600 rounded-full h-4 !block transition-all duration-300"
+            class="bg-indigo-300 rounded-full h-4 !block transition-all duration-300"
             role="progressbar"
             :style="{ width: $store.bundleBuilder.progressWidth }"></div>
           <div class="absolute -top-1 left-0 w-full flex justify-between px-2">
             <template x-for="i in $store.bundleBuilder.bundleLength">
               <span
-                class="w-6 h-6 flex items-center justify-center text-green-700 border-2 border-solid text-xs font-bold rounded-full"
+                class="w-6 h-6 flex items-center justify-center border-2 border-solid text-xs font-bold rounded-full"
                 x-text="i"
                 :class="$store.bundleBuilder.selectedProductsLength >= i ? 'bg-gray-800 text-white border-gray-800' : (i > $store.bundleBuilder.paidProductsLength ? 'bg-white text-gray-800 border-indigo-400' : 'bg-white text-gray-800 border-gray-200')"></span>
             </template>
@@ -285,11 +304,7 @@
           <div class="space-y-2 flex-grow overflow-y-auto">
             <template x-for="product in $store.bundleBuilder.selectedProducts" :key="product.data.id">
               <div class="flex items-center gap-3 p-3 border border-solid border-gray-200 rounded-lg bg-white relative">
-                <button
-                  class=font-bold
-                  cursor-pointer
-                  border-0" @click="
-                  $store.bundleBuilder.deleteProduct(product.data.id)">×</button>
+                <button class="font-bold cursor-pointer border-0" @click="$store.bundleBuilder.deleteProduct(product.data.id)">×</button>
                 <img
                   :src="product.data.image"
                   :alt="product.data.name"
@@ -301,10 +316,10 @@
                   <p class="my-0 text-sm" x-text="$store.bundleBuilder.selectedVariant"></p>
                 </div>
                 <div class="p-1 rounded-full border border-solid border-gray-200 flex items-center justify-between gap-2">
-                  <button class="bg-green-700 text-white size-6 rounded-full font-bold cursor-pointer border-0" @click="$store.bundleBuilder.removeProduct(product.data.id)">-</button>
+                  <button class="bg-rose-200 size-6 rounded-full font-bold cursor-pointer border-0" @click="$store.bundleBuilder.removeProduct(product.data.id)">-</button>
                   <span class="leading-none" x-text="product.quantity"></span>
                   <button
-                    class="bg-green-700 text-white size-6 rounded-full font-bold cursor-pointer border-0 disabled:opacity-50 disabled:cursor-not-allowed"
+                    class="bg-sky-200 size-6 rounded-full font-bold cursor-pointer border-0 disabled:opacity-50 disabled:cursor-not-allowed"
                     :disabled="$store.bundleBuilder.selectedProductsLength >= $store.bundleBuilder.bundleLength"
                     @click="$store.bundleBuilder.addProduct(product.data)">+</button>
                 </div>
@@ -319,7 +334,7 @@
           @click="$store.bundleBuilder.addBundleToCart()"
           :disabled="$store.bundleBuilder.selectedProductsLength < $store.bundleBuilder.bundleLength"
           class="w-full py-3 px-7 text-xl rounded-full font-bold border-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
-          :class="$store.bundleBuilder.selectedProductsLength < $store.bundleBuilder.bundleLength ? 'bg-gray-200 text-gray-800' : 'bg-green-700 text-white'">
+          :class="$store.bundleBuilder.selectedProductsLength < $store.bundleBuilder.bundleLength ? 'bg-gray-200 text-gray-800' : 'bg-sky-200'">
           CHECKOUT
         </button>
       </div>
@@ -376,7 +391,7 @@
             id: {{ bundle_product.id }},
             name: "{{ bundle_product.title }}",
             image: "{{ bundle_product.featured_image | image_url }}",
-            ratingCount: "{{ bundle_product.metafields.reviews.rating_count }}",
+            nuta: "{{ bundle_product.metafields.custom.nuta }}",
             tags: {{ bundle_product.tags | json }},
             variants: {
               {% for variant in bundle_product.variants %}
