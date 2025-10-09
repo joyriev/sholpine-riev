@@ -17,10 +17,10 @@ document.addEventListener("DOMContentLoaded", function () {
   new Swiper(".home_trending_slider", {
     modules: [Navigation],
     slidesPerView: 2,
-    spaceBetween: 30,
+    spaceBetween: 15,
     breakpoints: {
-      768: { slidesPerView: 3 },
-      1024: { slidesPerView: 4 },
+      768: { slidesPerView: 3, spaceBetween: 20 },
+      1024: { slidesPerView: 4, spaceBetween: 30 },
     },
     navigation: {
       nextEl: ".swiper-button-next",
