@@ -747,6 +747,10 @@ video {
   margin-top: auto;
   margin-bottom: auto;
 }
+.-mx-4 {
+  margin-left: -16px;
+  margin-right: -16px;
+}
 .mb-0 {
   margin-bottom: 0px;
 }
@@ -1945,6 +1949,11 @@ video {
 
   .md\:col-span-5 {
     grid-column: span 5 / span 5;
+  }
+
+  .md\:-mx-0 {
+    margin-left: -0px;
+    margin-right: -0px;
   }
 
   .md\:block {
