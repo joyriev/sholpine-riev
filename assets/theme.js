@@ -200,6 +200,16 @@ eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpa
 
 /***/ }),
 
+/***/ "./node_modules/swiper/modules/pagination.css":
+/*!****************************************************!*\
+  !*** ./node_modules/swiper/modules/pagination.css ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("{__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://shopify-theme-development/./node_modules/swiper/modules/pagination.css?\n}");
+
+/***/ }),
+
 /***/ "./node_modules/swiper/modules/pagination.mjs":
 /*!****************************************************!*\
   !*** ./node_modules/swiper/modules/pagination.mjs ***!
@@ -386,7 +396,7 @@ eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var alp
   \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ \"./node_modules/swiper/swiper.mjs\");\n/* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/modules */ \"./node_modules/swiper/modules/index.mjs\");\n/* harmony import */ var swiper_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper/css */ \"./node_modules/swiper/swiper.css\");\n\n\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n  const mainEl = document.querySelector(\".product-main\");\n  const thumbsEl = document.querySelector(\".product-thumbs\");\n  if (!mainEl || !thumbsEl) return;\n  const thumbs = new swiper__WEBPACK_IMPORTED_MODULE_0__[\"default\"](thumbsEl, {\n    modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Thumbs],\n    direction: \"vertical\",\n    slidesPerView: 4,\n    spaceBetween: 10,\n    freeMode: true,\n    watchSlidesProgress: true,\n    breakpoints: {\n      640: { slidesPerView: 6 }\n    }\n  });\n  new swiper__WEBPACK_IMPORTED_MODULE_0__[\"default\"](mainEl, {\n    modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Thumbs],\n    spaceBetween: 10,\n    navigation: {\n      nextEl: \".swiper-button-next\",\n      prevEl: \".swiper-button-prev\"\n    },\n    thumbs: { swiper: thumbs }\n  });\n});\n\n\n//# sourceURL=webpack://shopify-theme-development/./src/product-gallery.js?\n}");
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ \"./node_modules/swiper/swiper.mjs\");\n/* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/modules */ \"./node_modules/swiper/modules/index.mjs\");\n/* harmony import */ var swiper_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper/css */ \"./node_modules/swiper/swiper.css\");\n/* harmony import */ var swiper_css_pagination__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! swiper/css/pagination */ \"./node_modules/swiper/modules/pagination.css\");\n\n\n\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n  const mainEl = document.querySelector(\".product-main\");\n  const thumbsEl = document.querySelector(\".product-thumbs\");\n  if (!mainEl || !thumbsEl) return;\n  const thumbs = new swiper__WEBPACK_IMPORTED_MODULE_0__[\"default\"](thumbsEl, {\n    modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Thumbs],\n    direction: \"vertical\",\n    slidesPerView: 4,\n    spaceBetween: 10,\n    freeMode: true,\n    watchSlidesProgress: true,\n    breakpoints: {\n      640: { slidesPerView: 6 }\n    }\n  });\n  new swiper__WEBPACK_IMPORTED_MODULE_0__[\"default\"](mainEl, {\n    modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Thumbs, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Pagination],\n    spaceBetween: 10,\n    navigation: {\n      nextEl: \".swiper-button-next\",\n      prevEl: \".swiper-button-prev\"\n    },\n    thumbs: { swiper: thumbs },\n    pagination: {\n      el: \".swiper-pagination\",\n      clickable: true\n    }\n  });\n});\n\n\n//# sourceURL=webpack://shopify-theme-development/./src/product-gallery.js?\n}");
 
 /***/ }),
 

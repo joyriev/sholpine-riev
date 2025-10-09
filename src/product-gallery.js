@@ -1,9 +1,10 @@
 // Swiper core
 import Swiper from "swiper";
-import { Thumbs, Navigation } from "swiper/modules";
+import { Thumbs, Navigation, Pagination } from "swiper/modules";
 
 // CSS
 import "swiper/css";
+import "swiper/css/pagination";
 
 document.addEventListener("DOMContentLoaded", () => {
   const mainEl = document.querySelector(".product-main");
@@ -24,12 +25,16 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   new Swiper(mainEl, {
-    modules: [Navigation, Thumbs],
+    modules: [Navigation, Thumbs, Pagination],
     spaceBetween: 10,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
     thumbs: { swiper: thumbs },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
   });
 });
