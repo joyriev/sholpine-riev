@@ -2,23 +2,25 @@
   <!-- Main Swiper -->
   <div class="flex gap-3">
     <!-- Thumbnails (vertical) -->
-    <div class="swiper product-thumbs w-20 h-[500px]">
-      <div class="swiper-wrapper">
-        {% for media in product.media %}
-          <div class="swiper-slide cursor-pointer overflow-hidden">
-            <img
-              src="{{ media | image_url: width: 100, height: 100 }}"
-              alt="{{ media.alt }}"
-              width="100"
-              height="100"
-              class="w-full h-full object-cover rounded-2xl">
-          </div>
-        {% endfor %}
+    <div class="hidden md:block">
+      <div class="swiper product-thumbs w-20 h-[500px]">
+        <div class="swiper-wrapper">
+          {% for media in product.media %}
+            <div class="swiper-slide cursor-pointer overflow-hidden">
+              <img
+                src="{{ media | image_url: width: 100, height: 100 }}"
+                alt="{{ media.alt }}"
+                width="100"
+                height="100"
+                class="w-full h-full object-cover rounded-2xl">
+            </div>
+          {% endfor %}
+        </div>
       </div>
     </div>
 
     <!-- Main gallery -->
-    <div class="swiper product-main flex-1 relative rounded-3xl border">
+    <div class="swiper product-main flex-1 relative md:rounded-3xl md:border">
       <div class="swiper-wrapper">
         {% for media in product.media %}
           <div class="swiper-slide">
@@ -27,7 +29,7 @@
               alt="{{ media.alt }}"
               width="800"
               height="800"
-              class="w-full h-auto object-cover rounded-3xl">
+              class="w-full h-auto object-cover md:rounded-3xl">
           </div>
         {% endfor %}
       </div>

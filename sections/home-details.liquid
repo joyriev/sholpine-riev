@@ -56,176 +56,99 @@
   <div class="flex items-center justify-between mb-8 max-w-6xl mx-auto">
     <h2 class="text-3xl md:text-4xl font-bold">Trending now!</h2>
     <div class="flex gap-2">
-      <button class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center hover:bg-gray-400">←</button>
-      <button class="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center hover:bg-gray-800">→</button>
+      <button class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center hover:bg-gray-400 swiper-button-prev [&_svg]:rotate-180 disabled:opacity-50 disabled:cursor-not-allowed"></button>
+      <button class="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center hover:bg-gray-800 swiper-button-next disabled:opacity-50 disabled:cursor-not-allowed"></button>
     </div>
   </div>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-    {% for product in trending_collection.products limit: 8 %}
-      <div class="swiper-slide">
-        {% render 'card-product'
-          , product: product %}
-      </div>
-    {% endfor %}
+  <div class="max-w-6xl mx-auto swiper home_trending_slider">
+    <div class="swiper-wrapper">
+      {% for product in trending_collection.products limit: 8 %}
+        <div class="swiper-slide">
+          {% render 'card-product'
+            , product: product %}
+        </div>
+      {% endfor %}
+    </div>
   </div>
 </div>
 
 <!-- Category Cards -->
-<div class="container mx-auto px-4 py-16">
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-    <!-- Women's Collection -->
-    <div class="relative rounded-3xl overflow-hidden bg-purple-200 h-64">
-      <img
-        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23dac5f7' width='400' height='300'/%3E%3C/svg%3E"
-        alt="Women"
-        class="w-full h-full object-cover">
-      <div class="absolute inset-0 p-8 flex flex-col justify-between">
-        <div>
-          <h2 class="text-4xl font-bold mb-1">WOMENS</h2>
-          <p class="text-sm">Perfume collection</p>
+<div>
+  <div class="container mx-auto px-4 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <!-- Women's Collection -->
+      <div class="relative rounded-3xl overflow-hidden bg-purple-200 h-64">
+        <img
+          height=""
+          width=""
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23dac5f7' width='400' height='300'/%3E%3C/svg%3E"
+          alt="Women"
+          class="w-full h-full object-cover">
+        <div class="absolute inset-0 p-8 flex flex-col justify-between">
+          <div>
+            <h2 class="text-4xl font-bold mb-1">WOMENS</h2>
+            <p class="text-sm">Perfume collection</p>
+          </div>
+          <button class="bg-white text-black px-6 py-2 rounded-full font-medium text-sm w-fit flex items-center gap-2 hover:bg-gray-50">
+            Women
+            <span>→</span>
+          </button>
         </div>
-        <button class="bg-white text-black px-6 py-2 rounded-full font-medium text-sm w-fit flex items-center gap-2 hover:bg-gray-50">
-          Women
-          <span>→</span>
-        </button>
       </div>
-    </div>
 
-    <!-- Men's Collection -->
-    <div class="relative rounded-3xl overflow-hidden bg-blue-200 h-64">
-      <img
-        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23b8e0f6' width='400' height='300'/%3E%3C/svg%3E"
-        alt="Men"
-        class="w-full h-full object-cover">
-      <div class="absolute inset-0 p-8 flex flex-col justify-between">
-        <div>
-          <h2 class="text-4xl font-bold mb-1">MENS</h2>
-          <p class="text-sm">Perfume collection</p>
+      <!-- Men's Collection -->
+      <div class="relative rounded-3xl overflow-hidden bg-blue-200 h-64">
+        <img
+          height=""
+          width=""
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23b8e0f6' width='400' height='300'/%3E%3C/svg%3E"
+          alt="Men"
+          class="w-full h-full object-cover">
+        <div class="absolute inset-0 p-8 flex flex-col justify-between">
+          <div>
+            <h2 class="text-4xl font-bold mb-1">MENS</h2>
+            <p class="text-sm">Perfume collection</p>
+          </div>
+          <button class="bg-white text-black px-6 py-2 rounded-full font-medium text-sm w-fit flex items-center gap-2 hover:bg-gray-50">
+            Men
+            <span>→</span>
+          </button>
         </div>
-        <button class="bg-white text-black px-6 py-2 rounded-full font-medium text-sm w-fit flex items-center gap-2 hover:bg-gray-50">
-          Men
-          <span>→</span>
-        </button>
       </div>
-    </div>
 
-    <!-- Unisex Collection -->
-    <div class="relative rounded-3xl overflow-hidden bg-yellow-300 h-64">
-      <img
-        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23f5d165' width='400' height='300'/%3E%3C/svg%3E"
-        alt="Unisex"
-        class="w-full h-full object-cover">
-      <div class="absolute inset-0 p-8 flex flex-col justify-between">
-        <div>
-          <h2 class="text-4xl font-bold mb-1">UNISEX</h2>
-          <p class="text-sm">Perfume collection</p>
+      <!-- Unisex Collection -->
+      <div class="relative rounded-3xl overflow-hidden bg-yellow-300 h-64">
+        <img
+          height=""
+          width=""
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23f5d165' width='400' height='300'/%3E%3C/svg%3E"
+          alt="Unisex"
+          class="w-full h-full object-cover">
+        <div class="absolute inset-0 p-8 flex flex-col justify-between">
+          <div>
+            <h2 class="text-4xl font-bold mb-1">UNISEX</h2>
+            <p class="text-sm">Perfume collection</p>
+          </div>
+          <button class="bg-white text-black px-6 py-2 rounded-full font-medium text-sm w-fit flex items-center gap-2 hover:bg-gray-50">
+            Unisex
+            <span>→</span>
+          </button>
         </div>
-        <button class="bg-white text-black px-6 py-2 rounded-full font-medium text-sm w-fit flex items-center gap-2 hover:bg-gray-50">
-          Unisex
-          <span>→</span>
-        </button>
       </div>
     </div>
   </div>
 </div>
 
+{% assign new_drops = collections['tryscent'] %}
 <!-- New Drops Section -->
 <div class="container mx-auto px-4 py-16">
   <h2 class="text-4xl font-bold mb-8 text-center">New drops</h2>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-    <!-- Mini Bundle -->
-    <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition">
-      <div class="relative bg-gray-200 h-64">
-        <span class="absolute top-3 left-3 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">SAVE $120!</span>
-        <span class="absolute top-3 right-3 bg-blue-400 text-white text-xs font-bold px-3 py-1 rounded-full">NEW!</span>
-        <img
-          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect fill='%23e5e7eb' width='300' height='300'/%3E%3C/svg%3E"
-          alt="Product"
-          class="w-full h-full object-cover">
-        <button class="absolute bottom-3 right-3 bg-black text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-800">
-          <span class="text-xl">+</span>
-        </button>
-      </div>
-      <div class="p-4">
-        <h3 class="font-bold mb-2">Mini Bundle</h3>
-        <div class="flex items-center gap-2">
-          <span class="font-bold text-lg">$130.00</span>
-          <span class="text-gray-500 line-through text-sm">$250.00</span>
-          <span class="bg-red-100 text-red-600 text-xs font-bold px-2 py-1 rounded">SAVE $120.00</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- October Bundle - Women's -->
-    <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition">
-      <div class="relative bg-gray-200 h-64">
-        <span class="absolute top-3 left-3 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">SAVE $40!</span>
-        <span class="absolute top-3 right-3 bg-blue-400 text-white text-xs font-bold px-3 py-1 rounded-full">NEW!</span>
-        <img
-          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect fill='%23e5e7eb' width='300' height='300'/%3E%3C/svg%3E"
-          alt="Product"
-          class="w-full h-full object-cover">
-        <button class="absolute bottom-3 right-3 bg-black text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-800">
-          <span class="text-xl">+</span>
-        </button>
-      </div>
-      <div class="p-4">
-        <h3 class="font-bold mb-2">October Bundle - Women's</h3>
-        <div class="flex items-center gap-2">
-          <span class="font-bold text-lg">$110.00</span>
-          <span class="text-gray-500 line-through text-sm">$150.00</span>
-          <span class="bg-red-100 text-red-600 text-xs font-bold px-2 py-1 rounded">SAVE $40.00</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- October Bundle - Men's -->
-    <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition">
-      <div class="relative bg-gray-200 h-64">
-        <span class="absolute top-3 left-3 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">SAVE $55.00!</span>
-        <span class="absolute top-3 right-3 bg-blue-400 text-white text-xs font-bold px-3 py-1 rounded-full">NEW!</span>
-        <img
-          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect fill='%23e5e7eb' width='300' height='300'/%3E%3C/svg%3E"
-          alt="Product"
-          class="w-full h-full object-cover">
-        <button class="absolute bottom-3 right-3 bg-black text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-800">
-          <span class="text-xl">+</span>
-        </button>
-      </div>
-      <div class="p-4">
-        <h3 class="font-bold mb-2">October Bundle - Men's</h3>
-        <div class="flex items-center gap-2">
-          <span class="font-bold text-lg">$110.00</span>
-          <span class="text-gray-500 line-through text-sm">$165.00</span>
-          <span class="bg-red-100 text-red-600 text-xs font-bold px-2 py-1 rounded">SAVE $55.00</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Diamond Glint -->
-    <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition">
-      <div class="relative bg-blue-300 h-64">
-        <span class="absolute top-3 left-3 bg-black text-white text-xs font-bold px-3 py-1 rounded-full">WOMEN</span>
-        <span class="absolute top-3 right-3 bg-blue-400 text-white text-xs font-bold px-3 py-1 rounded-full">NEW!</span>
-        <img
-          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect fill='%2393c5fd' width='300' height='300'/%3E%3C/svg%3E"
-          alt="Product"
-          class="w-full h-full object-cover">
-        <button class="absolute bottom-3 right-3 bg-black text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-800">
-          <span class="text-xl">+</span>
-        </button>
-      </div>
-      <div class="p-4">
-        <div class="flex items-center gap-1 mb-2">
-          <span class="text-yellow-400">★★★★★</span>
-          <span class="text-sm text-gray-600">5.0/5</span>
-        </div>
-        <h3 class="font-bold mb-1">Diamond Glint</h3>
-        <p class="text-xs text-gray-600 mb-2">Inspired by Poco Rabanne Lady Million</p>
-        <span class="font-bold text-lg">$50.00</span>
-      </div>
-    </div>
+    {% for product in new_drops.products limit: 4 %}
+      {% render 'card-product'
+        , product: product %}
+    {% endfor %}
   </div>
 </div>
 
@@ -239,6 +162,8 @@
       <div class="bg-white rounded-3xl overflow-hidden">
         <div class="bg-teal-100 h-48 flex items-center justify-center">
           <img
+            height=""
+            width=""
             src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200'%3E%3Crect fill='%2399f6e4' width='300' height='200'/%3E%3C/svg%3E"
             alt="Gourmand"
             class="w-full h-full object-cover">
@@ -253,6 +178,8 @@
       <div class="bg-white rounded-3xl overflow-hidden">
         <div class="bg-pink-100 h-48 flex items-center justify-center">
           <img
+            height=""
+            width=""
             src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200'%3E%3Crect fill='%23fce7f3' width='300' height='200'/%3E%3C/svg%3E"
             alt="Floral"
             class="w-full h-full object-cover">
@@ -267,6 +194,8 @@
       <div class="bg-white rounded-3xl overflow-hidden">
         <div class="bg-red-600 h-48 flex items-center justify-center">
           <img
+            height=""
+            width=""
             src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200'%3E%3Crect fill='%23dc2626' width='300' height='200'/%3E%3C/svg%3E"
             alt="Masculine"
             class="w-full h-full object-cover">
@@ -281,6 +210,8 @@
       <div class="bg-white rounded-3xl overflow-hidden">
         <div class="bg-blue-200 h-48 flex items-center justify-center">
           <img
+            height=""
+            width=""
             src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200'%3E%3Crect fill='%23bfdbfe' width='300' height='200'/%3E%3C/svg%3E"
             alt="Fresh"
             class="w-full h-full object-cover">
@@ -293,16 +224,16 @@
     </div>
 
     <div class="text-center mt-12">
-      <button class="inline-flex items-center gap-2 font-bold text-lg hover:underline">
+      <a href="{{ routes.all_products_collection_url }}" class="inline-flex items-center gap-2 font-bold text-lg hover:underline">
         SHOP FULL RANGE
         <span class="w-6 h-6 bg-black text-white rounded-full inline-flex items-center justify-center text-sm">→</span>
-      </button>
+      </a>
     </div>
   </div>
 </div>
 
 <!-- Side Button -->
-<a href="https://www.purfum.co/pages/build-your-bundle" class="fixed left-0 top-1/2 -translate-y-1/2 bg-pink-500 text-white px-2 py-4 rounded-r-lg font-bold text-sm writing-mode-vertical hover:bg-pink-600 cursor-pointer">
+<a href="https://www.purfum.co/pages/build-your-bundle" class="fixed left-0 top-1/2 -translate-y-1/2 bg-pink-500 text-white px-2 py-4 rounded-r-lg font-bold text-sm writing-mode-vertical hover:bg-pink-600 cursor-pointer z-50">
   MYSTERY DISCOUNT
 </a>
 
