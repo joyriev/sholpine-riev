@@ -1153,6 +1153,11 @@ video {
   margin-top: calc(32px * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(32px * var(--tw-space-y-reverse));
 }
+.space-x-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(8px * var(--tw-space-x-reverse));
+  margin-left: calc(8px * calc(1 - var(--tw-space-x-reverse)));
+}
 .\!overflow-hidden {
   overflow: hidden !important;
 }
@@ -1201,6 +1206,10 @@ video {
   border-bottom-right-radius: 0px;
   border-bottom-left-radius: 0px;
 }
+.rounded-l-lg {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
 .\!border-0 {
   border-width: 0px !important;
 }
@@ -1229,6 +1238,9 @@ video {
 }
 .border-t {
   border-top-width: 1px;
+}
+.border-r {
+  border-right-width: 1px;
 }
 .border-solid {
   border-style: solid;
