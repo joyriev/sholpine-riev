@@ -81,7 +81,7 @@
           </div>
         </button>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 border my-8 rounded-2xl p-4">
+        <div class="grid grid-cols-3 gap-8 border my-8 rounded-2xl p-4">
             <div class="text-center">
                 <div class="size-16 mx-auto mb-4 rounded-full border border-rose-300 flex items-center justify-center">
                     <svg class="w-10 h-10 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -108,7 +108,7 @@
             </div>
         </div>
         <div 
-            class="bg-gray-100 rounded-3xl p-8" 
+            class="bg-gray-100 rounded-3xl p-4 md:p-8" 
             x-data="{
                 activeAccordion: 0,
                 toggleAccordion(index) {
@@ -194,69 +194,56 @@
     </div>
   </div>
 </div>
-<div class="bg-blue-50">
-    <div class="container mx-auto px-4 py-16">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto items-center">
+<div class="bg-blue-50 py-16 md:py-20">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto items-center">
             <div>
                 <div class="mb-8">
-                    <h2 class="text-4xl md:text-5xl font-serif font-bold mb-2">Luxury redefined</h2>
-                    <p class="text-sm text-gray-600 uppercase tracking-wide">CRAFTED WITH PRECISION</p>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4">Luxury redefined</h2>
+                    <p class="tracking-wide">Crafted with precision</p>
                 </div>
 
                 <div class="grid grid-cols-2 gap-4">
-                    <div class="bg-white border-2 border-gray-300 rounded-xl p-6 text-center hover:border-gray-400 transition">
-                        <div class="mb-4">
-                            <svg class="w-12 h-12 mx-auto text-blue-600" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
-                            </svg>
-                        </div>
+                    <div class="bg-white rounded-xl p-6 text-center">
+                        <img class="mx-auto block mb-3" src="{{ 'pdp-droplet.svg' | asset_url }}" alt="Droplet" width="48" height="48">
                         <h3 class="font-bold text-base mb-1">25% EDP</h3>
                         <p class="text-xs text-gray-600 uppercase">CONCENTRATION</p>
                     </div>
 
-                    <div class="bg-white border-2 border-gray-300 rounded-xl p-6 text-center hover:border-gray-400 transition">
-                        <div class="mb-4">
-                            <svg class="w-12 h-12 mx-auto text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <circle cx="12" cy="12" r="10" stroke-width="2"/>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2"/>
-                            </svg>
-                        </div>
+                    <div class="bg-white rounded-xl p-6 text-center">
+                        <img class="mx-auto block mb-3" src="{{ 'pdp-clock.svg' | asset_url }}" alt="Clock" width="48" height="48">
                         <h3 class="font-bold text-base mb-1">LASTS 12+</h3>
                         <p class="text-xs text-gray-600 uppercase">HOURS</p>
                     </div>
-                    <div class="bg-white border-2 border-gray-300 rounded-xl p-6 text-center hover:border-gray-400 transition">
-                        <div class="mb-4">
-                            <svg class="w-12 h-12 mx-auto text-green-600" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66c.67-1.5 1.46-3.18 2.37-4.88C8.5 17 8.5 17 9 17c3 0 5-2 5-5 0-1.66-1.34-3-3-3s-3 1.34-3 3c0 .35.07.69.18 1-.18.85-.37 1.68-.55 2.5-.3-1-.47-1.98-.47-2.5 0-2.76 2.24-5 5-5s5 2.24 5 5c0 2.42-1.72 4.44-4 4.9V19c3.86-.48 7-3.85 7-7.99C20 6.49 16.5 3 12 3S4 6.49 4 11.01c0 .71.14 1.39.38 2.02-.22 1.13-.43 2.23-.61 3.29-.72-.6-1.23-1.5-1.23-2.52C2.54 9.25 6.76 5 12 5s9.46 4.25 9.46 8.8c0 4.56-3.71 8.2-8.46 8.2V24c5.52 0 10-4.48 10-10S17.52 4 12 4 2 8.48 2 14s4.48 10 10 10z"/>
-                            </svg>
-                        </div>
+                    <div class="bg-white rounded-xl p-6 text-center">
+                        <img class="mx-auto block mb-3" src="{{ 'pdp-leaf.svg' | asset_url }}" alt="Heart" width="48" height="48">
                         <h3 class="font-bold text-base mb-1">CRUELTY-FREE</h3>
                         <p class="text-xs text-gray-600 uppercase">FORMULA</p>
                     </div>
-                    <div class="bg-white border-2 border-gray-300 rounded-xl p-6 text-center hover:border-gray-400 transition">
-                        <div class="mb-4">
-                            <svg class="w-12 h-12 mx-auto text-purple-600" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                            </svg>
-                        </div>
+                    <div class="bg-white rounded-xl p-6 text-center">
+                        <img class="mx-auto block mb-3" src="{{ 'pdp-trophy.svg' | asset_url }}" alt="Heart" width="48" height="48">
                         <h3 class="font-bold text-base mb-1">LUXURY</h3>
                         <p class="text-xs text-gray-600 uppercase">INSPIRED</p>
                     </div>
                 </div>
             </div>
-
             <!-- Right Side - Image Card -->
-            <div class="relative">
+            <div>
+                <img class="w-full h-auto rounded-2xl" src="{{ product.images[1].src | image_url }}" alt="{{ product.images[1].alt }}" width="" height="">
             </div>
         </div>
     </div>
 </div>
 
-
-<div>
-{% for product in recommendations.products %}
-    
-{% endfor %}
+{% assign related_products = collections['tryscent'] %}
+<div class="container mx-auto px-4 py-16">
+    <h2 class="text-4xl font-bold mb-8 text-center">You may also like</h2>
+    <div class="grid grid-cols-2 sm:col-span-3 md:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto">
+        {% for product in related_products.products limit: 4 %}
+        {% render 'card-product'
+            , product: product %}
+        {% endfor %}
+    </div>
 </div>
 
 

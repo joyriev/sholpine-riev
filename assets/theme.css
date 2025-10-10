@@ -2141,6 +2141,10 @@ video {
     padding: 24px;
   }
 
+  .md\:p-8 {
+    padding: 32px;
+  }
+
   .md\:py-16 {
     padding-top: 64px;
     padding-bottom: 64px;
