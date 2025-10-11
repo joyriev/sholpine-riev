@@ -163,10 +163,6 @@
         "padding_bottom": 48
       }
     },
-    "home-details": {
-      "type": "home-details",
-      "settings": {}
-    },
     "new_drops_QUKFqT": {
       "type": "new-drops",
       "name": "New Drops",
@@ -177,6 +173,56 @@
         "padding_top": 48,
         "padding_bottom": 48
       }
+    },
+    "shop_scent_types_naPzx9": {
+      "type": "shop-scent-types",
+      "blocks": {
+        "scent_card_hC9A4T": {
+          "type": "scent_card",
+          "settings": {
+            "title": "Gourmand Scents",
+            "bg_color": "#99f6e4",
+            "link": ""
+          }
+        },
+        "scent_card_9aT9rc": {
+          "type": "scent_card",
+          "settings": {
+            "title": "Floral Scents",
+            "bg_color": "#fce7f3",
+            "link": ""
+          }
+        },
+        "scent_card_rgrcJP": {
+          "type": "scent_card",
+          "settings": {
+            "title": "Masculine Scents",
+            "bg_color": "#dc2626",
+            "link": ""
+          }
+        },
+        "scent_card_PTV6Lh": {
+          "type": "scent_card",
+          "settings": {
+            "title": "Fresh Scents",
+            "bg_color": "#bfdbfe",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "scent_card_hC9A4T",
+        "scent_card_9aT9rc",
+        "scent_card_rgrcJP",
+        "scent_card_PTV6Lh"
+      ],
+      "name": "Shop Scent Types",
+      "settings": {
+        "heading": "Shop scent type",
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "button_text": "SHOP NOW"
+      }
     }
   },
   "order": [
@@ -185,7 +231,7 @@
     "press_mentions_Nw9Wjr",
     "trending_products_Y3HR9d",
     "category_cards_XVJeii",
-    "home-details",
-    "new_drops_QUKFqT"
+    "new_drops_QUKFqT",
+    "shop_scent_types_naPzx9"
   ]
 }
