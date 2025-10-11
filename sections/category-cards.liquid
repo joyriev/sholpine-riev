@@ -1,0 +1,146 @@
+<div class="category-cards section-{{ section.id }}-padding">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      {% for block in section.blocks %}
+        <div
+          class="relative rounded-3xl overflow-hidden h-64"
+          style="background-color: {{ block.settings.background_color }};"
+          {{ block.shopify_attributes }}>
+          {% if block.settings.image != blank %}
+            {{ block.settings.image | image_url: width: 800 | image_tag:  class: 'w-full h-full object-cover', alt: block.settings.title, width: 400, height: 400
+            }}
+          {% else %}
+            <div class="w-full h-full" style="background-color: {{ block.settings.fallback_color }};"></div>
+          {% endif %}
+
+          <div class="absolute inset-0 p-8 flex flex-col justify-between">
+            <div>
+              <h2 class="text-4xl font-bold mb-1" style="color: {{ block.settings.text_color }};">{{ block.settings.title }}</h2>
+              <p class="text-sm" style="color: {{ block.settings.text_color | color_modify: 'alpha', 0.8 }};">{{ block.settings.subtitle }}</p>
+            </div>
+            <a href="{{ block.settings.button_url }}" class="bg-white text-black px-6 py-2 rounded-full font-medium text-sm w-fit flex items-center gap-2 hover:bg-gray-50 transition-colors">
+              {{ block.settings.button_text }}
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Category Cards",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Section Padding"
+      }, {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "Top Padding",
+        "default": 48
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "Bottom Padding",
+        "default": 48
+      }
+    ],
+    "blocks": [
+      {
+        "type": "category",
+        "name": "Category Card",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "color",
+            "id": "fallback_color",
+            "label": "Fallback Background Color",
+            "default": "#DAC5F7"
+          },
+          {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text Color",
+            "default": "#000000"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "CATEGORY"
+          }, {
+            "type": "text",
+            "id": "subtitle",
+            "label": "Subtitle",
+            "default": "Collection description"
+          }, {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button Text",
+            "default": "Shop Now"
+          }, {
+            "type": "url",
+            "id": "button_url",
+            "label": "Button Link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Category Cards",
+        "blocks": [
+          {
+            "type": "category",
+            "settings": {
+              "title": "WOMENS",
+              "subtitle": "Perfume collection",
+              "button_text": "Women",
+              "fallback_color": "#DAC5F7"
+            }
+          }, {
+            "type": "category",
+            "settings": {
+              "title": "MENS",
+              "subtitle": "Perfume collection",
+              "button_text": "Men",
+              "fallback_color": "#B8E0F6"
+            }
+          }, {
+            "type": "category",
+            "settings": {
+              "title": "UNISEX",
+              "subtitle": "Perfume collection",
+              "button_text": "Unisex",
+              "fallback_color": "#F5D165"
+            }
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+<style>
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+</style>
