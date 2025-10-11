@@ -117,6 +117,54 @@
     "home-details": {
       "type": "home-details",
       "settings": {}
+    },
+    "category_cards_XVJeii": {
+      "type": "category-cards",
+      "blocks": {
+        "category_my3WUH": {
+          "type": "category",
+          "settings": {
+            "fallback_color": "#dac5f7",
+            "text_color": "#000000",
+            "title": "WOMENS",
+            "subtitle": "Perfume collection",
+            "button_text": "Women",
+            "button_url": ""
+          }
+        },
+        "category_cymKrr": {
+          "type": "category",
+          "settings": {
+            "fallback_color": "#b8e0f6",
+            "text_color": "#000000",
+            "title": "MENS",
+            "subtitle": "Perfume collection",
+            "button_text": "Men",
+            "button_url": ""
+          }
+        },
+        "category_b3p84t": {
+          "type": "category",
+          "settings": {
+            "fallback_color": "#f5d165",
+            "text_color": "#000000",
+            "title": "UNISEX",
+            "subtitle": "Perfume collection",
+            "button_text": "Unisex",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "category_my3WUH",
+        "category_cymKrr",
+        "category_b3p84t"
+      ],
+      "name": "Category Cards",
+      "settings": {
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
     }
   },
   "order": [
@@ -124,6 +172,7 @@
     "features_grid_D9xAK3",
     "press_mentions_Nw9Wjr",
     "trending_products_Y3HR9d",
+    "category_cards_XVJeii",
     "home-details"
   ]
 }
