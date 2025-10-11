@@ -28,3 +28,15 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  new Swiper(".press-swiper", {
+    modules: [Navigation],
+    slidesPerView: 1.5,
+    spaceBetween: 15,
+    centeredSlides: true,
+    breakpoints: {
+      768: { slidesPerView: 3, spaceBetween: 20, centeredSlides: false },
+    },
+  });
+});
