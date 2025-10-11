@@ -19,6 +19,54 @@
         "reviews": "4.8 from 10,977 reviews"
       }
     },
+    "features_grid_D9xAK3": {
+      "type": "features-grid",
+      "blocks": {
+        "feature_LbgKa3": {
+          "type": "feature",
+          "settings": {
+            "icon": "📦",
+            "title": "Free Returns",
+            "description": "No questions asked."
+          }
+        },
+        "feature_h9Gfbx": {
+          "type": "feature",
+          "settings": {
+            "icon": "🍊",
+            "title": "6,000,000+ Bottles",
+            "description": "over 6M bottles sold worldwide."
+          }
+        },
+        "feature_UJzLUY": {
+          "type": "feature",
+          "settings": {
+            "icon": "👁️",
+            "title": "100,000+ Reviews",
+            "description": "over 100,000 5+ star reviews."
+          }
+        },
+        "feature_ghQwEY": {
+          "type": "feature",
+          "settings": {
+            "icon": "🌸",
+            "title": "Viral fragrance brand",
+            "description": "10,000+ views & dazzling social reviews."
+          }
+        }
+      },
+      "block_order": [
+        "feature_LbgKa3",
+        "feature_h9Gfbx",
+        "feature_UJzLUY",
+        "feature_ghQwEY"
+      ],
+      "name": "Features Grid",
+      "settings": {
+        "padding_top": 8,
+        "padding_bottom": 12
+      }
+    },
     "home-details": {
       "type": "home-details",
       "settings": {}
@@ -26,6 +74,7 @@
   },
   "order": [
     "home-hero",
+    "features_grid_D9xAK3",
     "home-details"
   ]
 }
