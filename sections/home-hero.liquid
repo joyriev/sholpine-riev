@@ -1,6 +1,17 @@
+<style>
+  .hero-section-card {
+    background-image: url({{ section.settings.background_image | image_url: width: 1280 }});
+  }
+  @media (max-width: 768px) {
+    .hero-section-card {
+      background-image: url({{ section.settings.mobile_background_image | image_url: width: 400 }});
+    }
+  }
+</style>
+
 <div class="py-4">
   <div class="container">
-    <div class="rounded-3xl p-4 md:p-12 bg-gradient-to-bl from-sky-100 to-rose-100 flex flex-col justify-center min-h-[70vh] bg-cover bg-center" style="background-image: url({{ section.settings.background_image | image_url: width: 1280 }})">
+    <div class="rounded-3xl p-4 md:p-12 bg-gradient-to-bl from-sky-100 to-rose-100 flex flex-col justify-center min-h-[70vh] bg-cover bg-center hero-section-card">
       <div class="space-y-6">
         <h1 class="text-3xl font-bold">{{ section.settings.title }}</h1>
         <p class="text-4xl uppercase tracking-wide">{{ section.settings.subtitle }}</p>
@@ -32,6 +43,11 @@
         "label": "Background Image"
       },
       {
+        "type": "image_picker",
+        "id": "mobile_background_image",
+        "label": "Mobile Background Image"
+      },
+      {
         "type": "text",
         "id": "title",
         "label": "Title"
@@ -40,8 +56,7 @@
         "type": "text",
         "id": "subtitle",
         "label": "Subtitle"
-      },
-      {
+      }, {
         "type": "link_list",
         "id": "buttons",
         "label": "Buttons"
