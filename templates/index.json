@@ -12,7 +12,7 @@
     "home-hero": {
       "type": "home-hero",
       "settings": {
-        "background_image": "shopify://shop_images/PC_HOME_BANNER-16.png",
+        "background_image": "shopify://shop_images/header_1.png",
         "title": "Designer Perfumes",
         "subtitle": "Without The Pricetag",
         "buttons": "resources",
