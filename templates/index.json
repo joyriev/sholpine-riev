@@ -142,7 +142,6 @@
         "category_b3p84t": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/header_1.png",
             "fallback_color": "#f5d165",
             "text_color": "#000000",
             "title": "UNISEX",
