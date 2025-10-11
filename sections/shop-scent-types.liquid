@@ -12,12 +12,7 @@
             <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow" {{ block.shopify_attributes }}>
               <div class="h-48 flex items-center justify-center" style="background-color: {{ block.settings.bg_color | default: '#f3f4f6' }}">
                 {% if block.settings.image != blank %}
-                  {{ block.settings.image | image_url: width: 600 | image_tag:
-                    loading: 'lazy',
-                    width: 300,
-                    height: 200,
-                    class: 'w-full h-full object-cover',
-                    alt: block.settings.title
+                  {{ block.settings.image | image_url: width: 600 | image_tag: loading: 'lazy', width: 300, height: 200, class: 'w-full h-full object-cover', alt: block.settings.title
                   }}
                 {% else %}
                   <div class="w-full h-full flex items-center justify-center text-gray-400">
@@ -43,107 +38,97 @@
 </div>
 
 {% schema %}
-{
-  "name": "Shop Scent Types",
-  "settings": [
-    {
-      "type": "text",
-      "id": "heading",
-      "label": "Section Heading",
-      "default": "Shop scent type"
-    },
-    {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "Top Padding",
-      "default": 64
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "Bottom Padding",
-      "default": 64
-    },
-    {
-      "type": "text",
-      "id": "button_text",
-      "label": "Button Text",
-      "default": "SHOP NOW"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "scent_card",
-      "name": "Scent Card",
-      "settings": [
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Title",
-          "default": "Scent Type"
-        },
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image"
-        },
-        {
-          "type": "color",
-          "id": "bg_color",
-          "label": "Fallback Background Color",
-          "default": "#f3f4f6"
-        },
-        {
-          "type": "url",
-          "id": "link",
-          "label": "Link"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Shop Scent Types",
-      "category": "Custom",
-      "blocks": [
-        {
-          "type": "scent_card",
-          "settings": {
-            "title": "Gourmand Scents",
-            "bg_color": "#99f6e4"
+  {
+    "name": "Shop Scent Types",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Section Heading",
+        "default": "Shop scent type"
+      }, {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "Top Padding",
+        "default": 64
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "Bottom Padding",
+        "default": 64
+      }, {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "SHOP NOW"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "scent_card",
+        "name": "Scent Card",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Scent Type"
+          }, {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }, {
+            "type": "color",
+            "id": "bg_color",
+            "label": "Fallback Background Color",
+            "default": "#f3f4f6"
+          }, {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
           }
-        },
-        {
-          "type": "scent_card",
-          "settings": {
-            "title": "Floral Scents",
-            "bg_color": "#fce7f3"
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Shop Scent Types",
+        "blocks": [
+          {
+            "type": "scent_card",
+            "settings": {
+              "title": "Gourmand Scents",
+              "bg_color": "#99f6e4"
+            }
+          }, {
+            "type": "scent_card",
+            "settings": {
+              "title": "Floral Scents",
+              "bg_color": "#fce7f3"
+            }
+          }, {
+            "type": "scent_card",
+            "settings": {
+              "title": "Masculine Scents",
+              "bg_color": "#dc2626"
+            }
+          }, {
+            "type": "scent_card",
+            "settings": {
+              "title": "Fresh Scents",
+              "bg_color": "#bfdbfe"
+            }
           }
-        },
-        {
-          "type": "scent_card",
-          "settings": {
-            "title": "Masculine Scents",
-            "bg_color": "#dc2626"
-          }
-        },
-        {
-          "type": "scent_card",
-          "settings": {
-            "title": "Fresh Scents",
-            "bg_color": "#bfdbfe"
-          }
-        }
-      ]
-    }
-  ]
-}
+        ]
+      }
+    ]
+  }
 {% endschema %}
