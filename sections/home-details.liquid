@@ -1,26 +1,3 @@
-{% assign trending_collection = collections['tryscent'] %}
-<div class="container mx-auto px-4 py-16">
-  <div class="flex items-center justify-between mb-8 max-w-6xl mx-auto">
-    <h2 class="text-3xl md:text-4xl font-bold">Trending now!</h2>
-    <div class="flex gap-2">
-      <button class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center hover:bg-gray-400 swiper-button-prev [&_svg]:rotate-180 disabled:opacity-50 disabled:cursor-not-allowed"></button>
-      <button class="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center hover:bg-gray-800 swiper-button-next disabled:opacity-50 disabled:cursor-not-allowed"></button>
-    </div>
-  </div>
-
-  <div class="max-w-6xl mx-auto swiper home_trending_slider">
-    <div class="swiper-wrapper">
-      {% for product in trending_collection.products limit: 8 %}
-        <div class="swiper-slide">
-          {% render 'card-product'
-            , product: product %}
-        </div>
-      {% endfor %}
-    </div>
-  </div>
-</div>
-
-<!-- Category Cards -->
 <div>
   <div class="container mx-auto px-4 py-16">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
