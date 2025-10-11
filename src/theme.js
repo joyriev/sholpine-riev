@@ -14,7 +14,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 
 document.addEventListener("DOMContentLoaded", function () {
-  new Swiper(".home_trending_slider", {
+  new Swiper(".trending-slider", {
     modules: [Navigation],
     slidesPerView: 2,
     spaceBetween: 15,
