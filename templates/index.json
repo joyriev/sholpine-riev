@@ -70,11 +70,48 @@
     "home-details": {
       "type": "home-details",
       "settings": {}
+    },
+    "press_mentions_Nw9Wjr": {
+      "type": "press-mentions",
+      "blocks": {
+        "mention_FPjawi": {
+          "type": "mention",
+          "settings": {
+            "publication": "ELOQUENT",
+            "quote": "Everything I've ordered smells amazing and the scent really lasts!"
+          }
+        },
+        "mention_bJxyEn": {
+          "type": "mention",
+          "settings": {
+            "publication": "VOGUE",
+            "quote": "A lovely pick for holiday vibes or a quick, charming gift."
+          }
+        },
+        "mention_HMXdtW": {
+          "type": "mention",
+          "settings": {
+            "publication": "COSMOPOLITAN",
+            "quote": "This feels so authentic, and lasts longer than we thought."
+          }
+        }
+      },
+      "block_order": [
+        "mention_FPjawi",
+        "mention_bJxyEn",
+        "mention_HMXdtW"
+      ],
+      "name": "Press Mentions",
+      "settings": {
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
     }
   },
   "order": [
     "home-hero",
     "features_grid_D9xAK3",
+    "press_mentions_Nw9Wjr",
     "home-details"
   ]
 }
