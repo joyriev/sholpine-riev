@@ -956,6 +956,12 @@ video {
 .w-screen {
   width: 100vw;
 }
+.w-1\/2 {
+  width: 50%;
+}
+.w-3\/4 {
+  width: 75%;
+}
 .max-w-2xl {
   max-width: 672px;
 }

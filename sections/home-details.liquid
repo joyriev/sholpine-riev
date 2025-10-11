@@ -1,15 +1,3 @@
-{% assign new_drops = collections['tryscent'] %}
-<!-- New Drops Section -->
-<div class="container mx-auto px-4 py-16">
-  <h2 class="text-4xl font-bold mb-8 text-center">New drops</h2>
-  <div class="grid grid-cols-2 sm:col-span-3 md:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto">
-    {% for product in new_drops.products limit: 4 %}
-      {% render 'card-product'
-        , product: product %}
-    {% endfor %}
-  </div>
-</div>
-
 <!-- Shop Scent Type Section -->
 <div class="bg-blue-50 py-16">
   <div class="container mx-auto px-4">
