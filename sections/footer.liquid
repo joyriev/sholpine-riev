@@ -4,6 +4,8 @@
       <div class="grid grid-cols-2 md:grid-cols-4 gap-12">
         <div class="col-span-2 md:col-span-1 flex justify-center md:justify-start items-start">
           <img
+            height=""
+            width=""
             src="{{ section.settings.logo | image_url: width: 100 }}"
             alt="{{ shop.name }}"
             class="w-32 h-auto">
@@ -53,8 +55,9 @@
           {%- endfor -%}
         </ul>
       </div>
-      <p>Purfum is an independent fragrance house. Our products are not affiliated with, endorsed by, or produced by any of the brands or designers mentioned.          
-        Any references are for descriptive purposes only.</p>
+      <div>
+        {{ section.settings.footer_text }}
+      </div>
       <p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.</p>
     </div>
   </div>
@@ -68,18 +71,26 @@
         "id": "logo",
         "type": "image_picker",
         "label": "Logo"
-      }, {
+      },
+      {
         "id": "footer_menu_1",
         "type": "link_list",
         "label": "Footer menu 1"
-      }, {
+      },
+      {
         "id": "footer_menu_2",
         "type": "link_list",
         "label": "Footer menu 2"
-      }, {
+      },
+      {
         "type": "richtext",
         "id": "contact_information",
         "label": "Contact Information"
+      }, {
+        "type": "richtext",
+        "id": "footer_text",
+        "label": "Footer Text",
+        "default": "<p>Purfum is an independent fragrance house. Our products are not affiliated with, endorsed by, or produced by any of the brands or designers mentioned. Any references are for descriptive purposes only.</p>"
       }
     ]
   }
