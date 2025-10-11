@@ -24,16 +24,22 @@
                 {% if block.settings.title != blank %}
                   <h3 class="font-bold text-xl mb-4">{{ block.settings.title }}</h3>
                 {% endif %}
-                {% if block.settings.link != blank %}
-                  <a href="{{ block.settings.link }}" class="bg-black text-white px-6 py-2 rounded-full font-medium inline-block hover:bg-gray-800 transition-colors">
-                    {{ section.settings.button_text | default: 'SHOP NOW' }}
-                  </a>
-                {% endif %}
+                <a href="{{ block.settings.link }}" class="bg-black text-white block px-8 py-3 rounded-full font-medium w-full hover:bg-gray-800">
+                  {{ block.settings.button_text | default: 'SHOP NOW' }}
+                </a>
               </div>
             </div>
         {% endcase %}
       {% endfor %}
     </div>
+    {% if section.settings.button_text != blank %}
+      <div class="text-center mt-12">
+        <a href="{{ section.settings.link }}" class="inline-flex items-center gap-2 font-bold text-lg hover:underline">
+          {{ section.settings.button_text | default: 'SHOP FULL RANGE' }}
+          <span class="w-6 h-6 bg-black text-white rounded-full inline-flex items-center justify-center text-sm">→</span>
+        </a>
+      </div>
+    {% endif %}
   </div>
 </div>
 
@@ -46,7 +52,8 @@
         "id": "heading",
         "label": "Section Heading",
         "default": "Shop scent type"
-      }, {
+      },
+      {
         "type": "range",
         "id": "padding_top",
         "min": 0,
@@ -55,7 +62,8 @@
         "unit": "px",
         "label": "Top Padding",
         "default": 64
-      }, {
+      },
+      {
         "type": "range",
         "id": "padding_bottom",
         "min": 0,
@@ -64,11 +72,16 @@
         "unit": "px",
         "label": "Bottom Padding",
         "default": 64
-      }, {
+      },
+      {
         "type": "text",
         "id": "button_text",
         "label": "Button Text",
         "default": "SHOP NOW"
+      }, {
+        "type": "url",
+        "id": "link",
+        "label": "Link"
       }
     ],
     "blocks": [
@@ -81,15 +94,23 @@
             "id": "title",
             "label": "Title",
             "default": "Scent Type"
-          }, {
+          },
+          {
             "type": "image_picker",
             "id": "image",
             "label": "Image"
-          }, {
+          },
+          {
             "type": "color",
             "id": "bg_color",
             "label": "Fallback Background Color",
             "default": "#f3f4f6"
+          },
+          {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button Text",
+            "default": "SHOP NOW"
           }, {
             "type": "url",
             "id": "link",
