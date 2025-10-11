@@ -1,5 +1,5 @@
 <div class="features-grid section-{{ section.id }}-padding">
-  <div class="container mx-auto px-4 py-8">
+  <div class="container mx-auto px-4">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
       {% for block in section.blocks %}
         <div class="feature-item flex items-start gap-3" {{ block.shopify_attributes }}>
@@ -53,14 +53,12 @@
             "id": "icon",
             "label": "Emoji Icon",
             "default": "✨"
-          },
-          {
+          }, {
             "type": "text",
             "id": "title",
             "label": "Title",
             "default": "Feature Title"
-          },
-          {
+          }, {
             "type": "text",
             "id": "description",
             "label": "Description",
@@ -80,24 +78,21 @@
               "title": "Free Returns",
               "description": "No questions asked."
             }
-          },
-          {
+          }, {
             "type": "feature",
             "settings": {
               "icon": "🍊",
               "title": "6,000,000+ Bottles",
               "description": "over 6M bottles sold worldwide."
             }
-          },
-          {
+          }, {
             "type": "feature",
             "settings": {
               "icon": "👁️",
               "title": "100,000+ Reviews",
               "description": "over 100,000 5+ star reviews."
             }
-          },
-          {
+          }, {
             "type": "feature",
             "settings": {
               "icon": "🌸",
