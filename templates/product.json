@@ -60,6 +60,13 @@
             "title": "Description",
             "content": "{{ product.description }}"
           }
+        },
+        "accordion_BmXGEd": {
+          "type": "accordion",
+          "settings": {
+            "title": "Why are your perfumes so affordable?",
+            "content": "<p>Our perfumes are affordable because we focus on what really matters — the fragrance itself — and eliminate unnecessary costs:<br/><br/>✔️ No expensive advertising – We don’t invest in celebrity campaigns or luxury branding, which allows us to offer lower prices.<br/><br/>✔️ Simple, elegant packaging – Instead of costly designer bottles, we use minimalist, stylish packaging that keeps production costs low.<br/><br/>✔️ Direct sales model – By selling online and bottling ourselves, we avoid intermediaries and retail mark-ups.<br/><br/>✔️ Alternative compositions, premium quality<br/><br/>The result? You enjoy long-lasting, high-quality perfumes at a price that makes sense.</p>"
+          }
         }
       },
       "block_order": [
@@ -69,7 +76,8 @@
         "feature_Wj3YFB",
         "feature_Rbkhxf",
         "feature_7fdiJX",
-        "accordion_innk7e"
+        "accordion_innk7e",
+        "accordion_BmXGEd"
       ],
       "settings": {}
     }
