@@ -2035,6 +2035,11 @@ video {
     padding-bottom: 80px;
   }
 
+  .md\:px-8 {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
   .md\:pb-12 {
     padding-bottom: 48px;
   }
