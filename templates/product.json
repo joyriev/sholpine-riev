@@ -22,15 +22,15 @@
         "feature_xW6rmY": {
           "type": "feature",
           "settings": {
-            "image": "shopify://shop_images/icons8-replay-30-100.svg",
+            "image": "shopify://shop_images/icons8-shield-100_64x_3ef4509e-34d7-432e-9d2a-100362fa8033.svg",
             "title": "100% Satisfaction guarantee"
           }
         },
         "feature_Ag6qWp": {
           "type": "feature",
           "settings": {
-            "image": "shopify://shop_images/icons8-replay-30-100.svg",
-            "title": "Free 30-day returns"
+            "image": "shopify://shop_images/icons8-percentage_64x_dd62c390-d3d7-4992-943f-faf7ec92d8d0.svg",
+            "title": "60% to 85% cheaper"
           }
         }
       },
