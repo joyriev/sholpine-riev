@@ -10,10 +10,10 @@
 </style>
 <div class="py-4">
   <div class="container">
-    <div class="rounded-3xl p-4 md:p-12 bg-gradient-to-bl from-sky-100 to-rose-100 flex flex-col justify-center min-h-[70vh] bg-cover bg-center hero-section-card">
-      <div class="space-y-6">
-        <h1 class="text-3xl font-bold">{{ section.settings.title }}</h1>
-        <p class="text-4xl uppercase tracking-wide">{{ section.settings.subtitle }}</p>
+    <div class="rounded-3xl px-6 py-12 md:p-12 bg-gradient-to-bl from-sky-100 to-rose-100 flex flex-col md:justify-center min-h-[70vh] bg-cover bg-center hero-section-card">
+      <div class="space-y-4 md:space-y-6">
+        <h1 class="text-2xl md:text-3xl font-bold">{{ section.settings.title }}</h1>
+        <p class="text-2xl md:text-4xl uppercase tracking-wide">{{ section.settings.subtitle }}</p>
         <div class="flex items-center gap-2">
           <a href="/collection/all" class="inline-block px-8 py-4 rounded-full bg-black text-white">SHOP ALL</a>
           <a href="/blogs/news" class="inline-block px-8 py-4 rounded-full bg-black text-white">DISCOVER</a>
@@ -25,7 +25,8 @@
             alt="*****"
             width="66"
             height="13">
-          <span class="leading-none inline-block pt-1">{{ section.settings.reviews }}</span>
+          <span class="leading-none inline-block pt-1 text-shadow-md text-shadow-white">
+            {{ section.settings.reviews }}</span>
         </div>
       </div>
     </div>
