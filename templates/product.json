@@ -46,6 +46,13 @@
             "image": "shopify://shop_images/icons8-time_2_64x_5ebb3f00-38a3-40ac-8755-3db0b3e12b81.svg",
             "title": "Long-lasting"
           }
+        },
+        "feature_7fdiJX": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify://shop_images/icons8-leaf-100_64x_4b53584c-5beb-41cb-89ba-25a6dcaa14a3.svg",
+            "title": "Vegan, Cruelty Free & Carbon Neutral"
+          }
         }
       },
       "block_order": [
@@ -53,7 +60,8 @@
         "feature_xW6rmY",
         "feature_Ag6qWp",
         "feature_Wj3YFB",
-        "feature_Rbkhxf"
+        "feature_Rbkhxf",
+        "feature_7fdiJX"
       ],
       "settings": {}
     }
