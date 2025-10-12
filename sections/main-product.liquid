@@ -83,7 +83,7 @@
         <div class="grid grid-cols-2 md:grid-cols-3 gap-y-4 gap-x-2 items-center mt-12">
           {% for block in section.blocks %}
             {% if block.type == 'feature' %}
-              <div class="flex gap-2 items-center">
+              <div class="flex gap-2 items-center" {{ block.shopify_attributes }}>
                 <img
                   class="w-8 h-8"
                   src="{{ block.settings.image | image_url: width: 64, height: 64 }}"
@@ -99,7 +99,10 @@
         <div class="bg-gray-100 rounded-3xl p-4 md:p-8 mt-12 space-y-4">
           {% for block in section.blocks %}
             {% if block.type == 'accordion' %}
-              <div x-data="{ isOpen: false }" class="bg-white rounded-2xl overflow-hidden transition-all duration-300 ease-in-out">
+              <div
+                x-data="{ isOpen: false }"
+                class="bg-white rounded-2xl overflow-hidden transition-all duration-300 ease-in-out"
+                {{ block.shopify_attributes }}>
                 <button
                   @click="isOpen = !isOpen"
                   class="w-full px-6 py-5 flex items-center justify-between text-left rounded-2xl transition-all duration-300"
@@ -207,7 +210,6 @@
       {
         "type": "feature",
         "name": "Feature",
-        "limit": 6,
         "settings": [
           {
             "id": "image",
@@ -222,7 +224,6 @@
       }, {
         "type": "accordion",
         "name": "Accordion",
-        "limit": 6,
         "settings": [
           {
             "id": "title",
