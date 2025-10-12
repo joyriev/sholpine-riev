@@ -67,6 +67,13 @@
             "title": "Why are your perfumes so affordable?",
             "content": "<p>Our perfumes are affordable because we focus on what really matters — the fragrance itself — and eliminate unnecessary costs:<br/><br/>✔️ No expensive advertising – We don’t invest in celebrity campaigns or luxury branding, which allows us to offer lower prices.<br/><br/>✔️ Simple, elegant packaging – Instead of costly designer bottles, we use minimalist, stylish packaging that keeps production costs low.<br/><br/>✔️ Direct sales model – By selling online and bottling ourselves, we avoid intermediaries and retail mark-ups.<br/><br/>✔️ Alternative compositions, premium quality<br/><br/>The result? You enjoy long-lasting, high-quality perfumes at a price that makes sense.</p>"
           }
+        },
+        "accordion_8PrpD8": {
+          "type": "accordion",
+          "settings": {
+            "title": "Is it a perfumed water?",
+            "content": "<p>Our fragrances go far beyond simple perfumed water. At Try Scent, we offer high-quality <strong>Eau de Parfum (EDP)</strong> with a perfume oil concentration of <strong>19-21%</strong>, ensuring long-lasting scent, excellent projection, and depth.</p><p>Unlike light body sprays or perfumed waters, our compositions are made to stay on your skin for many hours — often even until the next day. You enjoy an intense, refined fragrance experience at a fraction of the price of luxury brands.</p>"
+          }
         }
       },
       "block_order": [
@@ -77,7 +84,8 @@
         "feature_Rbkhxf",
         "feature_7fdiJX",
         "accordion_innk7e",
-        "accordion_BmXGEd"
+        "accordion_BmXGEd",
+        "accordion_8PrpD8"
       ],
       "settings": {}
     }
