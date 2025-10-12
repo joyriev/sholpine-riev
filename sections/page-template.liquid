@@ -1,0 +1,38 @@
+<div class="page-width">
+  <div class="page-content">
+    <div class="page-header">
+      <h1 class="page-title">{{ page.title | escape }}</h1>
+      {% if page.metafields.custom.subtitle %}
+        <p class="page-subtitle">{{ page.metafields.custom.subtitle }}</p>
+      {% endif %}
+    </div>
+
+    <div class="page-content-inner rte">
+      {{ page.content }}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Page Template",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Page Settings"
+      }, {
+        "type": "checkbox",
+        "id": "show_page_title",
+        "default": true,
+        "label": "Show page title"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Page Template"
+      }
+    ]
+  }
+{% endschema %}
