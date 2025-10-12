@@ -121,6 +121,7 @@
         "category_my3WUH": {
           "type": "category",
           "settings": {
+            "image": "shopify://shop_images/model_1.png",
             "fallback_color": "#dac5f7",
             "text_color": "#000000",
             "title": "WOMENS",
@@ -132,6 +133,7 @@
         "category_cymKrr": {
           "type": "category",
           "settings": {
+            "image": "shopify://shop_images/bottle_3.png",
             "fallback_color": "#b8e0f6",
             "text_color": "#000000",
             "title": "MENS",
@@ -143,6 +145,7 @@
         "category_b3p84t": {
           "type": "category",
           "settings": {
+            "image": "shopify://shop_images/model_3.png",
             "fallback_color": "#f5d165",
             "text_color": "#000000",
             "title": "UNISEX",
@@ -181,7 +184,7 @@
           "type": "scent_card",
           "settings": {
             "title": "Gourmand Scents",
-            "image": "shopify://shop_images/8_bb71bb42-45ab-4999-a0b2-462624552ab1.png",
+            "image": "shopify://shop_images/bottle_5.png",
             "bg_color": "#99f6e4",
             "button_text": "SHOP NOW",
             "link": "shopify://blogs/news/blue-light-melatonin-sleep-gummies"
@@ -191,7 +194,7 @@
           "type": "scent_card",
           "settings": {
             "title": "Floral Scents",
-            "image": "shopify://shop_images/saffron_rose_amber_70ac415e-1091-4a83-b843-4ca65dee51cf.png",
+            "image": "shopify://shop_images/bottle_6.png",
             "bg_color": "#fce7f3",
             "button_text": "SHOP NOW",
             "link": ""
@@ -201,6 +204,7 @@
           "type": "scent_card",
           "settings": {
             "title": "Masculine Scents",
+            "image": "shopify://shop_images/bottle_2.png",
             "bg_color": "#dc2626",
             "button_text": "SHOP NOW",
             "link": ""
@@ -210,6 +214,7 @@
           "type": "scent_card",
           "settings": {
             "title": "Fresh Scents",
+            "image": "shopify://shop_images/bottle_1.png",
             "bg_color": "#bfdbfe",
             "button_text": "SHOP NOW",
             "link": ""
