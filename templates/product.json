@@ -32,12 +32,28 @@
             "image": "shopify://shop_images/icons8-percentage_64x_dd62c390-d3d7-4992-943f-faf7ec92d8d0.svg",
             "title": "60% to 85% cheaper"
           }
+        },
+        "feature_Wj3YFB": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify://shop_images/icons8-diamond-100_64x_7c81afc1-4672-4248-b214-96e17883dfcb.svg",
+            "title": "High-quality"
+          }
+        },
+        "feature_Rbkhxf": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify://shop_images/icons8-time_2_64x_5ebb3f00-38a3-40ac-8755-3db0b3e12b81.svg",
+            "title": "Long-lasting"
+          }
         }
       },
       "block_order": [
         "feature_mYFyjH",
         "feature_xW6rmY",
-        "feature_Ag6qWp"
+        "feature_Ag6qWp",
+        "feature_Wj3YFB",
+        "feature_Rbkhxf"
       ],
       "settings": {}
     }
