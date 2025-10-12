@@ -18,10 +18,26 @@
             "image": "shopify://shop_images/icons8-replay-30-100.svg",
             "title": "Free 30-day returns"
           }
+        },
+        "feature_xW6rmY": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify://shop_images/icons8-replay-30-100.svg",
+            "title": "Free 30-day returns"
+          }
+        },
+        "feature_Ag6qWp": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify://shop_images/icons8-replay-30-100.svg",
+            "title": "Free 30-day returns"
+          }
         }
       },
       "block_order": [
-        "feature_mYFyjH"
+        "feature_mYFyjH",
+        "feature_xW6rmY",
+        "feature_Ag6qWp"
       ],
       "settings": {}
     }
