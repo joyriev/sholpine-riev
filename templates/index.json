@@ -121,7 +121,7 @@
         "category_my3WUH": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/bottle_4.png",
+            "image": "shopify://shop_images/model_1.png",
             "fallback_color": "#dac5f7",
             "text_color": "#000000",
             "title": "WOMENS",
@@ -145,7 +145,7 @@
         "category_b3p84t": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/bottle_2.png",
+            "image": "shopify://shop_images/model_3.png",
             "fallback_color": "#f5d165",
             "text_color": "#000000",
             "title": "UNISEX",
