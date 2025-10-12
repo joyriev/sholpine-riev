@@ -2165,6 +2165,22 @@ video {
   background-color: rgb(254 215 170 / var(--tw-bg-opacity, 1));
 }
 
+.\[\&_p\]\:leading-snug p {
+  line-height: 1.375;
+}
+
+.\[\&_p\]\:leading-normal p {
+  line-height: 1.5;
+}
+
+.\[\&_p\]\:leading-loose p {
+  line-height: 2;
+}
+
+.\[\&_p\]\:leading-relaxed p {
+  line-height: 1.625;
+}
+
 .\[\&_strong\]\:text-gray-400 strong {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity, 1));
