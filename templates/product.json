@@ -53,6 +53,13 @@
             "image": "shopify://shop_images/icons8-leaf-100_64x_4b53584c-5beb-41cb-89ba-25a6dcaa14a3.svg",
             "title": "Vegan, Cruelty Free & Carbon Neutral"
           }
+        },
+        "accordion_innk7e": {
+          "type": "accordion",
+          "settings": {
+            "title": "Description",
+            "content": ""
+          }
         }
       },
       "block_order": [
@@ -61,7 +68,8 @@
         "feature_Ag6qWp",
         "feature_Wj3YFB",
         "feature_Rbkhxf",
-        "feature_7fdiJX"
+        "feature_7fdiJX",
+        "accordion_innk7e"
       ],
       "settings": {}
     }
