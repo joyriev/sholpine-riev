@@ -184,7 +184,7 @@
           "type": "scent_card",
           "settings": {
             "title": "Gourmand Scents",
-            "image": "shopify://shop_images/8_bb71bb42-45ab-4999-a0b2-462624552ab1.png",
+            "image": "shopify://shop_images/bottle_5.png",
             "bg_color": "#99f6e4",
             "button_text": "SHOP NOW",
             "link": "shopify://blogs/news/blue-light-melatonin-sleep-gummies"
@@ -194,7 +194,7 @@
           "type": "scent_card",
           "settings": {
             "title": "Floral Scents",
-            "image": "shopify://shop_images/saffron_rose_amber_70ac415e-1091-4a83-b843-4ca65dee51cf.png",
+            "image": "shopify://shop_images/bottle_6.png",
             "bg_color": "#fce7f3",
             "button_text": "SHOP NOW",
             "link": ""
@@ -204,6 +204,7 @@
           "type": "scent_card",
           "settings": {
             "title": "Masculine Scents",
+            "image": "shopify://shop_images/bottle_2.png",
             "bg_color": "#dc2626",
             "button_text": "SHOP NOW",
             "link": ""
