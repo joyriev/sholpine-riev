@@ -80,36 +80,91 @@
             <span class="sr-only">Loading...</span>
           </div>
         </button>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-y-4 gap-x-2 items-center mt-12">
 
-        <div class="grid grid-cols-3 gap-8 border my-8 rounded-2xl p-4">
-            <div class="text-center">
-                <div class="size-16 mx-auto mb-4 rounded-full border border-rose-300 flex items-center justify-center">
-                    <svg class="w-10 h-10 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10M12 3v6m0 0l-3-3m3 3l3-3M5 14h14"></path>
-                    </svg>
+          {% for block in section.settings.blocks %}
+            {% case block.type %}
+              {% when 'feature' %}
+                <div class="flex gap-2 items-center">
+                  <img
+                    class="w-8 h-8"
+                    src="{{ block.settings.image | image_url: width: 64, height: 64 }}"
+                    alt="{{ block.settings.title }}"
+                    width="32"
+                    height="32"
+                    loading="lazy">
+                  <p class="m-0 text-xs leading-4">{{ block.settings.title }}</p>
                 </div>
-                <h3 class="font-bold">Expertly Crafted Fragrances</h3>
-            </div>
-            <div class="text-center">
-                <div class="size-16 mx-auto mb-4 rounded-full border border-indigo-300 flex items-center justify-center">
-                    <svg class="w-10 h-10 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                    </svg>
-                </div>
-                <h3 class="font-bold">Vegan & Cruelty Free</h3>
-            </div>
-            <div class="text-center">
-                <div class="size-16 mx-auto mb-4 rounded-full border border-sky-300 flex items-center justify-center">
-                    <svg class="w-10 h-10 text-sky-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
-                    </svg>
-                </div>
-                <h3 class="font-bold">Paraben & Phthalates Free</h3>
-            </div>
+            {% endcase %}
+          {% endfor %}
+          <div class="flex gap-2 items-center">
+            <img
+              class="w-8 h-8"
+              src="//dialectfragrances.com/cdn/shop/files/icons8-replay-30-100.svg?v=1737552710"
+              alt="Free 30-day returns"
+              width="32"
+              height="32"
+              loading="lazy">
+            <p class="m-0 text-xs leading-4">Free 30-day returns</p>
+          </div>
+
+          <div class="flex gap-2 items-center">
+            <img
+              class="w-8 h-8"
+              src="//dialectfragrances.com/cdn/shop/files/icons8-shield-100.svg?v=1737552800"
+              alt="100% Satisfaction guarantee"
+              width="32"
+              height="32"
+              loading="lazy">
+            <p class="m-0 text-xs leading-4">100% Satisfaction guarantee</p>
+          </div>
+
+          <div class="flex gap-2 items-center">
+            <img
+              class="w-8 h-8"
+              src="//dialectfragrances.com/cdn/shop/files/icons8-percentage.svg?v=1737553256"
+              alt="60% to 85% cheaper"
+              width="32"
+              height="32"
+              loading="lazy">
+            <p class="m-0 text-xs leading-4">60% to 85% cheaper</p>
+          </div>
+
+          <div class="flex gap-2 items-center">
+            <img
+              class="w-8 h-8"
+              src="//dialectfragrances.com/cdn/shop/files/icons8-diamond-100.svg?v=1737552836"
+              alt="High-quality"
+              width="32"
+              height="32"
+              loading="lazy">
+            <p class="m-0 text-xs leading-4">High-quality</p>
+          </div>
+
+          <div class="flex gap-2 items-center">
+            <img
+              class="w-8 h-8"
+              src="//dialectfragrances.com/cdn/shop/files/icons8-time_2.svg?v=1737553604"
+              alt="Long-lasting"
+              width="32"
+              height="32"
+              loading="lazy">
+            <p class="m-0 text-xs leading-4">Long-lasting</p>
+          </div>
+
+          <div class="flex gap-2 items-center">
+            <img
+              class="w-8 h-8"
+              src="//dialectfragrances.com/cdn/shop/files/icons8-leaf-100.svg?v=1737553281"
+              alt="Vegan, Cruelty Free & Carbon Neutral"
+              width="32"
+              height="32"
+              loading="lazy">
+            <p class="m-0 text-xs leading-4">Vegan, Cruelty Free &amp; Carbon Neutral</p>
+          </div>
         </div>
-        <div 
-            class="bg-gray-100 rounded-3xl p-4 md:p-8" 
-            x-data="{
+
+        <div class="bg-gray-100 rounded-3xl p-4 md:p-8" x-data="{
                 activeAccordion: 0,
                 toggleAccordion(index) {
                     this.activeAccordion = this.activeAccordion === index ? null : index;
@@ -117,140 +172,179 @@
                 isActive(index) {
                     return this.activeAccordion === index;
                 }
-            }"
-        >
-            <div class="space-y-4">
-                <div class="bg-white rounded-2xl overflow-hidden transition-all duration-300 ease-in-out"
-                    :class="{ 'shadow-md': isActive(0) }">
-                    <button 
-                        @click="toggleAccordion(0)" 
-                        class="w-full px-6 py-5 flex items-center justify-between text-left rounded-2xl transition-all duration-300"
-                        :class="{ 'rounded-b-none': isActive(0) }">
-                        <span class="text-xl font-bold">How do I apply Orphic?</span>
-                        <span class="text-3xl font-light transition-transform duration-300 transform" :class="{ 'rotate-45': isActive(0) }">+</span>
-                    </button>
-                    <div 
-                        x-show="isActive(0)" 
-                        x-collapse 
-                        x-cloak
-                        class="px-6 pb-5 pt-0 text-gray-600 transition-all duration-300 ease-in-out">
-                        <p>Apply Orphic to pulse points such as wrists, neck, and behind the ears. Start with 1-2 sprays and adjust based on your preference. The fragrance will develop over time.</p>
-                    </div>
-                </div>
-                <div class="bg-white rounded-2xl overflow-hidden transition-all duration-300 ease-in-out"
-                    :class="{ 'shadow-md': isActive(1) }">
-                    <button 
-                        @click="toggleAccordion(1)" 
-                        class="w-full px-6 py-5 flex items-center justify-between text-left rounded-2xl transition-all duration-300"
-                        :class="{ 'rounded-b-none': isActive(1) }">
-                        <span class="text-xl font-bold">How long does the fragrance last?</span>
-                        <span class="text-3xl font-light transition-transform duration-300 transform" :class="{ 'rotate-45': isActive(1) }">+</span>
-                    </button>
-                    <div 
-                        x-show="isActive(1)" 
-                        x-collapse 
-                        x-cloak
-                        class="px-6 pb-5 pt-0 text-gray-600 transition-all duration-300 ease-in-out">
-                        <p>Orphic is designed to be long-lasting, typically lasting 8-10 hours on the skin. The fragrance may vary slightly depending on your skin type and environment.</p>
-                    </div>
-                </div>
-                <div class="bg-white rounded-2xl overflow-hidden transition-all duration-300 ease-in-out"
-                    :class="{ 'shadow-md': isActive(2) }">
-                    <button 
-                        @click="toggleAccordion(2)" 
-                        class="w-full px-6 py-5 flex items-center justify-between text-left rounded-2xl transition-all duration-300"
-                        :class="{ 'rounded-b-none': isActive(2) }">
-                        <span class="text-xl font-bold">Is Orphic suitable for sensitive skin?</span>
-                        <span class="text-3xl font-light transition-transform duration-300 transform" :class="{ 'rotate-45': isActive(2) }">+</span>
-                    </button>
-                    <div 
-                        x-show="isActive(2)" 
-                        x-collapse 
-                        x-cloak
-                        class="px-6 pb-5 pt-0 text-gray-600 transition-all duration-300 ease-in-out">
-                        <p>Yes, Orphic is formulated to be gentle on all skin types. However, if you have particularly sensitive skin, we recommend doing a patch test before full application.</p>
-                    </div>
-                </div>
-                <div class="bg-white rounded-2xl overflow-hidden transition-all duration-300 ease-in-out"
-                    :class="{ 'shadow-md': isActive(3) }">
-                    <button 
-                        @click="toggleAccordion(3)" 
-                        class="w-full px-6 py-5 flex items-center justify-between text-left rounded-2xl transition-all duration-300"
-                        :class="{ 'rounded-b-none': isActive(3) }">
-                        <span class="text-xl font-bold">What are the key notes in Orphic?</span>
-                        <span class="text-3xl font-light transition-transform duration-300 transform" :class="{ 'rotate-45': isActive(3) }">+</span>
-                    </button>
-                    <div 
-                        x-show="isActive(3)" 
-                        x-collapse 
-                        x-cloak
-                        class="px-6 pb-5 pt-0 text-gray-600 transition-all duration-300 ease-in-out">
-                        <p>Orphic features top notes of bergamot and lemon, a heart of lavender and rosemary, with a base of vetiver and patchouli, creating a sophisticated and long-lasting fragrance.</p>
-                    </div>
-                </div>
+            }">
+          <div class="space-y-4">
+
+
+            <div class="bg-white rounded-2xl overflow-hidden transition-all duration-300 ease-in-out" :class="{ 'shadow-md': isActive(0) }">
+              <button
+                @click="toggleAccordion(0)"
+                class="w-full px-6 py-5 flex items-center justify-between text-left rounded-2xl transition-all duration-300"
+                :class="{ 'rounded-b-none': isActive(0) }">
+                <span class="text-xl font-bold">How do I apply Orphic?</span>
+                <span class="text-3xl font-light transition-transform duration-300 transform" :class="{ 'rotate-45': isActive(0) }">+</span>
+              </button>
+              <div
+                x-show="isActive(0)"
+                x-collapse
+                x-cloak
+                class="px-6 pb-5 pt-0 text-gray-600 transition-all duration-300 ease-in-out">
+                <p>Apply Orphic to pulse points such as wrists, neck, and behind the ears. Start with 1-2 sprays and adjust based on your preference. The fragrance will develop over time.</p>
+              </div>
             </div>
+            <div class="bg-white rounded-2xl overflow-hidden transition-all duration-300 ease-in-out" :class="{ 'shadow-md': isActive(1) }">
+              <button
+                @click="toggleAccordion(1)"
+                class="w-full px-6 py-5 flex items-center justify-between text-left rounded-2xl transition-all duration-300"
+                :class="{ 'rounded-b-none': isActive(1) }">
+                <span class="text-xl font-bold">How long does the fragrance last?</span>
+                <span class="text-3xl font-light transition-transform duration-300 transform" :class="{ 'rotate-45': isActive(1) }">+</span>
+              </button>
+              <div
+                x-show="isActive(1)"
+                x-collapse
+                x-cloak
+                class="px-6 pb-5 pt-0 text-gray-600 transition-all duration-300 ease-in-out">
+                <p>Orphic is designed to be long-lasting, typically lasting 8-10 hours on the skin. The fragrance may vary slightly depending on your skin type and environment.</p>
+              </div>
+            </div>
+            <div class="bg-white rounded-2xl overflow-hidden transition-all duration-300 ease-in-out" :class="{ 'shadow-md': isActive(2) }">
+              <button
+                @click="toggleAccordion(2)"
+                class="w-full px-6 py-5 flex items-center justify-between text-left rounded-2xl transition-all duration-300"
+                :class="{ 'rounded-b-none': isActive(2) }">
+                <span class="text-xl font-bold">Is Orphic suitable for sensitive skin?</span>
+                <span class="text-3xl font-light transition-transform duration-300 transform" :class="{ 'rotate-45': isActive(2) }">+</span>
+              </button>
+              <div
+                x-show="isActive(2)"
+                x-collapse
+                x-cloak
+                class="px-6 pb-5 pt-0 text-gray-600 transition-all duration-300 ease-in-out">
+                <p>Yes, Orphic is formulated to be gentle on all skin types. However, if you have particularly sensitive skin, we recommend doing a patch test before full application.</p>
+              </div>
+            </div>
+            <div class="bg-white rounded-2xl overflow-hidden transition-all duration-300 ease-in-out" :class="{ 'shadow-md': isActive(3) }">
+              <button
+                @click="toggleAccordion(3)"
+                class="w-full px-6 py-5 flex items-center justify-between text-left rounded-2xl transition-all duration-300"
+                :class="{ 'rounded-b-none': isActive(3) }">
+                <span class="text-xl font-bold">What are the key notes in Orphic?</span>
+                <span class="text-3xl font-light transition-transform duration-300 transform" :class="{ 'rotate-45': isActive(3) }">+</span>
+              </button>
+              <div
+                x-show="isActive(3)"
+                x-collapse
+                x-cloak
+                class="px-6 pb-5 pt-0 text-gray-600 transition-all duration-300 ease-in-out">
+                <p>Orphic features top notes of bergamot and lemon, a heart of lavender and rosemary, with a base of vetiver and patchouli, creating a sophisticated and long-lasting fragrance.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
 <div class="bg-blue-50 py-16 md:py-20">
-    <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto items-center">
-            <div>
-                <div class="mb-8">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-4">Luxury redefined</h2>
-                    <p class="tracking-wide">Crafted with precision</p>
-                </div>
-
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="bg-white rounded-xl p-6 text-center">
-                        <img class="mx-auto block mb-3" src="{{ 'pdp-droplet.svg' | asset_url }}" alt="Droplet" width="48" height="48">
-                        <h3 class="font-bold text-base mb-1">25% EDP</h3>
-                        <p class="text-xs text-gray-600 uppercase">CONCENTRATION</p>
-                    </div>
-
-                    <div class="bg-white rounded-xl p-6 text-center">
-                        <img class="mx-auto block mb-3" src="{{ 'pdp-clock.svg' | asset_url }}" alt="Clock" width="48" height="48">
-                        <h3 class="font-bold text-base mb-1">LASTS 12+</h3>
-                        <p class="text-xs text-gray-600 uppercase">HOURS</p>
-                    </div>
-                    <div class="bg-white rounded-xl p-6 text-center">
-                        <img class="mx-auto block mb-3" src="{{ 'pdp-leaf.svg' | asset_url }}" alt="Heart" width="48" height="48">
-                        <h3 class="font-bold text-base mb-1">CRUELTY-FREE</h3>
-                        <p class="text-xs text-gray-600 uppercase">FORMULA</p>
-                    </div>
-                    <div class="bg-white rounded-xl p-6 text-center">
-                        <img class="mx-auto block mb-3" src="{{ 'pdp-trophy.svg' | asset_url }}" alt="Heart" width="48" height="48">
-                        <h3 class="font-bold text-base mb-1">LUXURY</h3>
-                        <p class="text-xs text-gray-600 uppercase">INSPIRED</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Right Side - Image Card -->
-            <div>
-                <img class="w-full h-auto rounded-2xl" src="{{ product.images[1].src | image_url }}" alt="{{ product.images[1].alt }}" width="" height="">
-            </div>
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto items-center">
+      <div>
+        <div class="mb-8">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4">Luxury redefined</h2>
+          <p class="tracking-wide">Crafted with precision</p>
         </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-white rounded-xl p-6 text-center">
+            <img
+              class="mx-auto block mb-3"
+              src="{{ 'pdp-droplet.svg' | asset_url }}"
+              alt="Droplet"
+              width="48"
+              height="48">
+            <h3 class="font-bold text-base mb-1">25% EDP</h3>
+            <p class="text-xs text-gray-600 uppercase">CONCENTRATION</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 text-center">
+            <img
+              class="mx-auto block mb-3"
+              src="{{ 'pdp-clock.svg' | asset_url }}"
+              alt="Clock"
+              width="48"
+              height="48">
+            <h3 class="font-bold text-base mb-1">LASTS 12+</h3>
+            <p class="text-xs text-gray-600 uppercase">HOURS</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 text-center">
+            <img
+              class="mx-auto block mb-3"
+              src="{{ 'pdp-leaf.svg' | asset_url }}"
+              alt="Heart"
+              width="48"
+              height="48">
+            <h3 class="font-bold text-base mb-1">CRUELTY-FREE</h3>
+            <p class="text-xs text-gray-600 uppercase">FORMULA</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 text-center">
+            <img
+              class="mx-auto block mb-3"
+              src="{{ 'pdp-trophy.svg' | asset_url }}"
+              alt="Heart"
+              width="48"
+              height="48">
+            <h3 class="font-bold text-base mb-1">LUXURY</h3>
+            <p class="text-xs text-gray-600 uppercase">INSPIRED</p>
+          </div>
+        </div>
+      </div>
+      <!-- Right Side - Image Card -->
+      <div>
+        <img
+          class="w-full h-auto rounded-2xl"
+          src="{{ product.images[1].src | image_url }}"
+          alt="{{ product.images[1].alt }}"
+          width=""
+          height="">
+      </div>
     </div>
+  </div>
 </div>
 
 {% assign related_products = collections['tryscent'] %}
 <div class="container mx-auto px-4 py-16">
-    <h2 class="text-4xl font-bold mb-8 text-center">You may also like</h2>
-    <div class="grid grid-cols-2 sm:col-span-3 md:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto">
-        {% for product in related_products.products limit: 4 %}
-        {% render 'card-product'
-            , product: product %}
-        {% endfor %}
-    </div>
+  <h2 class="text-4xl font-bold mb-8 text-center">You may also like</h2>
+  <div class="grid grid-cols-2 sm:col-span-3 md:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto">
+    {% for product in related_products.products limit: 4 %}
+      {% render 'card-product'
+        , product: product %}
+    {% endfor %}
+  </div>
 </div>
-
 
 {% schema %}
   {
     "name": "Main Product",
     "settings": [],
+    "blocks": [
+      {
+        "type": "feature",
+        "name": "Feature",
+        "limit": 6,
+        "settings": [
+          {
+            "id": "image",
+            "type": "image_picker",
+            "label": "Image"
+          }, {
+            "id": "title",
+            "type": "text",
+            "label": "Title"
+          }
+        ]
+      }
+    ],
     "presets": [
       {
         "name": "Main Product"

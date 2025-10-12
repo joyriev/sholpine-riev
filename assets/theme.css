@@ -790,6 +790,9 @@ video {
 .mt-auto {
   margin-top: auto;
 }
+.mt-6 {
+  margin-top: 24px;
+}
 .line-clamp-1 {
   overflow: hidden;
   display: -webkit-box;
@@ -1093,6 +1096,13 @@ video {
 }
 .gap-8 {
   gap: 32px;
+}
+.gap-x-2 {
+  -moz-column-gap: 8px;
+       column-gap: 8px;
+}
+.gap-y-4 {
+  row-gap: 16px;
 }
 .space-x-1 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
@@ -1626,6 +1636,9 @@ video {
 }
 .leading-snug {
   line-height: 1.375;
+}
+.leading-4 {
+  line-height: 16px;
 }
 .tracking-normal {
   letter-spacing: 0em;
