@@ -213,6 +213,7 @@
           "type": "scent_card",
           "settings": {
             "title": "Fresh Scents",
+            "image": "shopify://shop_images/bottle_1.png",
             "bg_color": "#bfdbfe",
             "button_text": "SHOP NOW",
             "link": ""
