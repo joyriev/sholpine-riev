@@ -913,6 +913,9 @@ video {
   min-height: -moz-fit-content;
   min-height: fit-content;
 }
+.min-h-\[580px\] {
+  min-height: 580px;
+}
 .\!w-px {
   width: 1px !important;
 }
