@@ -58,7 +58,7 @@
           "type": "accordion",
           "settings": {
             "title": "Description",
-            "content": ""
+            "content": "{{ product.description }}"
           }
         }
       },
