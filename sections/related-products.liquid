@@ -18,7 +18,7 @@
 <div class="section-{{ section.id }}-padding">
   <div class="container mx-auto px-4">
     <h2 class="text-4xl font-bold mb-8 text-center">{{ section.settings.heading }}</h2>
-    <div class="grid grid-cols-2 sm:col-span-3 md:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto">
+    <div class="grid grid-cols-2 sm:col-span-3 md:grid-cols-4 gap-4 md:gap-6">
       {% for product in recommendations limit: 4 %}
         {% render 'card-product'
           , product: product %}

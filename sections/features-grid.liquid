@@ -1,6 +1,6 @@
 <div class="features-grid section-{{ section.id }}-padding">
   <div class="container mx-auto px-4">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
       {% for block in section.blocks %}
         <div class="feature-item flex items-start gap-3" {{ block.shopify_attributes }}>
           <div class="feature-icon text-3xl">{{ block.settings.icon }}</div>

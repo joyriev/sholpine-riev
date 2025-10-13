@@ -1,13 +1,13 @@
 <div class="category-cards section-{{ section.id }}-padding">
   <div class="container mx-auto px-4">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       {% for block in section.blocks %}
         <div
           class="relative rounded-3xl overflow-hidden h-64"
           style="background-color: {{ block.settings.background_color }};"
           {{ block.shopify_attributes }}>
           {% if block.settings.image != blank %}
-            {{ block.settings.image | image_url: width: 800 | image_tag:  class: 'w-full h-full object-cover', alt: block.settings.title, width: 400, height: 400
+            {{ block.settings.image | image_url: width: 800 | image_tag: class: 'w-full h-full object-cover', alt: block.settings.title, width: 400, height: 400
             }}
           {% else %}
             <div class="w-full h-full" style="background-color: {{ block.settings.fallback_color }};"></div>
