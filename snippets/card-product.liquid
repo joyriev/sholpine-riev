@@ -1,5 +1,5 @@
-<a href="{{ product.url }}" class="block border bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition">
-  <div class="relative w-full aspect-square">
+<a href="{{ product.url }}" class="block border bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition [&:hover_.opacity-0]:opacity-100">
+  <div class="relative w-full aspect-square border-b overflow-hidden">
     {% if product.tags contains 'bestseller' %}
       <span class="absolute top-3 right-3 bg-indigo-400 text-white text-xs font-bold px-3 py-1 rounded-full">BESTSELLER</span>
     {% endif %}
@@ -9,9 +9,12 @@
       height=""
       width=""
       class="w-full h-full object-contain object-center">
-    <button class="hidden absolute bottom-3 right-3 bg-black text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-800">
-      <span class="text-xl">+</span>
-    </button>
+    <img
+      src="{{ product.images[1] | image_url: width: 300 }}"
+      alt="{{  product.title }}"
+      height=""
+      width=""
+      class="absolute inset-0 opacity-0 transition-opacity duration-700">
   </div>
   <div class="p-4">
     <div class="flex items-center gap-1 mb-2">
