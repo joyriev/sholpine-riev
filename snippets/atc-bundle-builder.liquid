@@ -6,7 +6,7 @@
   <div class="grid grid-cols-3 gap-4">
     <template x-for="(product, index) in $store.atcBundle.selectedProducts" :key="product.id">
       <div class="text-center relative">
-        <div class="flex justify-center mb-4 border-2 border-solid border-green-700 rounded-lg">
+        <div class="flex justify-center mb-4 border-2 border-solid border-indigo-400 rounded-lg">
           <button @click="$store.atcBundle.removeProduct(index)" class="absolute top-2 right-2 w-6 h-6 p-0 flex items-center justify-center bg-white rounded-full text-xs cursor-pointer border-0 shadow">
             <svg
               width="10"
