@@ -113,6 +113,16 @@
       ],
       "settings": {}
     },
+    "luxury_redefiend_GUkd69": {
+      "type": "luxury-redefiend",
+      "name": "Luxury redefined",
+      "settings": {
+        "title": "Luxury redefined",
+        "subtitle": "Crafted with precision",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
     "related_products_Kfrejg": {
       "type": "related-products",
       "name": "Related products",
@@ -126,6 +136,7 @@
   },
   "order": [
     "main-product",
+    "luxury_redefiend_GUkd69",
     "related_products_Kfrejg"
   ]
 }
