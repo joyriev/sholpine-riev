@@ -112,9 +112,19 @@
         "accordion_jnNfj8"
       ],
       "settings": {}
+    },
+    "related_products_Kfrejg": {
+      "type": "related-products",
+      "name": "Related products",
+      "settings": {
+        "heading": "You may also like",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
     }
   },
   "order": [
-    "main-product"
+    "main-product",
+    "related_products_Kfrejg"
   ]
 }
