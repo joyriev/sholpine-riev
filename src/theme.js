@@ -3,6 +3,7 @@ import "./theme.css";
 import "./product-gallery.js";
 import "./cart.js";
 import "./product.js";
+import "./atc-bundle.js";
 import "./search.js";
 
 window.Alpine = Alpine;

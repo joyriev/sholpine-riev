@@ -1,17 +1,13 @@
-{% liquid
-  assign selected_variant = product.selected_or_first_available_variant
-%}
-
 <div x-data class="mt-12 bg-gray-100 rounded-3xl p-4 md:p-8">
   <h2 class="text-xl md:text-2xl text-gray-900 my-0 text-center tracking-normal font-semibold flex items-center justify-center gap-2 mb-3">Buy 2 Get 1 FREE
     <span class="bg-indigo-600 text-white px-4 py-1 rounded-full font-bold">Save 33%</span>
   </h2>
   <p class="mt-0 mb-8 text-center tracking-normal">Build your bundle and get one scent for FREE!</p>
   <div class="grid grid-cols-3 gap-4">
-    <template x-for="(product, index) in $store.bundleBuilder.selectedProducts" :key="product.id">
+    <template x-for="(product, index) in $store.atcBundle.selectedProducts" :key="product.id">
       <div class="text-center relative">
         <div class="flex justify-center mb-4 border-2 border-solid border-green-700 rounded-lg">
-          <button @click="$store.bundleBuilder.removeProduct(index)" class="absolute top-2 right-2 w-6 h-6 p-0 flex items-center justify-center bg-white rounded-full text-xs cursor-pointer border-0 shadow">
+          <button @click="$store.atcBundle.removeProduct(index)" class="absolute top-2 right-2 w-6 h-6 p-0 flex items-center justify-center bg-white rounded-full text-xs cursor-pointer border-0 shadow">
             <svg
               width="10"
               height="12"
@@ -32,9 +28,9 @@
         <p class="text-gray-900 my-0" x-text="product.price"></p>
       </div>
     </template>
-    <template x-for="i in (3 - $store.bundleBuilder.selectedProducts.length)" :key="i">
+    <template x-for="i in (3 - $store.atcBundle.selectedProducts.length)" :key="i">
       <div class="text-center">
-        <button @click="$store.bundleBuilder.showModal = true" class="border-2 border-dashed bg-white border-gray-300 rounded-lg grid place-items-center w-full aspect-square">
+        <button @click="$store.atcBundle.showModal = true" class="border-2 border-dashed bg-white border-gray-300 rounded-lg grid place-items-center w-full aspect-square">
           <div class="size-8 text-gray-500">
             {{- 'icon-plus.svg' | inline_asset_content -}}
           </div>
@@ -47,40 +43,40 @@
 
 <div
   x-data
-  x-show="$store.bundleBuilder.showModal"
+  x-show="$store.atcBundle.showModal"
   class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[9999]"
   x-cloak>
-  <div class="bg-white rounded-lg p-6 max-w-2xl w-full mx-4 h-[90vh] flex flex-col relative" @click.away="$store.bundleBuilder.showModal = false">
-    <button @click="$store.bundleBuilder.showModal = false" class="absolute -top-2 -right-2 w-8 h-8 bg-green-700 text-white rounded-full flex items-center justify-center hover:bg-green-700 border-0 text-3xl cursor-pointer transition">
+  <div class="bg-white rounded-lg p-6 max-w-2xl w-full mx-4 h-[90vh] flex flex-col relative" @click.away="$store.atcBundle.showModal = false">
+    <button @click="$store.atcBundle.showModal = false" class="absolute -top-2 -right-2 w-8 h-8 bg-green-700 text-white rounded-full flex items-center justify-center hover:bg-green-700 border-0 text-3xl cursor-pointer transition">
       <span class="[rotate:-45deg] size-5">
         {{- 'icon-plus.svg' | inline_asset_content -}}
       </span>
     </button>
     <div class="modal-header flex-shrink-0">
       <div>
-        <h2 class="text-2xl font-bold text-gray-900 mt-0 mb-4 text-center tracking-normal" x-text="$store.bundleBuilder.selectedProducts.length === 3 ? 'YOUR BUNDLE IS READY! 👑' : `ADD ${3 - $store.bundleBuilder.selectedProducts.length} MORE SCENT${3 - $store.bundleBuilder.selectedProducts.length > 1 ? 'S' : ''}`"></h2>
+        <h2 class="text-2xl font-bold text-gray-900 mt-0 mb-4 text-center tracking-normal" x-text="$store.atcBundle.selectedProducts.length === 3 ? 'YOUR BUNDLE IS READY! 👑' : `ADD ${3 - $store.atcBundle.selectedProducts.length} MORE SCENT${3 - $store.atcBundle.selectedProducts.length > 1 ? 'S' : ''}`"></h2>
       </div>
 
-      <div x-show="$store.bundleBuilder.selectedProducts.length < 3">
+      <div x-show="$store.atcBundle.selectedProducts.length < 3">
         <div class="flex space-x-1 mb-4">
           <button
-            @click="$store.bundleBuilder.activeCategory = 'All'"
-            :class="$store.bundleBuilder.activeCategory === 'All' ? 'border-2 border-green-700 bg-green-50' : 'bg-white border-gray-200'"
+            @click="$store.atcBundle.activeCategory = 'All'"
+            :class="$store.atcBundle.activeCategory === 'All' ? 'border-2 border-green-700 bg-green-50' : 'bg-white border-gray-200'"
             class="px-4 py-2 rounded font-semibold border border-solid cursor-pointer">All</button>
           <button
-            @click="$store.bundleBuilder.activeCategory = 'Man'"
-            :class="$store.bundleBuilder.activeCategory === 'Man' ? 'border-2 border-green-700 bg-green-50' : 'bg-white border-gray-200'"
+            @click="$store.atcBundle.activeCategory = 'Man'"
+            :class="$store.atcBundle.activeCategory === 'Man' ? 'border-2 border-green-700 bg-green-50' : 'bg-white border-gray-200'"
             class="px-4 py-2 rounded font-semibold border border-solid cursor-pointer">Men's</button>
           <button
-            @click="$store.bundleBuilder.activeCategory = 'Woman'"
-            :class="$store.bundleBuilder.activeCategory === 'Woman' ? 'border-2 border-green-700 bg-green-50' : 'bg-white border-gray-200'"
+            @click="$store.atcBundle.activeCategory = 'Woman'"
+            :class="$store.atcBundle.activeCategory === 'Woman' ? 'border-2 border-green-700 bg-green-50' : 'bg-white border-gray-200'"
             class="px-4 py-2 rounded font-semibold border border-solid cursor-pointer">Women's</button>
         </div>
         <!-- Search -->
         <div class="relative">
           <input
             type="text"
-            x-model="$store.bundleBuilder.searchText"
+            x-model="$store.atcBundle.searchText"
             placeholder="Find your perfume"
             class="w-full p-2.5 pl-10 h-10 bg-gray-100 rounded border-0 border-solid focus:border-2 focus:border-green-700 focus:outline-none focus:ring-0">
           <span class="absolute top-2.5 left-2.5 size-5">
@@ -92,7 +88,7 @@
 
     {% comment %} Product Grid {% endcomment %}
     <div class="flex-1 overflow-y-auto mt-4 -mx-2 px-2">
-      <template x-if="$store.bundleBuilder.selectedProducts.length === 3">
+      <template x-if="$store.atcBundle.selectedProducts.length === 3">
         <div class="text-center mt-10">
           <div role="status">
             <svg
@@ -109,14 +105,14 @@
           <p class="font-semibold text-lg tracking-normal">Redirecting To Checkout...</p>
         </div>
       </template>
-      <template x-if="$store.bundleBuilder.selectedProducts.length < 3">
+      <template x-if="$store.atcBundle.selectedProducts.length < 3">
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-          <template x-for="product in $store.bundleBuilder.availableProducts" :key="product.id">
-            <template x-if="(product.tags.some(tag => tag === $store.bundleBuilder.activeCategory) || $store.bundleBuilder.activeCategory === 'All') &&
-         ($store.bundleBuilder.selectedBrand === '' || product.tags.some(tag => 
-           tag.toLowerCase().includes($store.bundleBuilder.selectedBrand.toLowerCase())
+          <template x-for="product in $store.atcBundle.availableProducts" :key="product.id">
+            <template x-if="(product.tags.some(tag => tag === $store.atcBundle.activeCategory) || $store.atcBundle.activeCategory === 'All') &&
+         ($store.atcBundle.selectedBrand === '' || product.tags.some(tag => 
+           tag.toLowerCase().includes($store.atcBundle.selectedBrand.toLowerCase())
          )) &&
-         ($store.bundleBuilder.searchText === '' || product.name.toLowerCase().includes($store.bundleBuilder.searchText.toLowerCase()))">
+         ($store.atcBundle.searchText === '' || product.name.toLowerCase().includes($store.atcBundle.searchText.toLowerCase()))">
               <div class="border border-solid border-gray-200 rounded-lg p-4 flex flex-col">
                 <div class="flex justify-center mb-4">
                   <img
@@ -140,11 +136,11 @@
                   <p class="text-gray-900 font-semibold mb-2 mt-0" x-html="product.variants[$store.product.selectedVariantTitle].originalPrice"></p>
                 </div>
                 <button
-                  @click="$store.bundleBuilder.addRemoveProduct(product)"
-                  :disabled="!$store.bundleBuilder.isProductSelected(product.id) && $store.bundleBuilder.selectedProducts.length >= 3"
-                  :class="$store.bundleBuilder.isProductSelected(product.id) ? 'bg-red-700 hover:bg-red-800' : 'bg-green-700 hover:bg-green-800'"
+                  @click="$store.atcBundle.addRemoveProduct(product)"
+                  :disabled="!$store.atcBundle.isProductSelected(product.id) && $store.atcBundle.selectedProducts.length >= 3"
+                  :class="$store.atcBundle.isProductSelected(product.id) ? 'bg-red-700 hover:bg-red-800' : 'bg-green-700 hover:bg-green-800'"
                   class="w-full text-white text-lg py-2.5 px-4 rounded-lg font-bold transition-colors border-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
-                  <span x-text="$store.bundleBuilder.isProductSelected(product.id) ? 'Remove -' : 'Add +'"></span>
+                  <span x-text="$store.atcBundle.isProductSelected(product.id) ? 'Remove -' : 'Add +'"></span>
                 </button>
               </div>
             </template>
@@ -161,81 +157,23 @@
 {% endunless %}
 
 <script>
-  document.addEventListener('alpine:init', function() {
-    const variantsObj = {
-      {% for variant in product.variants %}
-        "{{ variant.title }}": {
-          originalPrice: "{{ variant.price | money }}",
-          compareAtPrice: "{{ variant.compare_at_price | money }}"
-        },
-      {% endfor %}
-    };
-    Alpine.store('bundleBuilder', {
-      showModal: false,
-      activeCategory: "All",
-      selectedBrand: "",
-      searchText: "",
-      addingToCart: false,
-      selectedProducts: [],
-      availableProducts: [
-        {% for bundle_product in bundle_collection.products %}
-          {
-            id: {{ bundle_product.id }},
-            name: "{{ bundle_product.title }}",
-            image: "{{ bundle_product.featured_image | image_url }}",
-            ratingCount: "{{ bundle_product.metafields.reviews.rating_count }}",
-            tags: {{ bundle_product.tags | json }},
-            variants: {
-              {% for variant in bundle_product.variants %}
-                "{{ variant.title }}": {
-                  id: {{ variant.id }},
-                  originalPrice: "{{ variant.price | money }}"
-                },
-              {% endfor %}
-            }
-          },
-        {% endfor %}
-      ],
-      get originalPrice() {
-        return variantsObj[this.selectedVariant].originalPrice;
-      },
-      get compareAtPrice() {
-        return variantsObj[this.selectedVariant].compareAtPrice;
-      },
-      addRemoveProduct(product) {
-        if (this.selectedProducts.length < 3 && !this.isProductSelected(product.id)) {
-          this.selectedProducts.push(product);
-          if (this.selectedProducts.length === 3) {
-            // this.showModal = false;
-            this.addBundleToCart();
-          }
-        } else {
-          this.removeProduct(this.selectedProducts.findIndex(item => item.id === product.id));
+  const bundleProducts = [
+    {% for bundle_product in bundle_collection.products %}
+      {
+        id: {{ bundle_product.id }},
+        name: "{{ bundle_product.title }}",
+        image: "{{ bundle_product.featured_image | image_url }}",
+        nuta: "{{ bundle_product.metafields.custom.nuta }}",
+        tags: {{ bundle_product.tags | json }},
+        variants: {
+          {% for variant in bundle_product.variants %}
+            "{{ variant.title }}": {
+              id: {{ variant.id }},
+              originalPrice: "{{ variant.price | money }}"
+            },
+          {% endfor %}
         }
       },
-      removeProduct(index) {
-        this.selectedProducts.splice(index, 1);
-      },
-      isProductSelected(productId) {
-        return this.selectedProducts.some(product => product.id === productId);
-      },
-      addBundleToCart() {
-        this.addingToCart = true;
-
-        let checkoutURl = '/cart/';
-        this.selectedProducts.forEach((product, index) => {
-          if (index === 0) {
-            checkoutURl += `${product.variants[this.selectedVariant].id}:1`;
-          } else {
-            checkoutURl += `,${product.variants[this.selectedVariant].id}:1`;
-          }
-        });
-
-        window.location.href = checkoutURl;
-        setTimeout(() => {
-          this.addingToCart = false;
-        }, 3000);
-      }
-    });
-  });
+    {% endfor %}
+  ];
 </script>
