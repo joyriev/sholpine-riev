@@ -29,7 +29,7 @@
               alt="{{ media.alt }}"
               width="800"
               height="800"
-              fetchpriority="{{ forloop.first ? 'high' : 'low' }}"
+              fetchpriority="{% if forloop.first %}high{% else %}low{% endif %}"
               class="w-full h-auto object-cover md:rounded-3xl">
           </div>
         {% endfor %}
