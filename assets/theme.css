@@ -847,6 +847,10 @@ video {
   width: 32px;
   height: 32px;
 }
+.size-16 {
+  width: 64px;
+  height: 64px;
+}
 .\!h-px {
   height: 1px !important;
 }

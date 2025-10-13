@@ -22,7 +22,7 @@
         </div>
 
         <div
-          class="grid grid-cols-4 gap-3 mb-6"
+          class="flex gap-3 mb-6"
           id="variant-selector"
           x-data>
           {% for variant in product.variants %}
@@ -35,18 +35,17 @@
               @click="$store.product.price = '{{ variant.price |  money }}'; $store.product.selectedVariant = '{{ variant.id }}'"
               :disabled="$store.product.loading"
               :class="'{{variant.id}}' == $store.product.selectedVariant ? 'border-indigo-500' : 'border-gray-200'"
-              class="variant-button flex flex-col items-center gap-1 rounded-2xl p-2 pt-6 bg-white border-2 border-solid border-gray-200 cursor-pointer relative disabled:cursor-not-allowed">
-              {% if variant.image %}
-                <div class="size-12 mx-auto">
-                  <img
-                    src="{{ variant.image | image_url: width: 100, height: 100, crop: 'center' }}"
-                    alt="{{ variant.title }}"
-                    width="100"
-                    height="100"
-                    class="size-12 object-cover"
-                    loading="lazy">
-                </div>
-              {% endif %}
+              class="variant-button flex-grow flex flex-col items-center gap-1 rounded-2xl p-2 pt-6 bg-white border-2 border-solid border-gray-200 cursor-pointer relative disabled:cursor-not-allowed">
+              {% assign variant_image = variant.image | default: product.featured_image %}
+              <div class="mx-auto">
+                <img
+                  src="{{ variant_image | image_url: width: 100, height: 100, crop: 'center' }}"
+                  alt="{{ variant.title }}"
+                  width="100"
+                  height="100"
+                  class="size-16 object-cover"
+                  loading="lazy">
+              </div>
               <h3 class="text-sm font-semibold mt-2">{{ variant.title }}</h3>
               <span class="text-xs text-gray-600">{{ cart.currency.symbol }}{{ per_ml }} Per Spray</span>
               {% if variant.title == '50ML' %}
@@ -182,8 +181,8 @@
       <div>
         <img
           class="w-full h-auto rounded-2xl"
-          src="{{ product.images[1].src | image_url }}"
-          alt="{{ product.images[1].alt }}"
+          src="{{ product.images[2].src | image_url }}"
+          alt="{{ product.images[2].alt }}"
           width=""
           height="">
       </div>
