@@ -115,6 +115,46 @@
     },
     "luxury_redefiend_GUkd69": {
       "type": "luxury-redefiend",
+      "blocks": {
+        "feature_6p9UFj": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify://shop_images/pdp-droplet_1.svg",
+            "title": "25% EDP",
+            "subtitle": "CONCENTRATION"
+          }
+        },
+        "feature_48NACN": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify://shop_images/pdp-clock.svg",
+            "title": "LASTS 12+",
+            "subtitle": "HOURS"
+          }
+        },
+        "feature_NcYHWC": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify://shop_images/pdp-leaf.svg",
+            "title": "CRUELTY-FREE",
+            "subtitle": "FORMULA"
+          }
+        },
+        "feature_GNjdkq": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify://shop_images/pdp-trophy.svg",
+            "title": "LUXURY",
+            "subtitle": "INSPIRED"
+          }
+        }
+      },
+      "block_order": [
+        "feature_6p9UFj",
+        "feature_48NACN",
+        "feature_NcYHWC",
+        "feature_GNjdkq"
+      ],
       "name": "Luxury redefined",
       "settings": {
         "title": "Luxury redefined",
