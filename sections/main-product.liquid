@@ -79,6 +79,9 @@
             <span class="sr-only">Loading...</span>
           </div>
         </button>
+
+        {% render 'atc-bundle-builder' %}
+
         <div class="grid grid-cols-2 md:grid-cols-3 gap-y-4 gap-x-2 items-center mt-12">
           {% for block in section.blocks %}
             {% if block.type == 'feature' %}
@@ -111,7 +114,6 @@
                 </button>
                 <div
                   x-show="isOpen"
-                  x-collapse
                   x-cloak
                   class="px-6 pb-5 pt-0 space-y-4 [&_p]:leading-relaxed text-gray-600 transition-all duration-300 ease-in-out">
                   <p>{{ block.settings.content }}</p>
