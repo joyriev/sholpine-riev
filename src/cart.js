@@ -28,7 +28,6 @@ document.addEventListener("alpine:init", () => {
       return formatMoney(total);
     },
     updateItems(items) {
-      console.log(items);
       this.items = items;
     },
     changeItem(key, type = "remove", quantity = 0) {

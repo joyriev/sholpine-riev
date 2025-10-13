@@ -1,6 +1,7 @@
 <script>
   const selectedVariant = "{{ product.selected_or_first_available_variant.id }}";
   const selectedVariantPrice = "{{ product.selected_or_first_available_variant.price | money }}";
+  const selectedVariantTitle = "{{ product.selected_or_first_available_variant.title }}";
 </script>
 
 <div class="pb-16 md:pb-20 md:pt-12">
@@ -32,7 +33,7 @@
             {% assign per_ml = price_in_dollars | divided_by: size_int | round: 2 %}
             <button
               type="button"
-              @click="$store.product.price = '{{ variant.price |  money }}'; $store.product.selectedVariant = '{{ variant.id }}'"
+              @click="$store.product.price = '{{ variant.price |  money }}'; $store.product.selectedVariant = '{{ variant.id }}'; $store.product.selectedVariantTitle = '{{ variant.title }}'"
               :disabled="$store.product.loading"
               :class="'{{variant.id}}' == $store.product.selectedVariant ? 'border-indigo-500' : 'border-gray-200'"
               class="variant-button flex-grow flex flex-col items-center gap-1 rounded-2xl p-2 pt-6 bg-white border-2 border-solid border-gray-200 cursor-pointer relative disabled:cursor-not-allowed">

@@ -127,7 +127,7 @@
                     class="w-full h-auto object-cover rounded mr-2">
                 </div>
                 <div class="relative mt-2 flex-1">
-                  <p class="text-gray-600 text-sm absolute -top-6 right-0 my-0" x-text="$store.bundleBuilder.selectedVariant">50ml</p>
+                  <p class="text-gray-600 text-sm absolute -top-6 right-0 my-0" x-text="$store.product.selectedVariantTitle"></p>
                   <h4 class="font-bold text-gray-900 my-1" x-text="product.name"></h4>
                   <div class="flex items-center">
                     <img
@@ -137,7 +137,7 @@
                       width="66">
                     <span class="text-gray-600 text-sm ml-1">(<span x-text="product.ratingCount"></span>)</span>
                   </div>
-                  <p class="text-gray-900 font-semibold mb-2 mt-0" x-html="product.variants[$store.bundleBuilder.selectedVariant].originalPrice"></p>
+                  <p class="text-gray-900 font-semibold mb-2 mt-0" x-html="product.variants[$store.product.selectedVariantTitle].originalPrice"></p>
                 </div>
                 <button
                   @click="$store.bundleBuilder.addRemoveProduct(product)"
@@ -171,8 +171,6 @@
       {% endfor %}
     };
     Alpine.store('bundleBuilder', {
-      selectedVariant: "{{ selected_variant.title }}",
-      variantId: "{{ selected_variant.id }}",
       showModal: false,
       activeCategory: "All",
       selectedBrand: "",

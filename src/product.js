@@ -9,6 +9,7 @@ document.addEventListener("alpine:init", () => {
   Alpine.store("product", {
     price: selectedVariantPrice,
     selectedVariant: selectedVariant,
+    selectedVariantTitle: selectedVariantTitle,
     loading: false,
     addToCart() {
       this.loading = true;
