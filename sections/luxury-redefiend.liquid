@@ -21,7 +21,6 @@
           <p class="tracking-wide">{{ section.settings.subtitle }}</p>
         </div>
         <div class="grid grid-cols-2 gap-4">
-
           {% for block in section.blocks %}
             {% if block.type == 'feature' %}
               <div class="flex gap-2 items-center" {{ block.shopify_attributes }}>
@@ -92,6 +91,29 @@
         "unit": "px",
         "label": "Bottom Padding",
         "default": 48
+      }
+    ],
+    "blocks": [
+      {
+        "type": "feature",
+        "name": "Feature",
+        "settings": [
+          {
+            "id": "image",
+            "type": "image_picker",
+            "label": "Image"
+          }, {
+            "id": "title",
+            "type": "text",
+            "label": "Title",
+            "default": "25% EDP"
+          }, {
+            "type": "text",
+            "id": "subtitle",
+            "label": "Subtitle",
+            "default": "CONCENTRATION"
+          }
+        ]
       }
     ],
     "presets": [
