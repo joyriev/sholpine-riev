@@ -7,7 +7,7 @@
           style="background-color: {{ block.settings.background_color }};"
           {{ block.shopify_attributes }}>
           {% if block.settings.image != blank %}
-            {{ block.settings.image | image_url: width: 800 | image_tag: class: 'w-full h-full object-cover', alt: block.settings.title, width: 400, height: 400
+            {{ block.settings.image | image_url: width: 800 | image_tag: loading: 'lazy', class: 'w-full h-full object-cover', alt: block.settings.title, width: 400, height: 400
             }}
           {% else %}
             <div class="w-full h-full" style="background-color: {{ block.settings.fallback_color }};"></div>
