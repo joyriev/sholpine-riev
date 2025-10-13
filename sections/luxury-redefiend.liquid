@@ -1,0 +1,143 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="section-{{ section.id }}-padding">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto items-center">
+      <div>
+        <div class="mb-8">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4">{{ section.settings.title }}</h2>
+          <p class="tracking-wide">{{ section.settings.subtitle }}</p>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+
+          {% for block in section.blocks %}
+            {% if block.type == 'feature' %}
+              <div class="flex gap-2 items-center" {{ block.shopify_attributes }}>
+                <img
+                  class="w-8 h-8"
+                  src="{{ block.settings.image | image_url: width: 64, height: 64 }}"
+                  alt="{{ block.settings.title }}"
+                  width="32"
+                  height="32"
+                  loading="lazy">
+                <p class="m-0 text-xs leading-4">{{ block.settings.title }}</p>
+              </div>
+            {% endif %}
+          {% endfor %}
+          <div class="bg-white rounded-xl p-6 text-center">
+            <img
+              class="mx-auto block mb-3"
+              src="{{ 'pdp-droplet.svg' | asset_url }}"
+              alt="Droplet"
+              width="48"
+              height="48">
+            <h3 class="font-bold text-base mb-1">25% EDP</h3>
+            <p class="text-xs text-gray-600 uppercase">CONCENTRATION</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 text-center">
+            <img
+              class="mx-auto block mb-3"
+              src="{{ 'pdp-clock.svg' | asset_url }}"
+              alt="Clock"
+              width="48"
+              height="48">
+            <h3 class="font-bold text-base mb-1">LASTS 12+</h3>
+            <p class="text-xs text-gray-600 uppercase">HOURS</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 text-center">
+            <img
+              class="mx-auto block mb-3"
+              src="{{ 'pdp-leaf.svg' | asset_url }}"
+              alt="Heart"
+              width="48"
+              height="48">
+            <h3 class="font-bold text-base mb-1">CRUELTY-FREE</h3>
+            <p class="text-xs text-gray-600 uppercase">FORMULA</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 text-center">
+            <img
+              class="mx-auto block mb-3"
+              src="{{ 'pdp-trophy.svg' | asset_url }}"
+              alt="Heart"
+              width="48"
+              height="48">
+            <h3 class="font-bold text-base mb-1">LUXURY</h3>
+            <p class="text-xs text-gray-600 uppercase">INSPIRED</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <img
+          class="w-full h-auto rounded-2xl"
+          src="{{ product.images[2].src | image_url }}"
+          alt="{{ product.images[2].alt }}"
+          width=""
+          height="">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Luxury redefined",
+    "settings": [
+      {
+        "id": "title",
+        "type": "text",
+        "label": "Title",
+        "default": "Luxury redefined"
+      },
+      {
+        "id": "subtitle",
+        "type": "text",
+        "label": "Subtitle",
+        "default": "Crafted with precision"
+      },
+      {
+        "type": "header",
+        "content": "Section Padding"
+      },
+      {
+        "type": "header",
+        "content": "Section Padding"
+      }, {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "Top Padding",
+        "default": 48
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "Bottom Padding",
+        "default": 48
+      }
+    ],
+    "presets": [
+      {
+        "name": "Luxury redefined"
+      }
+    ]
+  }
+{% endschema %}
