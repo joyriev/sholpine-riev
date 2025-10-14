@@ -1,0 +1,197 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="section-{{ section.id }}-padding bg-blue-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-center  text-2xl md:text-4xl font-bold mb-12">{{ section.settings.title }}</h2>
+    <div class="grid gap-0 w-[700px] max-w-[100%] grid-cols-3 mx-auto">
+      <div class="!flex items-end px-4 py-4 text-sm font-black md:text-base"></div>
+      <div class="flex items-center justify-center bg-warmAmber/10 px-4 py-4 text-sm font-black text-white md:text-base relative">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0263/8974/1673/files/dupe-bottle-removebg-preview.png?v=1758087173"
+          height="375"
+          width="200"
+          class="max-w-16 h-auto"
+          alt="TryScent">
+        <img
+          class="absolute -top-4 -right-4 size-14 md:size-20"
+          src="https://cdn.shopify.com/s/files/1/0263/8974/1673/files/winner-badge.svg?v=1758513834"
+          alt="Comparison Winner"
+          height="150"
+          width="150">
+      </div>
+      <div class="flex items-center justify-center rounded-t-xl px-4 py-4 text-center text-sm font-black md:text-base">
+        <img
+          src="//www.dupestore.com/cdn/shop/t/29/assets/other-bottle.png?v=36063276044952722891756809594"
+          height="150"
+          width="150"
+          class="max-w-24 h-auto"
+          alt="Other Brands">
+      </div>
+      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] pr-4 py-4  text-sm md:text-2xl text-[#55351c] font-regular">
+        METRIC
+      </div>
+      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] bg-warmAmber/10 px-4 py-4  text-sm md:text-2xl text-midnight font-bold md:tracking-normal ">
+        PURFUM
+      </div>
+      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] p-4 py-4  text-sm md:text-2xl text-gray-500 font-bold md:tracking-normal">
+        OTHERS
+      </div>
+      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] pr-4 py-4  text-sm md:text-2xl text-[#55351c] font-bold">
+        Price
+      </div>
+      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] bg-warmAmber/10 px-4 py-4  text-sm md:text-2xl text-[#55351c] font-bold md:tracking-normal ">
+        $29.99
+      </div>
+      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] p-4 py-4  text-sm md:text-2xl text-gray-500 font-bold md:tracking-normal">
+        $150-$300
+      </div>
+      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] pr-4 py-4  text-sm md:text-2xl text-[#55351c] font-bold">
+        EDP Concentration
+      </div>
+      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] bg-warmAmber/10 px-4 py-4  text-sm md:text-2xl text-[#55351c] font-bold md:tracking-normal ">
+        25%
+      </div>
+      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] p-4 py-4  text-sm md:text-2xl text-gray-500 font-bold md:tracking-normal">
+        15-20%
+      </div>
+      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] pr-4 py-4  text-sm md:text-2xl text-[#55351c] font-bold">
+        Longevity
+      </div>
+      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] bg-warmAmber/10 px-4 py-4  text-sm md:text-2xl text-[#55351c] font-bold md:tracking-normal ">
+        10-12 Hrs
+      </div>
+      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] p-4 py-4  text-sm md:text-2xl text-gray-500 font-bold md:tracking-normal">
+        6-8 Hrs
+      </div>
+      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] pr-4 py-4  text-sm md:text-2xl text-[#55351c] font-bold">
+        Celebrity Endorsements
+      </div>
+      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] bg-warmAmber/10 px-4 py-4  text-sm md:text-2xl text-[#55351c] font-bold md:tracking-normal ">
+        Zero (you're welcome)
+      </div>
+      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] p-4 py-4  text-sm md:text-2xl text-gray-500 font-bold md:tracking-normal">
+        $80 of your $300
+      </div>
+      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] pr-4 py-4  text-sm md:text-2xl text-[#55351c] font-bold">
+        Fancy Bottle
+      </div>
+      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] bg-warmAmber/10 px-4 py-4  text-sm md:text-2xl text-[#55351c] font-bold md:tracking-normal ">
+        Nope, just clean design
+      </div>
+      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] p-4 py-4  text-sm md:text-2xl text-gray-500 font-bold md:tracking-normal">
+        $40 of your $300
+      </div>
+      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] pr-4 py-4  text-sm md:text-2xl text-[#55351c] font-bold">
+        The Actual Scent
+      </div>
+      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] bg-warmAmber/10 px-4 py-4  text-sm md:text-2xl text-[#55351c] font-bold md:tracking-normal ">
+        $29.99
+      </div>
+      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] p-4 py-4  text-sm md:text-2xl text-gray-500 font-bold md:tracking-normal">
+        $20-30 (the rest is markup)
+      </div>
+      <div class="!block"></div>
+      <div class="bg-warmAmber/10 px-4 py-4 !block"></div>
+      <div class="!block"></div>
+    </div>
+    <div class="max-w-[400px] mx-auto mt-8 flex flex-col gap-6 items-center">
+      <a
+        href="#"
+        class="no-underline text-white md:tracking-normal font-semibold px-8 py-3 bg-warmAmber hover:bg-skyblue hover:text-midnight rounded-full text-lg text-center transition-colors w-full block tabs-cta-ripple-animation"
+        aria-label="View All">
+        SHOP DUPESTORE PERFUMES NOW
+      </a>
+      <ul class="flex justify-center flex-wrap gap-x-6 gap-y-3 list-unstyled">
+        <li class="flex items-center gap-1.5">
+          <img
+            src="/cdn/shop/files/sandwatch.svg?v=1753955350"
+            height="16"
+            width="auto"
+            alt="Icon">
+          <span class="leading-none">Lasts 12+ Hours</span>
+        </li>
+        <li class="flex items-center gap-1.5">
+          <img
+            src="/cdn/shop/files/heart.svg?v=1753955924"
+            height="16"
+            width="auto"
+            alt="Icon">
+          <span class="leading-none">loved by 10,000+</span>
+        </li>
+        <li class="flex items-center gap-1.5">
+          <img
+            src="/cdn/shop/files/sheild-star.svg?v=1753955264"
+            height="16"
+            width="auto"
+            alt="Icon">
+          <span class="leading-none">60 day satisfaction guarantee</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Stacks up table",
+    "settings": [
+      {
+        "id": "title",
+        "type": "text",
+        "label": "Title",
+        "default": "Purfum vs. Designer Brands: Let's Talk Numbers"
+      },
+      {
+        "id": "purfum_bottle",
+        "type": "image_picker",
+        "label": "Purfum Bottle"
+      },
+      {
+        "id": "designer_bottle",
+        "type": "image_picker",
+        "label": "Designer Bottle"
+      },
+      {
+        "type": "header",
+        "content": "Section Padding"
+      }, {
+        "type": "header",
+        "content": "Section Padding"
+      }, {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "Top Padding",
+        "default": 48
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "Bottom Padding",
+        "default": 48
+      }
+    ],
+    "presets": [
+      {
+        "name": "Stacks up table"
+      }
+    ]
+  }
+{% endschema %}
