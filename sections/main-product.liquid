@@ -161,6 +161,7 @@
                 </button>
                 <div
                   x-ref="panel"
+                  x-cloak
                   x-bind:style="isOpen ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : 'max-height: 0px'"
                   class="overflow-hidden transition-all duration-300 ease-in-out">
                   <div class="flex flex-col gap-4 p-4 pt-0 [&_p:empty]:hidden [&_p]:leading-relaxed text-gray-700">
