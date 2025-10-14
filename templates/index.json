@@ -127,7 +127,7 @@
             "title": "WOMENS",
             "subtitle": "Perfume collection",
             "button_text": "Women",
-            "button_url": ""
+            "button_url": "shopify://collections/women"
           }
         },
         "category_cymKrr": {
@@ -139,7 +139,7 @@
             "title": "MENS",
             "subtitle": "Perfume collection",
             "button_text": "Men",
-            "button_url": ""
+            "button_url": "shopify://collections/tryscent"
           }
         },
         "category_b3p84t": {
@@ -151,7 +151,7 @@
             "title": "UNISEX",
             "subtitle": "Perfume collection",
             "button_text": "Unisex",
-            "button_url": ""
+            "button_url": "shopify://collections/unisex"
           }
         }
       },
