@@ -1213,6 +1213,18 @@ video {
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
 }
+.rounded-b-\[12px\] {
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+.rounded-b-\[13px\] {
+  border-bottom-right-radius: 13px;
+  border-bottom-left-radius: 13px;
+}
+.rounded-b-\[14px\] {
+  border-bottom-right-radius: 14px;
+  border-bottom-left-radius: 14px;
+}
 .\!border-0 {
   border-width: 0px !important;
 }

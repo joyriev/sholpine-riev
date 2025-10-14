@@ -1,6 +1,6 @@
 {% layout 'theme' %}
 
-{% assign chosen_product = all_products['tobacco-dreams'] %}
+{% assign chosen_product = all_products['gentle-caress'] %}
 
 <div class="py-12 md:py-16">
   <div class="px-4 mx-auto max-w-screen-xl">
@@ -12,7 +12,7 @@
         <div class="rating">
           <img
             class="h-6 md:h-10 w-auto"
-            src="//tryscent.co/cdn/shop/t/56/assets/rating-stars.svg?v=134568026622208682831756094205"
+            src="{{ 'rating-stars.svg' |  asset_url  }}"
             alt="*****"
             height=""
             width="">
@@ -30,7 +30,7 @@
         {% for variant in chosen_product.variants %}
           {% unless variant.title == '7.5ML' %}
             <button
-              class="bg-white rounded-xl p-3 md:p-6 border-2 border-solid border-gray-200 cursor-pointer relative"
+              class="bg-white rounded-2xl p-3 md:p-6 border-2 border-solid border-gray-200 cursor-pointer relative"
               @click="$store.bundleBuilder.selectedVariant = '{{ variant.title }}';"
               :class="'{{ variant.title }}' === $store.bundleBuilder.selectedVariant ? 'border-indigo-400' : ''">
               {% if variant.title == '50ML' %}
@@ -55,7 +55,7 @@
       <div class="flex flex-wrap md:flex-row-reverse gap-2 md:gap-6 border-0 border-y border-solid border-gray-200 py-8 mb-6">
         <div class="flex-grow grid grid-cols-2 gap-2 md:gap-6 mb-0">
           <button
-            class="bg-white rounded-xl p-0 border-2 border-solid border-gray-200 cursor-pointer relative"
+            class="bg-white rounded-2xl p-0 border-2 border-solid border-gray-200 cursor-pointer relative"
             data-bundle-type="4+1"
             @click="$store.bundleBuilder.selectedBundleType = '5+4'"
             :class="$store.bundleBuilder.selectedBundleType === '5+4' ? 'border-sky-400' : ''">
@@ -65,10 +65,10 @@
               <p class="my-2 text-xl md:text-2xl tracking-normal font-bold" x-html="$store.bundleBuilder.getBundlePrice('5+4')">00.00</p>
               <p class="my-0 tracking-normal text-base leading-snug md:text-lg" x-html="$store.bundleBuilder.getPerBottlePrice('5+4')">00.00</p>
             </div>
-            <p class="my-0 bg-indigo-100 py-1 text-base font-semibold rounded-b-[10px]" x-html="$store.bundleBuilder.getBundleSavings('5+4')">SAVE 00.00</p>
+            <p class="my-0 bg-indigo-100 py-1 text-base font-semibold rounded-b-[14px]" x-html="$store.bundleBuilder.getBundleSavings('5+4')">SAVE 00.00</p>
           </button>
           <button
-            class="bg-white rounded-xl p-0 border-2 border-solid border-gray-200 cursor-pointer relative"
+            class="bg-white rounded-2xl p-0 border-2 border-solid border-gray-200 cursor-pointer relative"
             data-bundle-type="5+1"
             @click="$store.bundleBuilder.selectedBundleType = '8+8'"
             :class="$store.bundleBuilder.selectedBundleType === '8+8' ? 'border-sky-400' : ''">
@@ -78,12 +78,12 @@
               <p class="my-2 text-xl md:text-2xl tracking-normal font-bold" x-html="$store.bundleBuilder.getBundlePrice('8+8')">00.00</p>
               <p class="my-0 tracking-normal text-base leading-snug md:text-lg" x-html="$store.bundleBuilder.getPerBottlePrice('8+8')">00.00</p>
             </div>
-            <p class="my-0 bg-teal-100 py-1 text-base font-semibold rounded-b-[10px]" x-html="$store.bundleBuilder.getBundleSavings('8+8')">SAVE 00.00</p>
+            <p class="my-0 bg-teal-100 py-1 text-base font-semibold rounded-b-[14px]" x-html="$store.bundleBuilder.getBundleSavings('8+8')">SAVE 00.00</p>
           </button>
         </div>
         <div class="flex-grow grid grid-cols-2 gap-2 md:gap-6 mb-0">
           <button
-            class="bg-white rounded-xl p-0 border-2 border-solid border-gray-200 cursor-pointer relative"
+            class="bg-white rounded-2xl p-0 border-2 border-solid border-gray-200 cursor-pointer relative"
             data-bundle-type="2+1"
             @click="$store.bundleBuilder.selectedBundleType = '2+1'"
             :class="$store.bundleBuilder.selectedBundleType === '2+1' ? 'border-sky-400' : ''">
@@ -92,10 +92,10 @@
               <p class="my-2 text-xl md:text-2xl tracking-normal font-bold" x-html="$store.bundleBuilder.getBundlePrice('2+1')">00.00</p>
               <p class="my-0 tracking-normal text-base leading-snug md:text-lg" x-html="$store.bundleBuilder.getPerBottlePrice('2+1')">00.00</p>
             </div>
-            <p class="my-0 bg-orange-100 py-1 text-base font-semibold rounded-b-[10px]" x-html="$store.bundleBuilder.getBundleSavings('2+1')">SAVE 00.00</p>
+            <p class="my-0 bg-orange-100 py-1 text-base font-semibold rounded-b-[14px]" x-html="$store.bundleBuilder.getBundleSavings('2+1')">SAVE 00.00</p>
           </button>
           <button
-            class="bg-white rounded-xl p-0 border-2 border-solid border-gray-200 cursor-pointer relative"
+            class="bg-white rounded-2xl p-0 border-2 border-solid border-gray-200 cursor-pointer relative"
             data-bundle-type="3+2"
             @click="$store.bundleBuilder.selectedBundleType = '3+2'"
             :class="$store.bundleBuilder.selectedBundleType === '3+2' ? 'border-sky-400' : ''">
@@ -104,7 +104,7 @@
               <p class="my-2 text-xl md:text-2xl tracking-normal font-bold" x-html="$store.bundleBuilder.getBundlePrice('3+2')">00.00</p>
               <p class="my-0 tracking-normal text-base leading-snug md:text-lg" x-html="$store.bundleBuilder.getPerBottlePrice('3+2')">00.00</p>
             </div>
-            <p class="my-0 bg-lime-100 py-1 text-base font-semibold rounded-b-[10px]" x-html="$store.bundleBuilder.getBundleSavings('3+2')">SAVE 00.00</p>
+            <p class="my-0 bg-lime-100 py-1 text-base font-semibold rounded-b-[14px]" x-html="$store.bundleBuilder.getBundleSavings('3+2')">SAVE 00.00</p>
           </button>
         </div>
       </div>
@@ -115,19 +115,19 @@
               <button
                 @click="$store.bundleBuilder.activeCategory = 'All'"
                 :class="$store.bundleBuilder.activeCategory === 'All' && 'border-2 border-indigo-400 bg-red-50'"
-                class="px-4 py-2 rounded font-semibold border border-solid cursor-pointer bg-white border-gray-200">All</button>
+                class="px-4 py-2 rounded-full font-semibold border border-solid cursor-pointer bg-white border-gray-200">All</button>
               <button
-                @click="$store.bundleBuilder.activeCategory = 'Man'"
-                :class="$store.bundleBuilder.activeCategory === 'Man' && 'border-2 border-sky-400 bg-red-50'"
-                class="px-4 py-2 rounded font-semibold border border-solid cursor-pointer bg-white border-gray-200">Men's</button>
+                @click="$store.bundleBuilder.activeCategory = 'men'"
+                :class="$store.bundleBuilder.activeCategory === 'men' && 'border-2 border-sky-400 bg-red-50'"
+                class="px-4 py-2 rounded-full font-semibold border border-solid cursor-pointer bg-white border-gray-200">Men's</button>
               <button
-                @click="$store.bundleBuilder.activeCategory = 'Woman'"
-                :class="$store.bundleBuilder.activeCategory === 'Woman' && 'border-2 border-rose-400 bg-red-50'"
-                class="px-4 py-2 rounded font-semibold border border-solid cursor-pointer bg-white border-gray-200">Women's</button>
+                @click="$store.bundleBuilder.activeCategory = 'women'"
+                :class="$store.bundleBuilder.activeCategory === 'women' && 'border-2 border-rose-400 bg-red-50'"
+                class="px-4 py-2 rounded-full font-semibold border border-solid cursor-pointer bg-white border-gray-200">Women's</button>
             </div>
             <!-- Search -->
             <div class="grid grid-cols-2 gap-4">
-              <select x-model="$store.bundleBuilder.selectedBrand" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:border-2 focus:border-teal-400 block w-full p-2.5 h-10 focus:outline-none focus:ring-0">
+              <select x-model="$store.bundleBuilder.selectedBrand" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-full focus:border-2 focus:border-teal-400 block w-full p-2.5 h-10 focus:outline-none focus:ring-0">
                 <option selected value="">Shop By Brand</option>
                 <option value="Creed">Creed</option>
                 <option value="Dior">Dior</option>
@@ -158,7 +158,7 @@
                   type="text"
                   x-model="$store.bundleBuilder.searchText"
                   placeholder="Find your perfume"
-                  class="w-full p-2.5 pl-10 h-10 bg-white rounded border border-solid focus:border-2 focus:border-indigo-400 focus:outline-none focus:ring-0">
+                  class="w-full p-2.5 pl-10 h-10 bg-white rounded-full border border-solid focus:border-2 focus:border-indigo-400 focus:outline-none focus:ring-0">
                 <span class="absolute top-2.5 left-2.5 size-5">
                   {{- 'icon-search.svg' | inline_asset_content -}}
                 </span>
@@ -168,7 +168,7 @@
           <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
             <template x-for="product in $store.bundleBuilder.availableProducts" :key="product.id">
               <template x-if="$store.bundleBuilder.shouldShowProduct(product)">
-                <div class="border border-solid rounded-lg p-4 flex flex-col" :class="$store.bundleBuilder.isProductSelected(product.id) ? 'border-indigo-400' : 'border-gray-200'">
+                <div class="border border-solid rounded-2xl p-4 flex flex-col" :class="$store.bundleBuilder.isProductSelected(product.id) ? 'border-indigo-400' : 'border-gray-200'">
                   <div class="flex justify-center mb-4">
                     <img
                       :src="product.image"
@@ -208,7 +208,7 @@
           </div>
         </div>
         <div class="md:col-span-3 [display:none] md:[display:block]">
-          <div class="p-6 bg-white border border-solid border-gray-200 rounded-lg sticky top-6">
+          <div class="p-6 bg-white border border-solid border-gray-200 rounded-2xl sticky top-6">
             <h2 class="text-2xl font-bold text-gray-900 mt-0 mb-6 text-center tracking-normal" x-text="$store.bundleBuilder.selectedProductsLength >= $store.bundleBuilder.bundleLength ? 'YOUR BUNDLE IS READY! 👑' : `ADD ${$store.bundleBuilder.bundleLength - $store.bundleBuilder.selectedProductsLength} MORE SCENT${$store.bundleBuilder.bundleLength - $store.bundleBuilder.selectedProductsLength > 1 ? 'S' : ''}`"></h2>
             {% comment %} Progress {% endcomment %}
             <div class="bg-gray-200 rounded-full relative">
