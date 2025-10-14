@@ -168,7 +168,7 @@
       "name": "Related products",
       "settings": {
         "heading": "You may also like",
-        "collection": "",
+        "collection": "best-sellers",
         "padding_top": 72,
         "padding_bottom": 72
       }
