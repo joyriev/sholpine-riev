@@ -119,6 +119,8 @@
       "settings": {
         "title": "Purfum vs. Designer Brands: Let's Talk Numbers",
         "purfum_bottle": "shopify://shop_images/SilkBloom.png",
+        "winner_badge": "shopify://shop_images/winner-badge.png",
+        "designer_bottle": "shopify://shop_images/other-bottle.png",
         "padding_top": 72,
         "padding_bottom": 72
       }
