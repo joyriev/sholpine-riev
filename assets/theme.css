@@ -2199,6 +2199,10 @@ video {
   background-color: rgb(254 215 170 / var(--tw-bg-opacity, 1));
 }
 
+.\[\&_p\:empty\]\:hidden p:empty {
+  display: none;
+}
+
 .\[\&_p\]\:leading-relaxed p {
   line-height: 1.625;
 }

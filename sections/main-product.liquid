@@ -143,7 +143,6 @@
             {% endfor %}
           </div>
         </div>
-
         <div class="bg-gray-100 rounded-3xl p-4 md:p-8 mt-12 space-y-4">
           {% for block in section.blocks %}
             {% if block.type == 'accordion' %}
@@ -156,13 +155,17 @@
                   class="w-full px-6 py-5 flex items-center justify-between text-left rounded-2xl transition-all duration-300"
                   :class="{ 'rounded-b-none': isOpen }">
                   <span class="text-xl font-bold">{{ block.settings.title }}</span>
-                  <span class="text-3xl font-light transition-transform duration-300 transform" :class="{ 'rotate-45': isOpen }">+</span>
+                  <span class="text-3xl font-light transition-transform duration-300 transform" :class="{ 'rotate-45': isOpen }">
+                    +
+                  </span>
                 </button>
                 <div
-                  x-show="isOpen"
-                  x-cloak
-                  class="px-6 pb-5 pt-0 space-y-4 [&_p]:leading-relaxed text-gray-600 transition-all duration-300 ease-in-out">
-                  <p>{{ block.settings.content }}</p>
+                  x-ref="panel"
+                  x-bind:style="isOpen ? 'max-height: ' + $refs.panel.scrollHeight + 'px' : 'max-height: 0px'"
+                  class="overflow-hidden transition-all duration-300 ease-in-out">
+                  <div class="flex flex-col gap-4 p-4 pt-0 [&_p:empty]:hidden [&_p]:leading-relaxed text-gray-700">
+                    <p>{{ block.settings.content }}</p>
+                  </div>
                 </div>
               </div>
             {% endif %}
