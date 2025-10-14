@@ -14,16 +14,16 @@
 
 <div class="section-{{ section.id }}-padding bg-blue-50">
   <div class="container mx-auto px-4">
-    <h2 class="text-center  text-2xl md:text-4xl font-bold mb-12">{{ section.settings.title }}</h2>
+    <h2 class="text-center text-2xl md:text-4xl font-semibold mb-12 max-w-[600px] mx-auto">{{ section.settings.title }}</h2>
     <div class="grid gap-0 w-[700px] max-w-[100%] grid-cols-3 mx-auto">
       <div class="!flex items-end px-4 py-4 text-sm font-black md:text-base"></div>
-      <div class="flex items-center justify-center bg-warmAmber/10 px-4 py-4 text-sm font-black text-white md:text-base relative">
+      <div class="flex items-center justify-center bg-warmAmber/10 px-4 py-4 text-sm font-black md:text-base relative">
         <img
-          src="https://cdn.shopify.com/s/files/1/0263/8974/1673/files/dupe-bottle-removebg-preview.png?v=1758087173"
+          src="{{ section.settings.purfum_bottle | image_url }}"
           height="375"
           width="200"
           class="max-w-16 h-auto"
-          alt="TryScent">
+          alt="Purfum">
         <img
           class="absolute -top-4 -right-4 size-14 md:size-20"
           src="https://cdn.shopify.com/s/files/1/0263/8974/1673/files/winner-badge.svg?v=1758513834"
@@ -33,73 +33,73 @@
       </div>
       <div class="flex items-center justify-center rounded-t-xl px-4 py-4 text-center text-sm font-black md:text-base">
         <img
-          src="//www.dupestore.com/cdn/shop/t/29/assets/other-bottle.png?v=36063276044952722891756809594"
+          src="{{ section.settings.designer_bottle | image_url }}"
           height="150"
           width="150"
           class="max-w-24 h-auto"
           alt="Other Brands">
       </div>
-      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] pr-4 py-4  text-sm md:text-2xl text-[#55351c] font-regular">
+      <div class="text-center [word-break:break-word] border-solid border-b border-gray-300 pr-4 py-4  text-sm md:text-2xl text-[#55351c] font-regular">
         METRIC
       </div>
-      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] bg-warmAmber/10 px-4 py-4  text-sm md:text-2xl text-midnight font-bold md:tracking-normal ">
+      <div class="text-center [word-break:break-word] border-solid border-b border-gray-300 bg-warmAmber/10 px-4 py-4  text-sm md:text-2xl text-midnight font-semibold md:tracking-normal ">
         PURFUM
       </div>
-      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] p-4 py-4  text-sm md:text-2xl text-gray-500 font-bold md:tracking-normal">
+      <div class="text-center [word-break:break-word] border-solid border-b border-gray-300 p-4 py-4  text-sm md:text-2xl text-gray-500 font-semibold md:tracking-normal">
         OTHERS
       </div>
-      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] pr-4 py-4  text-sm md:text-2xl text-[#55351c] font-bold">
+      <div class="text-center [word-break:break-word] border-solid border-b border-gray-300 pr-4 py-4  text-sm md:text-2xl font-semibold">
         Price
       </div>
-      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] bg-warmAmber/10 px-4 py-4  text-sm md:text-2xl text-[#55351c] font-bold md:tracking-normal ">
+      <div class="text-center [word-break:break-word] border-solid border-b border-gray-300 bg-warmAmber/10 px-4 py-4  text-sm md:text-2xl font-semibold md:tracking-normal ">
         $29.99
       </div>
-      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] p-4 py-4  text-sm md:text-2xl text-gray-500 font-bold md:tracking-normal">
+      <div class="text-center [word-break:break-word] border-solid border-b border-gray-300 p-4 py-4  text-sm md:text-2xl text-gray-500 font-semibold md:tracking-normal">
         $150-$300
       </div>
-      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] pr-4 py-4  text-sm md:text-2xl text-[#55351c] font-bold">
+      <div class="text-center [word-break:break-word] border-solid border-b border-gray-300 pr-4 py-4  text-sm md:text-2xl font-semibold">
         EDP Concentration
       </div>
-      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] bg-warmAmber/10 px-4 py-4  text-sm md:text-2xl text-[#55351c] font-bold md:tracking-normal ">
+      <div class="text-center [word-break:break-word] border-solid border-b border-gray-300 bg-warmAmber/10 px-4 py-4  text-sm md:text-2xl font-semibold md:tracking-normal ">
         25%
       </div>
-      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] p-4 py-4  text-sm md:text-2xl text-gray-500 font-bold md:tracking-normal">
+      <div class="text-center [word-break:break-word] border-solid border-b border-gray-300 p-4 py-4  text-sm md:text-2xl text-gray-500 font-semibold md:tracking-normal">
         15-20%
       </div>
-      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] pr-4 py-4  text-sm md:text-2xl text-[#55351c] font-bold">
+      <div class="text-center [word-break:break-word] border-solid border-b border-gray-300 pr-4 py-4  text-sm md:text-2xl font-semibold">
         Longevity
       </div>
-      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] bg-warmAmber/10 px-4 py-4  text-sm md:text-2xl text-[#55351c] font-bold md:tracking-normal ">
+      <div class="text-center [word-break:break-word] border-solid border-b border-gray-300 bg-warmAmber/10 px-4 py-4  text-sm md:text-2xl font-semibold md:tracking-normal ">
         10-12 Hrs
       </div>
-      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] p-4 py-4  text-sm md:text-2xl text-gray-500 font-bold md:tracking-normal">
+      <div class="text-center [word-break:break-word] border-solid border-b border-gray-300 p-4 py-4  text-sm md:text-2xl text-gray-500 font-semibold md:tracking-normal">
         6-8 Hrs
       </div>
-      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] pr-4 py-4  text-sm md:text-2xl text-[#55351c] font-bold">
+      <div class="text-center [word-break:break-word] border-solid border-b border-gray-300 pr-4 py-4  text-sm md:text-2xl font-semibold">
         Celebrity Endorsements
       </div>
-      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] bg-warmAmber/10 px-4 py-4  text-sm md:text-2xl text-[#55351c] font-bold md:tracking-normal ">
+      <div class="text-center [word-break:break-word] border-solid border-b border-gray-300 bg-warmAmber/10 px-4 py-4  text-sm md:text-2xl font-semibold md:tracking-normal ">
         Zero (you're welcome)
       </div>
-      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] p-4 py-4  text-sm md:text-2xl text-gray-500 font-bold md:tracking-normal">
+      <div class="text-center [word-break:break-word] border-solid border-b border-gray-300 p-4 py-4  text-sm md:text-2xl text-gray-500 font-semibold md:tracking-normal">
         $80 of your $300
       </div>
-      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] pr-4 py-4  text-sm md:text-2xl text-[#55351c] font-bold">
+      <div class="text-center [word-break:break-word] border-solid border-b border-gray-300 pr-4 py-4  text-sm md:text-2xl font-semibold">
         Fancy Bottle
       </div>
-      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] bg-warmAmber/10 px-4 py-4  text-sm md:text-2xl text-[#55351c] font-bold md:tracking-normal ">
+      <div class="text-center [word-break:break-word] border-solid border-b border-gray-300 bg-warmAmber/10 px-4 py-4  text-sm md:text-2xl font-semibold md:tracking-normal ">
         Nope, just clean design
       </div>
-      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] p-4 py-4  text-sm md:text-2xl text-gray-500 font-bold md:tracking-normal">
+      <div class="text-center [word-break:break-word] border-solid border-b border-gray-300 p-4 py-4  text-sm md:text-2xl text-gray-500 font-semibold md:tracking-normal">
         $40 of your $300
       </div>
-      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] pr-4 py-4  text-sm md:text-2xl text-[#55351c] font-bold">
+      <div class="text-center [word-break:break-word] border-solid border-b border-gray-300 pr-4 py-4  text-sm md:text-2xl font-semibold">
         The Actual Scent
       </div>
-      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] bg-warmAmber/10 px-4 py-4  text-sm md:text-2xl text-[#55351c] font-bold md:tracking-normal ">
+      <div class="text-center [word-break:break-word] border-solid border-b border-gray-300 bg-warmAmber/10 px-4 py-4  text-sm md:text-2xl font-semibold md:tracking-normal ">
         $29.99
       </div>
-      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] p-4 py-4  text-sm md:text-2xl text-gray-500 font-bold md:tracking-normal">
+      <div class="text-center [word-break:break-word] border-solid border-b border-gray-300 p-4 py-4  text-sm md:text-2xl text-gray-500 font-semibold md:tracking-normal">
         $20-30 (the rest is markup)
       </div>
       <div class="!block"></div>
