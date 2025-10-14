@@ -1173,15 +1173,15 @@ video {
   margin-top: calc(16px * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(16px * var(--tw-space-y-reverse));
 }
-.space-y-8 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(32px * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(32px * var(--tw-space-y-reverse));
-}
 .space-y-6 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(24px * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(24px * var(--tw-space-y-reverse));
+}
+.space-y-8 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(32px * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(32px * var(--tw-space-y-reverse));
 }
 .\!overflow-hidden {
   overflow: hidden !important;
@@ -1715,10 +1715,6 @@ video {
 .tracking-wide {
   letter-spacing: 0.025em;
 }
-.text-\[\#55351c\] {
-  --tw-text-opacity: 1;
-  color: rgb(85 53 28 / var(--tw-text-opacity, 1));
-}
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity, 1));
@@ -1898,6 +1894,219 @@ video {
     to {
         transform: translateX(-50%)
     }
+}
+
+.shopify-policy__title {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+@media (min-width: 768px) {
+
+  .shopify-policy__title {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+}
+
+.shopify-policy__title {
+    h1 {
+    font-size: 30px;
+    line-height: 36px;
+  }
+    h1 {
+    font-weight: 700;
+  }
+    @media (min-width: 768px) {
+
+    h1 {
+      font-size: 48px;
+      line-height: 1;
+    }
+  }
+}
+
+.shopify-policy__body {
+  padding-bottom: 32px;
+}
+
+@media (min-width: 768px) {
+
+  .shopify-policy__body {
+    padding-bottom: 48px;
+  }
+}
+
+.shopify-policy__body {
+    h1 {
+    margin-bottom: 16px;
+  }
+    h1 {
+    font-size: 30px;
+    line-height: 36px;
+  }
+    h1 {
+    font-weight: 700;
+  }
+    @media (min-width: 768px) {
+
+    h1 {
+      margin-bottom: 24px;
+    }
+  }
+    @media (min-width: 768px) {
+
+    h1 {
+      font-size: 48px;
+      line-height: 1;
+    }
+  }
+    h2 {
+    margin-bottom: 16px;
+  }
+    h2 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+    h2 {
+    font-weight: 700;
+  }
+    @media (min-width: 768px) {
+
+    h2 {
+      margin-bottom: 24px;
+    }
+  }
+    @media (min-width: 768px) {
+
+    h2 {
+      font-size: 36px;
+      line-height: 40px;
+    }
+  }
+    h3 {
+    margin-bottom: 16px;
+  }
+    h3 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+    h3 {
+    font-weight: 700;
+  }
+    @media (min-width: 768px) {
+
+    h3 {
+      margin-bottom: 24px;
+    }
+  }
+    @media (min-width: 768px) {
+
+    h3 {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+    h4 {
+    margin-bottom: 16px;
+  }
+    h4 {
+    font-size: 18px;
+    line-height: 28px;
+  }
+    h4 {
+    font-weight: 700;
+  }
+    @media (min-width: 768px) {
+
+    h4 {
+      margin-bottom: 24px;
+    }
+  }
+    @media (min-width: 768px) {
+
+    h4 {
+      font-size: 20px;
+      line-height: 28px;
+    }
+  }
+    h5 {
+    margin-bottom: 16px;
+  }
+    h5 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+    h5 {
+    font-weight: 700;
+  }
+    @media (min-width: 768px) {
+
+    h5 {
+      margin-bottom: 24px;
+    }
+  }
+    @media (min-width: 768px) {
+
+    h5 {
+      font-size: 20px;
+      line-height: 28px;
+    }
+  }
+    h6 {
+    margin-bottom: 16px;
+  }
+    h6 {
+    font-size: 14px;
+    line-height: 20px;
+  }
+    h6 {
+    font-weight: 700;
+  }
+    @media (min-width: 768px) {
+
+    h6 {
+      margin-bottom: 24px;
+    }
+  }
+    @media (min-width: 768px) {
+
+    h6 {
+      font-size: 20px;
+      line-height: 28px;
+    }
+  }
+    p {
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+    p {
+    line-height: 1.625;
+  }
+    @media (min-width: 768px) {
+
+    p {
+      margin-top: 16px;
+      margin-bottom: 16px;
+    }
+  }
+    ul {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+    ul {
+    list-style-position: inside;
+  }
+    ul {
+    list-style-type: disc;
+  }
+    @media (min-width: 768px) {
+
+    ul {
+      margin-top: 24px;
+      margin-bottom: 24px;
+    }
+  }
 }
 
 .hover\:cursor-pointer:hover {
@@ -2303,10 +2512,6 @@ video {
   transition-duration: 300ms;
 }
 
-.\[\&_ul\]\:list-inside ul {
-  list-style-position: inside;
-}
-
 .\[\&_ul\]\:list-disc ul {
   list-style-type: disc;
 }
@@ -2320,6 +2525,7 @@ video {
 .\[\&_ul\]\:pl-6 ul {
   padding-left: 24px;
 }
+
 /*!****************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/swiper/swiper.css ***!
   \****************************************************************************************************************************/
