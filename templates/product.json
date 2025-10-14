@@ -118,6 +118,7 @@
       "name": "Stacks up table",
       "settings": {
         "title": "Purfum vs. Designer Brands: Let's Talk Numbers",
+        "purfum_bottle": "shopify://shop_images/SilkBloom.png",
         "padding_top": 72,
         "padding_bottom": 72
       }
