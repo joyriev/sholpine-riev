@@ -113,54 +113,13 @@
       ],
       "settings": {}
     },
-    "luxury_redefiend_GUkd69": {
-      "type": "luxury-redefiend",
-      "blocks": {
-        "feature_6p9UFj": {
-          "type": "feature",
-          "settings": {
-            "image": "shopify://shop_images/pdp-droplet_1.svg",
-            "title": "25% EDP",
-            "subtitle": "CONCENTRATION"
-          }
-        },
-        "feature_48NACN": {
-          "type": "feature",
-          "settings": {
-            "image": "shopify://shop_images/pdp-clock.svg",
-            "title": "LASTS 12+",
-            "subtitle": "HOURS"
-          }
-        },
-        "feature_NcYHWC": {
-          "type": "feature",
-          "settings": {
-            "image": "shopify://shop_images/pdp-leaf.svg",
-            "title": "CRUELTY-FREE",
-            "subtitle": "FORMULA"
-          }
-        },
-        "feature_GNjdkq": {
-          "type": "feature",
-          "settings": {
-            "image": "shopify://shop_images/pdp-trophy.svg",
-            "title": "LUXURY",
-            "subtitle": "INSPIRED"
-          }
-        }
-      },
-      "block_order": [
-        "feature_6p9UFj",
-        "feature_48NACN",
-        "feature_NcYHWC",
-        "feature_GNjdkq"
-      ],
-      "name": "Luxury redefined",
+    "stacks_up_gdMgya": {
+      "type": "stacks-up",
+      "name": "Stacks up table",
       "settings": {
-        "title": "Luxury redefined",
-        "subtitle": "Crafted with precision",
-        "padding_top": 72,
-        "padding_bottom": 72
+        "title": "Purfum vs. Designer Brands: Let's Talk Numbers",
+        "padding_top": 48,
+        "padding_bottom": 48
       }
     },
     "related_products_Kfrejg": {
@@ -176,7 +135,7 @@
   },
   "order": [
     "main-product",
-    "luxury_redefiend_GUkd69",
+    "stacks_up_gdMgya",
     "related_products_Kfrejg"
   ]
 }
