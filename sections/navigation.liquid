@@ -1,11 +1,23 @@
 <div class="py-4 border-b border-gray-200">
   <div class="container">
     <div class="flex items-center justify-between">
-      <nav class="flex gap-4">
-        <a class="uppercase" href="/collections/all">PURFUMS</a>
-        <a class="uppercase" href="/pages/build-your-bundle">Build Your Bundle</a>
+      <nav class="flex gap-4 w-full">
+        <div x-data="{ open: false }" class="relative">
+          <button @click="open = !open" class="py-1.5 px-4 rounded-full font-medium bg-indigo-100 flex items-center gap-2">
+            <span>PURFUMs</span>
+            <span class="h-[9px] w-[15px] inline-block">{{ 'icon-caret.svg' | inline_asset_content }}</span>
+          </button>
+          <div x-show="open" class="absolute top-[calc(100%+5px)] z-40 left-0 bg-gray-100 rounded-2xl p-4 w-[300px]">
+            <div class="space-y-4">
+              <a class="block bg-white rounded-xl p-6" href="">
+                {{ section.id }}
+              </a>
+            </div>
+          </div>
+        </div>
+        <a class="py-1.5 px-4 rounded-full font-medium bg-rose-100" href="/pages/build-your-bundle">Build Your Bundle</a>
       </nav>
-      <a href="{{ routes.root_url }}">
+      <a class="block" href="{{ routes.root_url }}">
         <img
           src="{{ settings.logo.image | image_url: width: 300 }}"
           alt="{{ settings.logo.alt }}"
@@ -13,7 +25,7 @@
           height=""
           width="">
       </a>
-      <div class="flex gap-4 items-center [&_svg]:size-5 [&_svg]:transition-all [&_svg]:duration-300">
+      <div class="w-full flex gap-4 justify-end items-center [&_svg]:size-5 [&_svg]:transition-all [&_svg]:duration-300">
         <button
           x-data
           @click="$store.search.open = true"
@@ -54,3 +66,36 @@
   </div>
 </div>
 {% render 'predictive-search' %}
+
+{% schema %}
+  {
+    "name": "Navigation",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "menu-item",
+        "name": "Menu Item",
+        "settings": [
+          {
+            "id": "icon",
+            "type": "image_picker",
+            "label": "Icon"
+          }, {
+            "id": "title",
+            "type": "text",
+            "label": "Title"
+          }, {
+            "id": "link",
+            "type": "url",
+            "label": "Link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Navigation"
+      }
+    ]
+  }
+{% endschema %}
