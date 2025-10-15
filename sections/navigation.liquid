@@ -2,16 +2,35 @@
   <div class="container">
     <div class="flex items-center justify-between">
       <nav class="flex gap-4 w-full">
-        <div x-data="{ open: false }" class="relative">
+        <div
+          x-data="{ open: false }"
+          @click.away="open = false"
+          class="relative">
           <button @click="open = !open" class="py-1.5 px-4 rounded-full font-medium bg-indigo-100 flex items-center gap-2">
             <span>PURFUMs</span>
             <span class="h-[9px] w-[15px] inline-block">{{ 'icon-caret.svg' | inline_asset_content }}</span>
           </button>
-          <div x-show="open" class="absolute top-[calc(100%+5px)] z-40 left-0 bg-gray-100 rounded-2xl p-4 w-[300px]">
-            <div class="space-y-4">
-              <a class="block bg-white rounded-xl p-6" href="">
-                {{ section.id }}
-              </a>
+          <div
+            x-show="open"
+            x-transition:enter="transition ease-out duration-100"
+            x-transition:enter-start="opacity-0 scale-90"
+            x-transition:enter-end="opacity-100 scale-100"
+            x-transition:leave="transition ease-in duration-100"
+            x-transition:leave-start="opacity-100 scale-100"
+            x-transition:leave-end="opacity-0 scale-90"
+            class="absolute top-[calc(100%+5px)] z-40 left-0 bg-gray-100 rounded-2xl p-4 w-[300px]">
+            <div class="space-y-3">
+              {% for block in section.blocks %}
+                <a class="flex items-center gap-4 bg-white rounded-xl p-3" href="{{ block.settings.link }}">
+                  <img
+                    src="{{ block.settings.icon | image_url: width: 70, height: 70 }}"
+                    alt="{{ block.settings.title }}"
+                    class="rounded"
+                    height="40"
+                    width="40">
+                  <span>{{ block.settings.title }}</span>
+                </a>
+              {% endfor %}
             </div>
           </div>
         </div>
