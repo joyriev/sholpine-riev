@@ -80,6 +80,37 @@
     },
     "navigation": {
       "type": "navigation",
+      "blocks": {
+        "menu_item_PVXQRH": {
+          "type": "menu-item",
+          "settings": {
+            "icon": "shopify://shop_images/model_3.png",
+            "title": "Women",
+            "link": "shopify://collections/women"
+          }
+        },
+        "menu_item_k7T4A3": {
+          "type": "menu-item",
+          "settings": {
+            "icon": "shopify://shop_images/bottle_3.png",
+            "title": "Men",
+            "link": "#"
+          }
+        },
+        "menu_item_AQfrGG": {
+          "type": "menu-item",
+          "settings": {
+            "icon": "shopify://shop_images/bottle_4.png",
+            "title": "Unisex",
+            "link": "shopify://collections/unisex"
+          }
+        }
+      },
+      "block_order": [
+        "menu_item_PVXQRH",
+        "menu_item_k7T4A3",
+        "menu_item_AQfrGG"
+      ],
       "settings": {}
     }
   },
