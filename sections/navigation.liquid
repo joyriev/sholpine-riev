@@ -13,9 +13,7 @@
           </button>
           <div :class="open ? 'left-0' : '-left-full'" class="fixed top-0 h-full w-full max-w-[300px] bg-white shadow-2xl z-50 flex flex-col transition-all duration-300">
             <div class="flex items-center justify-between p-6 border-b">
-              <div class="flex items-center gap-3">
-                <h2 class="text-4xl font-bold">Menu</h2>
-              </div>
+              <h2 class="text-4xl font-bold">Menu</h2>
               <button @click="open = false" class="p-2 hover:bg-gray-100 rounded-lg transition-colors">
                 <svg
                   class="w-6 h-6"
@@ -29,6 +27,19 @@
                     d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
+            </div>
+            <div class="space-y-3 p-6">
+              {% for block in section.blocks %}
+                <a class="flex items-center gap-4 bg-white rounded-xl p-3 border" href="{{ block.settings.link }}">
+                  <img
+                    src="{{ block.settings.icon | image_url: width: 70, height: 70 }}"
+                    alt="{{ block.settings.title }}"
+                    class="rounded"
+                    height="40"
+                    width="40">
+                  <span>{{ block.settings.title }}</span>
+                </a>
+              {% endfor %}
             </div>
           </div>
         </div>
