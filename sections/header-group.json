@@ -104,12 +104,21 @@
             "title": "Unisex",
             "link": "shopify://collections/unisex"
           }
+        },
+        "menu_item_GHLqyA": {
+          "type": "menu-item",
+          "settings": {
+            "icon": "shopify://shop_images/header_1.png",
+            "title": "Shop All Perfumes",
+            "link": "shopify://collections"
+          }
         }
       },
       "block_order": [
         "menu_item_PVXQRH",
         "menu_item_k7T4A3",
-        "menu_item_AQfrGG"
+        "menu_item_AQfrGG",
+        "menu_item_GHLqyA"
       ],
       "settings": {}
     }
