@@ -1,41 +1,73 @@
 <div class="py-4 border-b border-gray-200">
   <div class="container">
-    <div class="flex items-center justify-between">
-      <nav class="flex gap-4 w-full">
+    <div class="flex items-center justify-between gap-6">
+      <div class="md:w-full">
         <div
           x-data="{ open: false }"
           @click.away="open = false"
-          class="relative">
-          <button @click="open = !open" class="py-1.5 px-4 rounded-full font-medium bg-indigo-100 flex items-center gap-2">
-            <span>PURFUMs</span>
-            <span class="h-[9px] w-[15px] inline-block">{{ 'icon-caret.svg' | inline_asset_content }}</span>
+          class="md:hidden">
+          <button @click="open = !open" class="flex items-center">
+            <span class="inline-block h-5 w-6">
+              {{ 'icon-hamburger.svg' | inline_asset_content }}
+            </span>
           </button>
-          <div
-            x-show="open"
-            x-transition:enter="transition ease-out duration-100"
-            x-transition:enter-start="opacity-0 scale-90"
-            x-transition:enter-end="opacity-100 scale-100"
-            x-transition:leave="transition ease-in duration-100"
-            x-transition:leave-start="opacity-100 scale-100"
-            x-transition:leave-end="opacity-0 scale-90"
-            class="absolute top-[calc(100%+5px)] z-40 left-0 bg-gray-100 rounded-2xl p-4 w-[300px]">
-            <div class="space-y-3">
-              {% for block in section.blocks %}
-                <a class="flex items-center gap-4 bg-white rounded-xl p-3" href="{{ block.settings.link }}">
-                  <img
-                    src="{{ block.settings.icon | image_url: width: 70, height: 70 }}"
-                    alt="{{ block.settings.title }}"
-                    class="rounded"
-                    height="40"
-                    width="40">
-                  <span>{{ block.settings.title }}</span>
-                </a>
-              {% endfor %}
+          <div :class="open ? 'left-0' : '-left-full'" class="fixed top-0 h-full w-full max-w-[300px] bg-white shadow-2xl z-50 flex flex-col transition-all duration-300">
+            <div class="flex items-center justify-between p-6 border-b">
+              <div class="flex items-center gap-3">
+                <h2 class="text-4xl font-bold">Menu</h2>
+              </div>
+              <button @click="open = false" class="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
             </div>
           </div>
         </div>
-        <a class="py-1.5 px-4 rounded-full font-medium bg-rose-100" href="/pages/build-your-bundle">Build Your Bundle</a>
-      </nav>
+        <nav class="hidden md:flex gap-4">
+          <div
+            x-data="{ open: false }"
+            @click.away="open = false"
+            class="relative">
+            <button @click="open = !open" class="py-1.5 px-4 rounded-full font-medium bg-indigo-100 flex items-center gap-2">
+              <span>PURFUMs</span>
+              <span class="h-[9px] w-[15px] inline-block">{{ 'icon-caret.svg' | inline_asset_content }}</span>
+            </button>
+            <div
+              x-show="open"
+              x-transition:enter="transition ease-out duration-100"
+              x-transition:enter-start="opacity-0 scale-90"
+              x-transition:enter-end="opacity-100 scale-100"
+              x-transition:leave="transition ease-in duration-100"
+              x-transition:leave-start="opacity-100 scale-100"
+              x-transition:leave-end="opacity-0 scale-90"
+              class="absolute top-[calc(100%+5px)] z-40 left-0 bg-gray-100 rounded-2xl p-4 w-[300px]">
+              <div class="space-y-3">
+                {% for block in section.blocks %}
+                  <a class="flex items-center gap-4 bg-white rounded-xl p-3" href="{{ block.settings.link }}">
+                    <img
+                      src="{{ block.settings.icon | image_url: width: 70, height: 70 }}"
+                      alt="{{ block.settings.title }}"
+                      class="rounded"
+                      height="40"
+                      width="40">
+                    <span>{{ block.settings.title }}</span>
+                  </a>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+          <a class="py-1.5 px-4 rounded-full font-medium bg-rose-100" href="/pages/build-your-bundle">Build Your Bundle</a>
+        </nav>
+      </div>
       <a class="block" href="{{ routes.root_url }}">
         <img
           src="{{ settings.logo.image | image_url: width: 300 }}"

@@ -688,6 +688,9 @@ video {
 .top-\[calc\(100\%\+5px\)\] {
   top: calc(100% + 5px);
 }
+.-left-full {
+  left: -100%;
+}
 .z-10 {
   z-index: 10;
 }
@@ -1070,6 +1073,9 @@ video {
 }
 .max-w-screen-xl {
   max-width: 1280px;
+}
+.max-w-\[300px\] {
+  max-width: 300px;
 }
 .flex-1 {
   flex: 1 1 0%;
@@ -2315,6 +2321,10 @@ video {
     display: block;
   }
 
+  .md\:flex {
+    display: flex;
+  }
+
   .md\:hidden {
     display: none;
   }
@@ -2330,6 +2340,10 @@ video {
 
   .md\:min-h-\[580px\] {
     min-height: 580px;
+  }
+
+  .md\:w-full {
+    width: 100%;
   }
 
   .md\:grid-cols-2 {
