@@ -46,7 +46,7 @@
   x-show="$store.atcBundle.showModal"
   class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[9999]"
   x-cloak>
-  <div class="bg-white rounded-2xl p-4 md:p-6 max-w-2xl w-full mx-4 h-[90vh] flex flex-col relative" @click.away="$store.atcBundle.showModal = false">
+  <div class="bg-white rounded-2xl p-4 md:p-6 max-w-2xl w-full h-[90vh] flex flex-col relative" @click.away="$store.atcBundle.showModal = false">
     <button @click="$store.atcBundle.showModal = false" class="absolute -top-2 -right-2 size-8 bg-teal-100 text-black [&:hover_span]:scale-110 rounded-full flex items-center justify-center border-0 text-3xl cursor-pointer transition">
       <span class="[rotate:-45deg] size-5 transition duration-150">
         {{- 'icon-plus.svg' | inline_asset_content -}}
