@@ -17,7 +17,7 @@
         "title": "The Smell of Good Decisions.",
         "subtitle": "Same ingredients. Same quality. Different price tag.We cut the BS and give you the scent — not the logo.",
         "buttons": "resources",
-        "reviews": "4.8 from 978 reviews"
+        "reviews": "4.8 from 78 reviews"
       }
     },
     "features_grid_D9xAK3": {
@@ -62,6 +62,7 @@
         "feature_UJzLUY",
         "feature_ghQwEY"
       ],
+      "disabled": true,
       "name": "Features Grid",
       "settings": {
         "padding_top": 32,
