@@ -8,17 +8,17 @@
     <div class="text-center pb-8 md:pb-12 border-0 border-b border-solid border-gray-200 space-y-8">
       <h1 class="font-bold text-4xl md:text-6xl leading-snug">Designer Scents For 90% Less.</h1>
       <p class="text-xl md:text-3xl font-medium text-gray-600">Same ingredients. Same longevity. <br class="md:hidden"> Zero markup.</p>
-      <div class="flex flex-wrap items-center gap-2 justify-center">
-        <div class="rating">
-          <img
-            class="h-6 md:h-10 w-auto"
-            src="{{ 'rating-stars.svg' |  asset_url  }}"
-            alt="*****"
-            height=""
-            width="">
-        </div>
-        <span class="text-xl md:text-3xl">(5 / 5) 2785 Reviews</span>
-      </div>
+    {% comment %} <div class="flex flex-wrap items-center gap-2 justify-center">
+              <div class="rating">
+                <img
+                  class="h-6 md:h-10 w-auto"
+                  src="{{ 'rating-stars.svg' |  asset_url  }}"
+                  alt="*****"
+                  height=""
+                  width="">
+              </div>
+              <span class="text-xl md:text-3xl">(5 / 5) 2785 Reviews</span>
+          </div> {% endcomment %}
     </div>
     {% comment %} X-Application Starts {% endcomment %}
     <div x-data>

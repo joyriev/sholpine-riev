@@ -19,14 +19,14 @@
       class="absolute inset-0 opacity-0 transition-opacity duration-700">
   </div>
   <div class="p-4">
-    <div class="flex items-center gap-1 mb-2">
-      <img
-        src="{{ 'rating-stars.svg' | asset_url }}"
-        alt="*****"
-        width="66"
-        height="13">
-      <span class="text-sm text-gray-600 leading-none pt-0.5">5.0/5</span>
-    </div>
+    {% comment %} <div class="flex items-center gap-1 mb-2">
+            <img
+              src="{{ 'rating-stars.svg' | asset_url }}"
+              alt="*****"
+              width="66"
+              height="13">
+            <span class="text-sm text-gray-600 leading-none pt-0.5">5.0/5</span>
+        </div> {% endcomment %}
     <h3 class="font-bold mb-1 line-clamp-1">{{ product.title }}</h3>
     <p class="text-sm text-gray-600 mb-2">"...{{ product.metafields.custom.nuta }}..."</p>
     <div class="flex items-center gap-2">
