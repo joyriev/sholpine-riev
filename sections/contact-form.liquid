@@ -12,157 +12,157 @@
   }
 {%- endstyle -%}
 
-<div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-  <div class="max-w-4xl w-full space-y-8 bg-white rounded-3xl shadow-xl overflow-hidden">
-    <div class="relative h-64 bg-cover bg-center" style="background-image: url('/cdn/shop/files/special-offer-two-bg.png?v=1753883876');">
-      <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+<div class="section-{{ section.id }}-padding">
+  <div class="container">
+    <div style="background-image: url({{ section.settings.background_image | image_url }});">
+      <div class=" w-full border rounded-3xl">
         <div class="text-center px-6">
           {%- if section.settings.heading != blank -%}
-            <h2 class="text-3xl font-extrabold text-white sm:text-4xl mb-4">
+            <h2 class="text-3xl font-extrabold sm:text-4xl mb-4">
               {{ section.settings.heading }}
             </h2>
           {%- else -%}
             <h2 class="sr-only">Contact form</h2>
           {%- endif -%}
-          <p class="text-xl text-gray-100">We'd love to hear from you</p>
+          <p class="text-xl text-gray-600">We'd love to hear from you</p>
         </div>
-      </div>
-    </div>
 
-    <div class="p-8 sm:p-12">
-      <div class="mb-8">
-        <h3 class="text-lg font-medium text-gray-900 mb-4">How can we help you?</h3>
-        <ul class="list-disc pl-5 space-y-2 text-gray-600">
-          <li>Customer feedback?</li>
-          <li>Retailer seeking opportunities?</li>
-        </ul>
-        <p class="mt-4 text-gray-600">
-          We would love to hear from you. Please contact us at
-          <a href="mailto:hello@tryscent.co" class="text-indigo-600 hover:text-indigo-500">hello@tryscent.co</a>
-          or call us at
-          <a href="tel:+18883736114" class="text-indigo-600 hover:text-indigo-500">+1 (888) 373-6114</a>
-          or fill in the form below.
-        </p>
-      </div>
+        <div class="p-8 sm:p-12">
+          <div class="mb-8">
+            <h3 class="text-lg font-medium text-gray-900 mb-4">How can we help you?</h3>
+            <ul class="list-disc pl-5 space-y-2 text-gray-600">
+              <li>Customer feedback?</li>
+              <li>Retailer seeking opportunities?</li>
+            </ul>
+            <p class="mt-4 text-gray-600">
+              We would love to hear from you. Please contact us at
+              <a href="mailto:hello@tryscent.co" class="text-indigo-600 hover:text-indigo-500">hello@tryscent.co</a>
+              or call us at
+              <a href="tel:+18883736114" class="text-indigo-600 hover:text-indigo-500">+1 (888) 373-6114</a>
+              or fill in the form below.
+            </p>
+          </div>
 
-      {%- form 'contact'
-        , id: 'ContactForm'
-        , class: 'space-y-6' -%}
-        {%- if form.posted_successfully? -%}
-          <div class="rounded-md bg-green-50 p-4 mb-6">
-            <div class="flex">
-              <div class="flex-shrink-0">
-                {{- 'icon-success.svg' | inline_asset_content -}}
-              </div>
-              <div class="ml-3">
-                <h3 class="text-sm font-medium text-green-800">Message sent successfully!</h3>
-                <div class="mt-2 text-sm text-green-700">
-                  <p>Thanks for contacting us. We'll get back to you as soon as possible.</p>
+          {%- form 'contact'
+            , id: 'ContactForm'
+            , class: 'space-y-6' -%}
+            {%- if form.posted_successfully? -%}
+              <div class="rounded-md bg-green-50 p-4 mb-6">
+                <div class="flex">
+                  <div class="flex-shrink-0">
+                    {{- 'icon-success.svg' | inline_asset_content -}}
+                  </div>
+                  <div class="ml-3">
+                    <h3 class="text-sm font-medium text-green-800">Message sent successfully!</h3>
+                    <div class="mt-2 text-sm text-green-700">
+                      <p>Thanks for contacting us. We'll get back to you as soon as possible.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        {%- elsif form.errors -%}
-          <div class="rounded-md bg-red-50 p-4 mb-6">
-            <div class="flex">
-              <div class="flex-shrink-0">
-                {{- 'icon-error.svg' | inline_asset_content -}}
-              </div>
-              <div class="ml-3">
-                <h3 class="text-sm font-medium text-red-800">There was an error with your submission</h3>
-                <div class="mt-2 text-sm text-red-700">
-                  <ul role="list" class="list-disc pl-5 space-y-1">
-                    {% for field in form.errors %}
-                      {% assign field_name = field | capitalize | replace: '_', ' ' %}
-                      <li>
-                        <a href="#ContactForm-{{ field }}" class="text-red-600 hover:text-red-500">
-                          {{ field_name }} {{ form.errors.messages[field] }}
-                        </a>
-                      </li>
-                    {% endfor %}
-                  </ul>
+            {%- elsif form.errors -%}
+              <div class="rounded-md bg-red-50 p-4 mb-6">
+                <div class="flex">
+                  <div class="flex-shrink-0">
+                    {{- 'icon-error.svg' | inline_asset_content -}}
+                  </div>
+                  <div class="ml-3">
+                    <h3 class="text-sm font-medium text-red-800">There was an error with your submission</h3>
+                    <div class="mt-2 text-sm text-red-700">
+                      <ul role="list" class="list-disc pl-5 space-y-1">
+                        {% for field in form.errors %}
+                          {% assign field_name = field | capitalize | replace: '_', ' ' %}
+                          <li>
+                            <a href="#ContactForm-{{ field }}" class="text-red-600 hover:text-red-500">
+                              {{ field_name }} {{ form.errors.messages[field] }}
+                            </a>
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        {%- endif -%}
-
-        <div class="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-2">
-          <div>
-            <label for="ContactForm-name" class="block text-sm font-medium text-gray-700">Name</label>
-            <div class="mt-1">
-              <input
-                type="text"
-                id="ContactForm-name"
-                name="contact[Name]"
-                autocomplete="name"
-                value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
-                class="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
-                placeholder="Your name">
-            </div>
-          </div>
-
-          <div>
-            <label for="ContactForm-email" class="block text-sm font-medium text-gray-700">
-              Email
-              <span class="text-red-500">*</span>
-            </label>
-            <div class="mt-1 relative">
-              <input
-                id="ContactForm-email"
-                name="contact[email]"
-                type="email"
-                autocomplete="email"
-                required
-                value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
-                class="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
-                placeholder="your.email@example.com"
-                {% if form.errors contains 'email' %}
-                aria-invalid="true"
-                aria-describedby="ContactForm-email-error"
-                {% endif %}>
-            </div>
-            {%- if form.errors contains 'email' -%}
-              <p class="mt-2 text-sm text-red-600" id="ContactForm-email-error">
-                {{ form.errors.translated_fields.email | capitalize }} {{ form.errors.messages.email }}
-              </p>
             {%- endif -%}
-          </div>
 
-          <div class="sm:col-span-2">
-            <label for="ContactForm-phone" class="block text-sm font-medium text-gray-700">Phone number</label>
-            <div class="mt-1">
-              <input
-                type="tel"
-                id="ContactForm-phone"
-                name="contact[Phone number]"
-                autocomplete="tel"
-                pattern="[0-9\-]*"
-                value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
-                class="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
-                placeholder="(123) 456-7890">
+            <div class="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-2">
+              <div>
+                <label for="ContactForm-name" class="block text-sm font-medium text-gray-700">Name</label>
+                <div class="mt-1">
+                  <input
+                    type="text"
+                    id="ContactForm-name"
+                    name="contact[Name]"
+                    autocomplete="name"
+                    value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+                    class="py-3 px-4 block w-full shadow-sm border focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                    placeholder="Your name">
+                </div>
+              </div>
+
+              <div>
+                <label for="ContactForm-email" class="block text-sm font-medium text-gray-700">
+                  Email
+                  <span class="text-red-500">*</span>
+                </label>
+                <div class="mt-1 relative">
+                  <input
+                    id="ContactForm-email"
+                    name="contact[email]"
+                    type="email"
+                    autocomplete="email"
+                    required
+                    value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+                    class="py-3 px-4 block w-full shadow-sm border focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                    placeholder="your.email@example.com"
+                    {% if form.errors contains 'email' %}
+                    aria-invalid="true"
+                    aria-describedby="ContactForm-email-error"
+                    {% endif %}>
+                </div>
+                {%- if form.errors contains 'email' -%}
+                  <p class="mt-2 text-sm text-red-600" id="ContactForm-email-error">
+                    {{ form.errors.translated_fields.email | capitalize }} {{ form.errors.messages.email }}
+                  </p>
+                {%- endif -%}
+              </div>
+
+              <div class="sm:col-span-2">
+                <label for="ContactForm-phone" class="block text-sm font-medium text-gray-700">Phone number</label>
+                <div class="mt-1">
+                  <input
+                    type="tel"
+                    id="ContactForm-phone"
+                    name="contact[Phone number]"
+                    autocomplete="tel"
+                    pattern="[0-9\-]*"
+                    value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
+                    class="py-3 px-4 block w-full shadow-sm border focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                    placeholder="(123) 456-7890">
+                </div>
+              </div>
+
+              <div class="sm:col-span-2">
+                <label for="ContactForm-body" class="block text-sm font-medium text-gray-700">Message</label>
+                <div class="mt-1">
+                  <textarea
+                    id="ContactForm-body"
+                    name="contact[Comment]"
+                    rows="4"
+                    class="py-3 px-4 block w-full shadow-sm border focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                    placeholder="How can we help you?">{{ form.body }}</textarea>
+                </div>
+              </div>
             </div>
-          </div>
 
-          <div class="sm:col-span-2">
-            <label for="ContactForm-body" class="block text-sm font-medium text-gray-700">Message</label>
-            <div class="mt-1">
-              <textarea
-                id="ContactForm-body"
-                name="contact[Comment]"
-                rows="4"
-                class="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
-                placeholder="How can we help you?">{{ form.body }}</textarea>
+            <div class="pt-4">
+              <button type="submit" class="w-full flex justify-center py-3 px-6 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                Send Message
+              </button>
             </div>
-          </div>
+          {%- endform -%}
         </div>
-
-        <div class="pt-4">
-          <button type="submit" class="w-full flex justify-center py-3 px-6 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-            Send Message
-          </button>
-        </div>
-      {%- endform -%}
+      </div>
     </div>
   </div>
 </div>
@@ -177,14 +177,21 @@
     },
     "settings": [
       {
+        "type": "image_picker",
+        "id": "background_image",
+        "label": "Background Image"
+      },
+      {
         "type": "inline_richtext",
         "id": "heading",
         "default": "Contact Form",
         "label": "Heading"
-      }, {
+      },
+      {
         "type": "header",
         "content": "Padding"
-      }, {
+      },
+      {
         "type": "range",
         "id": "padding_top",
         "min": 0,
