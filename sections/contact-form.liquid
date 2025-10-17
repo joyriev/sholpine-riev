@@ -10,13 +10,18 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  .h-captcha {
+    margin: 0 !important;
+  }
+
 {%- endstyle -%}
 
 <div class="section-{{ section.id }}-padding">
   <div class="container">
-    <div style="background-image: url({{ section.settings.background_image | image_url }});">
-      <div class=" w-full border rounded-3xl">
-        <div class="text-center px-6">
+    <div style="background-image: url({{ section.settings.background_image | image_url }});" class="bg-indigo-50 px-4 py-12 rounded-3xl">
+      <div class="max-w-2xl mx-auto bg-white rounded-2xl p-4 md:p-12">
+        <div class="text-center mb-12">
           {%- if section.settings.heading != blank -%}
             <h2 class="text-3xl font-extrabold sm:text-4xl mb-4">
               {{ section.settings.heading }}
@@ -27,7 +32,7 @@
           <p class="text-xl text-gray-600">We'd love to hear from you</p>
         </div>
 
-        <div class="p-8 sm:p-12">
+        <div class="">
           <div class="mb-8">
             <h3 class="text-lg font-medium text-gray-900 mb-4">How can we help you?</h3>
             <ul class="list-disc pl-5 space-y-2 text-gray-600">
@@ -95,7 +100,7 @@
                     name="contact[Name]"
                     autocomplete="name"
                     value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
-                    class="py-3 px-4 block w-full shadow-sm border focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                    class="py-3 px-4 block w-full shadow-sm border focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-full"
                     placeholder="Your name">
                 </div>
               </div>
@@ -113,7 +118,7 @@
                     autocomplete="email"
                     required
                     value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
-                    class="py-3 px-4 block w-full shadow-sm border focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                    class="py-3 px-4 block w-full shadow-sm border focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-full"
                     placeholder="your.email@example.com"
                     {% if form.errors contains 'email' %}
                     aria-invalid="true"
@@ -137,7 +142,7 @@
                     autocomplete="tel"
                     pattern="[0-9\-]*"
                     value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
-                    class="py-3 px-4 block w-full shadow-sm border focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                    class="py-3 px-4 block w-full shadow-sm border focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-full"
                     placeholder="(123) 456-7890">
                 </div>
               </div>
@@ -149,17 +154,14 @@
                     id="ContactForm-body"
                     name="contact[Comment]"
                     rows="4"
-                    class="py-3 px-4 block w-full shadow-sm border focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                    class="py-3 px-4 block w-full shadow-sm border focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-2xl"
                     placeholder="How can we help you?">{{ form.body }}</textarea>
                 </div>
               </div>
             </div>
-
-            <div class="pt-4">
-              <button type="submit" class="w-full flex justify-center py-3 px-6 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                Send Message
-              </button>
-            </div>
+            <button type="submit" class="w-full flex justify-center py-3 px-6 border border-transparent rounded-full shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+              Send Message
+            </button>
           {%- endform -%}
         </div>
       </div>
