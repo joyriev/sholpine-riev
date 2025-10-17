@@ -63,7 +63,7 @@
           x-data
           @click="$store.product.addToCart()"
           :disabled="$store.product.loading"
-          class="flex items-center justify-center gap-2 text-black text-3xl uppercase border-2 border-black rounded-full bg-[#ffb97f] w-full px-4 py-4 shadow-[0_3px_0_0px_#1697a6,0_5px_0_0px_#000] hover:shadow-[0_0px_0_0px_#1697a6,0_0px_0_0px_#000] transition-all disabled:cursor-not-allowed disabled:opacity-60">
+          class="cta_product_from_submit_btn flex items-center justify-center gap-2 text-black text-3xl uppercase border-2 border-black rounded-full bg-[#ffb97f] w-full px-4 py-4 shadow-[0_3px_0_0px_#1697a6,0_5px_0_0px_#000] hover:shadow-[0_0px_0_0px_#1697a6,0_0px_0_0px_#000] transition-all disabled:cursor-not-allowed disabled:opacity-60">
           <span>Shop Now |
             <span x-text="$store.product.price"></span>
           </span>
@@ -203,6 +203,88 @@
     </div>
   </div>
 </div>
+
+<div id="floatingAtc" class="fixed bottom-0 left-0 right-0 bg-white z-10 transform translate-y-full [&.active]:[transform:translateY(0)] py-4 shadow-[0_0_20px_5px_rgba(0,0,0,0.1)] transition-transform duration-500">
+  <div class="container">
+    <div class="flex items-center justify-between">
+      <div class="items-center gap-4 [display:none] md:flex">
+        <img
+          src="{{ product.featured_image | image_url: width: 100, height: 100, crop: 'center' }}"
+          alt="{{ product.title }}"
+          width="100"
+          height="100"
+          class="size-14"
+          loading="lazy">
+        <div>
+          <h2 class="text-lg font-semibold m-0">
+            {{ product.title }}
+          </h2>
+          <p
+            x-data
+            x-text="$store.product.price"
+            class="text-base m-0 current-price"></p>
+        </div>
+      </div>
+      <button class="flex justify-center bg-[#ffb97f] border-2 border-black font-semibold hover:text-midnight hover:bg-skyblue px-8 py-3 rounded-full tracking-wide text-xl shadow-[0_3px_0_0px_#1697a6,0_5px_0_0px_#000] hover:shadow-[0_0px_0_0px_#1697a6,0_0px_0_0px_#000] cursor-pointer transition-all w-full md:w-auto">
+        <span>Add to Cart</span>
+        <div class="ml-2 pl-2 border-0 border-l-2 flex items-center border-solid border-gray-700 md:hidden">
+          <span
+            class="current-price"
+            x-data
+            x-text="$store.product.price"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const atcBtn = document.querySelector('.cta_product_from_submit_btn');
+        const floatingAtc = document.getElementById('floatingAtc');
+        const floatingAtcBtn = document.querySelector('#floatingAtc button');
+
+        if(!atcBtn || !floatingAtc || !floatingAtcBtn) return;
+
+        // Observe the scrollToTarget's bottom crossing the viewport top
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                if (entry.boundingClientRect.bottom < 0) {
+                    // scrolled past (above viewport)
+                    floatingAtc.classList.add('active');
+                } else {
+                    // partially or fully visible in viewport
+                    floatingAtc.classList.remove('active');
+                }
+                });
+            },
+            {
+                threshold: [0],
+                root: null,
+                rootMargin: '0px',
+            }
+        );
+
+        observer.observe(atcBtn);
+
+        floatingAtcBtn.addEventListener('click', () => {
+            // Scroll to top
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            // Create and dispatch a proper click event that will trigger existing listeners
+            const clickEvent = new MouseEvent('click', {
+                view: window,
+                bubbles: true,
+                cancelable: true
+            });
+            atcBtn.dispatchEvent(clickEvent);
+        });
+    });
+
+</script>
 
 {% schema %}
   {
