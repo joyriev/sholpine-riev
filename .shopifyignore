@@ -2,10 +2,10 @@
 .prettierignore
 .prettierrc.json
 .theme-check.yml
-.vscode/
-.git/
-.github/
-src/
+.vscode/*
+.git/*
+.github/*
+src/*
 webpack.config.js
 tailwind.config.js
 jsconfig.json
