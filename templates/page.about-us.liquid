@@ -1,0 +1,448 @@
+<style>
+  :root {
+    --bg: #fbfbfd;
+    --card: #ffffff;
+    --ink: #101114;
+    --muted: #5e6470;
+    --accent: #1f7aec;
+    --accent-ink: #ffffff;
+    --line: #eceef3;
+    --ok: #15a26d;
+    --soft: #f3f7ff;
+    /* soft blue for table bg */
+  }
+  * {
+    box-sizing: border-box
+  }
+  body {
+    margin: 0;
+    font-family: system-ui
+    , -apple-system
+    , Segoe UI
+    , Roboto
+    , Ubuntu
+    , Cantarell
+    , Inter
+    , "Helvetica Neue"
+    , Arial
+    , sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.6;
+  }
+  .page {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 24px
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    background: linear-gradient(135deg,#e7efff,#f7f9ff);
+    padding: 42px 28px;
+    text-align: center;
+    margin-bottom: 28px;
+  }
+  .eyebrow {
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--muted);
+    font-size: 0.78rem
+  }
+  h1 {
+    margin: 0.25rem 0 0;
+    font-size: 2.25rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em
+  }
+  .sub {
+    color: var(--muted);
+    max-width: 720px;
+    margin: 10px auto 18px
+  }
+  .cta {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--accent-ink);
+    text-decoration: none;
+    padding: 12px 18px;
+    border-radius: 12px;
+    font-weight: 700;
+    transition: transform 0.08s ease;
+  }
+  .cta:hover {
+    transform: translateY(-1px)
+  }
+
+  /* LAYOUT + ELEMENTS */
+  .grid {
+    display: grid;
+    gap: 18px
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 20px
+  }
+  h2 {
+    margin: 0 0 10px;
+    font-size: 1.5rem;
+    letter-spacing: -0.01em
+  }
+  p {
+    margin: 0.5rem 0
+  }
+  ul {
+    margin: 0.5rem 0;
+    padding-left: 1.1rem
+  }
+  li {
+    margin: 0.35rem 0
+  }
+  .pill {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    border: 1px solid var(--line);
+    color: var(--muted)
+  }
+
+  /* Check list */
+  .list-check li {
+    list-style: none;
+    padding-left: 28px;
+    position: relative
+  }
+  .list-check li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--ok);
+    font-weight: 700
+  }
+
+  /* Testimonials */
+  .testimonials {
+    display: grid;
+    gap: 14px;
+    grid-template-columns: repeat(3, 1fr)
+  }
+  .quote {
+    font-style: italic;
+    color: var(--ink)
+  }
+  .by {
+    color: var(--muted);
+    font-size: 0.92rem
+  }
+
+  /* Guarantees */
+  .guarantees {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center
+  }
+  .g {
+    background: #f8fafc;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 14px
+  }
+  .g b {
+    display: block;
+    margin-top: 6px
+  }
+
+  /* CTA band */
+  .cta-band {
+    margin: 24px 0;
+    border-radius: 18px;
+    background: linear-gradient(135deg,#eef6ff,#edf9f3);
+    border: 1px solid var(--line);
+    padding: 24px;
+    text-align: center;
+  }
+
+  /* Contact */
+  .contact {
+    display: grid;
+    gap: 14px;
+    grid-template-columns: 1.2fr 0.8fr
+  }
+  .contact a {
+    color: var(--accent);
+    text-decoration: none
+  }
+
+  .muted {
+    color: var(--muted)
+  }
+  footer {
+    margin-top: 24px;
+    color: var(--muted);
+    font-size: 0.9rem
+  }
+
+  /* === Comparison table (replaces transparency bars) === */
+  .compare-wrap {
+    background: var(--soft);
+    border-radius: 14px;
+    padding: 12px
+  }
+  .compare {
+    overflow-x: auto
+  }
+  .compare table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden
+  }
+  .compare th,
+  .compare td {
+    padding: 14px 12px;
+    text-align: center;
+    border-bottom: 1px solid #e6e9f2
+  }
+  .compare thead th {
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    background: #fff
+  }
+  .compare .metric {
+    font-weight: 700;
+    color: #55351c;
+    text-align: left;
+    padding-left: 16px
+  }
+  .compare .brand-head,
+  .compare .brand-cell {
+    background: #fff3d6
+  } /* subtle warm highlight */
+  .compare .brand-head {
+    font-weight: 900
+  }
+  .compare .brand-cell {
+    font-weight: 700;
+    color: #55351c
+  }
+  .compare .other-cell {
+    color: #6b7280;
+    font-weight: 700
+  }
+  .compare tr:last-child td {
+    border-bottom: none
+  }
+  @media (max-width: 900px) {
+    h1 {
+      font-size: 1.9rem
+    }
+  }
+</style>
+
+
+<main class="page">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="eyebrow">Purfum</div>
+    <h1>Luxury That Doesn’t Lie</h1>
+    <p class="sub">Perfume should not cost a fortune to make you feel extraordinary. We make it honest, modern, and affordable without the unnecessary markup.</p>
+    <a href="/collections/all" class="cta">Explore Scents That Make Sense</a>
+  </section>
+
+  <!-- STORY ONLY -->
+  <section class="grid">
+    <article class="card">
+      <h2>Born From Curiosity, Not Marketing</h2>
+      <p>We started with a simple question: why are people still paying hundreds for what costs a few euros to make?</p>
+      <p>After years of collecting fragrances and studying formulation, we learned the truth. Most designer pricing is about prestige, not quality. Many houses source similar grade oils from the same global suppliers the entire industry trusts.</p>
+      <p>So we built Purfum to keep the essence and remove the illusion. High quality compositions, responsibly produced, bottled with restraint, and priced with integrity.</p>
+      <p>
+        <span class="pill">Made for everyday elegance</span>
+        <span class="pill">Designed in the EU</span>
+        <span class="pill">Fair pricing</span>
+      </p>
+    </article>
+  </section>
+
+  <!-- PRINCIPLES -->
+  <section style="margin-top:18px" class="grid">
+    <div class="card">
+      <h2>Modern. Honest. Human.</h2>
+      <ul>
+        <li>
+          <strong>Authentic craftsmanship.</strong>
+          We work with high grade fragrance oils used across luxury perfumery.</li>
+        <li>
+          <strong>Transparent pricing.</strong>
+          Your money goes to the juice, the bottle, and responsible production, not hype.</li>
+        <li>
+          <strong>Timeless, not trendy.</strong>
+          Trends fade. Scent memories do not. We design for now and for years to come.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE (replaces transparency bars) -->
+  <section style="margin-top:6px" class="grid">
+    <div class="card compare-wrap">
+      <h2>Purfum vs. Designer Brands: Let's Talk Numbers</h2>
+      <div
+        class="compare"
+        role="region"
+        aria-label="Fragrance comparison">
+        <table role="table">
+          <thead>
+            <tr>
+              <th scope="col">Metric</th>
+              <th scope="col" class="brand-head">PURFUM</th>
+              <th scope="col">DESIGNER BRANDS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="metric">Price</td>
+              <td class="brand-cell">€29.99</td>
+              <td class="other-cell">€150–€300</td>
+            </tr>
+            <tr>
+              <td class="metric">EDP Concentration</td>
+              <td class="brand-cell">25%</td>
+              <td class="other-cell">15–20%</td>
+            </tr>
+            <tr>
+              <td class="metric">Longevity</td>
+              <td class="brand-cell">10–12 Hrs</td>
+              <td class="other-cell">6–8 Hrs</td>
+            </tr>
+            <tr>
+              <td class="metric">Celebrity Endorsements</td>
+              <td class="brand-cell">Zero (you're welcome)</td>
+              <td class="other-cell">€80 of your €300</td>
+            </tr>
+            <tr>
+              <td class="metric">Fancy Bottle</td>
+              <td class="brand-cell">Nope, just clean design</td>
+              <td class="other-cell">€40 of your €300</td>
+            </tr>
+            <tr>
+              <td class="metric">The Actual Scent</td>
+              <td class="brand-cell">€29.99</td>
+              <td class="other-cell">€20–30 (the rest is markup)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section style="margin-top:6px" class="grid">
+    <div class="card">
+      <h2>For the Modern Minimalist</h2>
+      <ul class="list-check">
+        <li>You want sophistication without excess.</li>
+        <li>You believe scent should express emotion, not status.</li>
+        <li>You see through luxury markups and prefer honesty.</li>
+        <li>You love fragrance as art, not as an advertisement.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section style="margin-top:6px" class="grid">
+    <div class="card">
+      <h2>Loved by Real People</h2>
+      <div class="testimonials">
+        <div style="padding:16px" class="card">
+          <div class="quote">“Finally, a brand that respects both my nose and my wallet.”</div>
+          <div class="by">Ari L. · Helsinki</div>
+        </div>
+        <div style="padding:16px" class="card">
+          <div class="quote">“Blind tested beside my Chanel bottle. My husband could not tell the difference.”</div>
+          <div class="by">Elina S. · Stockholm</div>
+        </div>
+        <div style="padding:16px" class="card">
+          <div class="quote">“Elegant, long lasting, and refreshingly fair on price.”</div>
+          <div class="by">Jonas M. · Tallinn</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEES -->
+  <section style="margin-top:6px" class="grid">
+    <div class="card">
+      <h2>Our Promise</h2>
+      <div class="guarantees">
+        <div class="g">
+          <div aria-hidden="true">🛡️</div>
+          <b>60-Day Money-Back</b>
+          <div class="muted">If you do not love it, return it.</div>
+        </div>
+        <div class="g">
+          <div aria-hidden="true">🌿</div>
+          <b>Vegan &amp; Cruelty-Free</b>
+          <div class="muted">Always and without exception.</div>
+        </div>
+        <div class="g">
+          <div aria-hidden="true">⏳</div>
+          <b>12+ Hour Wear</b>
+          <div class="muted">Batch tested for performance.</div>
+        </div>
+        <div class="g">
+          <div aria-hidden="true">📦</div>
+          <b>Fast EU Delivery</b>
+          <div class="muted">Shipped from Tallinn.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <h2 style="margin:0 0 6px">Ready to Rethink Luxury?</h2>
+    <p style="margin:0 0 14px" class="muted">The scent is the same. The difference is everything else.</p>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+      <a href="/collections/all" class="cta">Shop Fragrances</a>
+      <a
+        style="background:#0f1b2d;color:#fff"
+        href="/pages/build-your-bundle"
+        class="cta">Bundle &amp; Save</a>
+    </div>
+  </section>
+
+  <!-- CONTACT / FOOTER -->
+  <section class="grid contact">
+    <div class="card">
+      <h2>Contact</h2>
+      <p>
+        <strong>Address:</strong>
+        Tornimäe tn 3-5 7, 10145 Tallinn, Estonia</p>
+      <p>
+        <strong>Email:</strong>
+        <a href="mailto:hello@purfum.co">hello@purfum.co</a>
+      </p>
+      <p>
+        <strong>Phone:</strong>
+        <a href="tel:+17787425955">+1 778 742 5955</a>
+      </p>
+    </div>
+  </section>
+</main>
+
+<script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+</script>

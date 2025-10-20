@@ -1,6 +1,6 @@
 <div class="py-4 border-b border-gray-200">
-  <div class="container max-w-[1400px]">
-    <div class="flex items-center justify-between gap-6">
+  <div class="container">
+    <div class="flex items-center justify-between gap-4">
       <div class="md:w-full">
         <div
           x-data="{ open: false }"
@@ -92,12 +92,8 @@
           width="">
       </a>
       <div class="w-full flex gap-4 justify-end items-center [&_svg]:size-5 [&_svg]:transition-all [&_svg]:duration-300">
-        {% comment %} {% if localization.available_languages.size > 1 %}
-                    {% render 'localizetion-language-form' %}
-                  {% endif %}
-                  {% if localization.available_countries.size > 1 %}
-                    {% render 'localizetion-currency-form' %}
-                {% endif %} {% endcomment %}
+        {% comment %} {% render 'localizetion-language-form' %} {% endcomment %}
+        {% comment %} {% render 'localizetion-currency-form' %} {% endcomment %}
         <button
           x-data
           @click="$store.search.open = true"

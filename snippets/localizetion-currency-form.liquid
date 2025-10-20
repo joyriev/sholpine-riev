@@ -1,9 +1,15 @@
-{% liquid
-
-  assign currencies = localization.available_countries | map: 'currency' | map: 'iso_code' | uniq
-%}
-
-<div x-data="{ open: false }" class="relative inline-block text-left">
+<div x-data="{ 
+  open: false, 
+  search: '',
+  get filteredCountries() {
+    if (!this.search) return this.$refs.countryList.querySelectorAll('li');
+    const query = this.search.toLowerCase();
+    return Array.from(this.$refs.countryList.querySelectorAll('li')).filter(li => {
+      const text = li.textContent.toLowerCase();
+      return text.includes(query);
+    });
+  }
+}" class="relative inline-block text-left">
   <button @click="open = !open" class="flex items-center gap-2 px-3 py-2 text-sm font-medium border rounded-lg hover:bg-gray-100">
     <span>{{ localization.country.currency.symbol }}</span>
     <svg
@@ -28,7 +34,18 @@
     x-transition:leave="transition ease-in duration-100"
     x-transition:leave-start="opacity-100 scale-100"
     x-transition:leave-end="opacity-0 scale-90"
-    class="absolute right-0 mt-2 w-40 origin-top-right bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+    class="absolute right-0 mt-2 w-60 origin-top-right bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+
+    <!-- Search Input -->
+    <div class="p-2 border-b border-gray-200">
+      <input
+        type="text"
+        x-model="search"
+        @keydown.escape="open = false"
+        placeholder="Search countries..."
+        class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+    </div>
+
     <form
       class="py-1"
       method="post"
@@ -52,15 +69,18 @@
         type="hidden"
         name="return_to"
         value="{{ request.path }}" />
-      <ul class="text-sm text-gray-700">
+
+      <ul class="text-sm text-gray-700 max-h-64 overflow-y-auto" x-ref="countryList">
         {% for country in localization.available_countries %}
-          <li>
+          <li x-show="!search || $el.textContent.toLowerCase().includes(search.toLowerCase())">
             <button
               type="submit"
               name="currency_code"
               value="{{ country.currency.iso_code }}"
-              class="block w-full text-left px-4 py-2 hover:bg-gray-100 {% if country.currency.iso_code == localization.currency.iso_code %}font-semibold{% endif %}">
-              {{ country.currency.iso_code }} — {{ country.currency.symbol }}
+              class="flex justify-between w-full text-left px-4 py-2 hover:bg-gray-100 {% if country.currency.iso_code == localization.currency.iso_code %}font-semibold{% endif %}">
+              <span>{{ country.name }}</span>
+              <span class="transition-opacity">
+                {{ country.currency.iso_code }}{{ country.currency.symbol }}</span>
             </button>
           </li>
         {% endfor %}
