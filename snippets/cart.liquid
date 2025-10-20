@@ -36,46 +36,34 @@
       {% comment %} Free Shipping Progress {% endcomment %}
       {% if settings.cart_progress %}
         <div class="p-6 border-b">
-          <p class="text-center text-lg">
-            You're
-            <span class="font-bold">$152.00</span>
-            away from free shipping!
-          </p>
+          <p class="text-center text-lg" x-html="$store.cart.progressMessage"></p>
           <div class="relative pt-6 mb-8">
             <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
-              <div class="h-full bg-teal-500 w-1/4"></div>
+              <div class="h-full bg-teal-500 transition-all duration-300 ease-in-out" :style="{ width: $store.cart.totalItems / 8 * 100 + '%' }"></div>
             </div>
-            <div class="flex flex-col items-center absolute top-2 left-1/3">
-              <div class="size-10 rounded-full border-2 border-teal-500 bg-white flex items-center justify-center">
-                <svg
-                  class="size-6 text-teal-500"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
+            <div class="flex flex-col items-center absolute top-2 left-[20%]">
+              <div class="size-10 rounded-full border-2 border-teal-500 bg-white flex items-center justify-center" :class="{ 'border-teal-500': $store.cart.totalItems >= 2 }">
+                <span class="size-6" :class="$store.cart.totalItems >= 2 ? 'fill-teal-500' : 'fill-gray-300'">
+                  {{ 'icon-perfume.svg' | inline_asset_content }}
+                </span>
               </div>
-              <span class="text-xs mt-2 font-medium">Free Shipping</span>
+              <span class="text-xs mt-2 font-medium" :class="$store.cart.totalItems >= 2 && 'text-teal-500'">2+1</span>
+            </div>
+            <div class="flex flex-col items-center absolute top-2 left-[35%]">
+              <div class="size-10 rounded-full border-2 border-gray-300 bg-white flex items-center justify-center" :class="$store.cart.totalItems >= 3 ? 'border-teal-500' : 'border-gray-300'">
+                <span class="size-6" :class="$store.cart.totalItems >= 3 ? 'fill-teal-500' : 'fill-gray-300'">
+                  {{ 'icon-perfume.svg' | inline_asset_content }}
+                </span>
+              </div>
+              <span class="text-xs mt-2 font-medium" :class="$store.cart.totalItems >= 3 && 'text-teal-500'">3+2</span>
             </div>
             <div class="flex flex-col items-center absolute top-2 left-3/4">
-              <div class="size-10 rounded-full border-2 border-gray-300 bg-white flex items-center justify-center">
-                <svg
-                  class="size-6 text-gray-300"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
-                </svg>
+              <div class="size-10 rounded-full border-2 border-gray-300 bg-white flex items-center justify-center" :class="{ 'border-teal-500': $store.cart.totalItems >= 7 }">
+                <span class="size-6" :class="$store.cart.totalItems >= 7 ? 'fill-teal-500' : 'fill-gray-300'">
+                  {{ 'icon-truck.svg' | inline_asset_content }}
+                </span>
               </div>
-              <span class="text-xs mt-2 font-medium">5% Off</span>
+              <span class="text-xs mt-2 font-medium" :class="$store.cart.totalItems >= 7 && 'text-teal-500'">Free Shipping</span>
             </div>
           </div>
         </div>
@@ -221,5 +209,12 @@
         <span x-text="$store.cart.cartTotal"></span>
       </a>
     </div>
+    <ul class=" px-6 flex gap-2 justify-center" role="list">
+      {%- for type in shop.enabled_payment_types -%}
+        <li>
+          {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+        </li>
+      {%- endfor -%}
+    </ul>
   </div>
 </div>

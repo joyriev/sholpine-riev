@@ -27,6 +27,22 @@ document.addEventListener("alpine:init", () => {
       );
       return formatMoney(total);
     },
+    get progressMessage() {
+      if (this.totalItems === 0)
+        return "Add 2 bottles to have <b>(2+1 Free).</b>";
+      if (this.totalItems === 1)
+        return "Add 1 more bottle to have <b>(2+1 Free).</b>";
+      if (this.totalItems === 2)
+        return "Add 1 more bottle to have <b>(3+2 Free).</b>";
+      if (this.totalItems === 3) return "Add your <b>2 Free bottles.</b>";
+      if (this.totalItems === 4) return "Add another <b>Free bottle.</b>";
+      if (this.totalItems === 5)
+        return "Add 2 more bottles to have <b>Free Shipping.</b>";
+      if (this.totalItems === 6)
+        return "Add 2 more bottles to have <b>Free Shipping.</b>";
+      if (this.totalItems >= 7)
+        return "Congratulations! You have <b>Free Shipping.</b>";
+    },
     updateItems(items) {
       this.items = items;
     },
