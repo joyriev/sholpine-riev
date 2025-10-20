@@ -158,6 +158,22 @@
               method="post"
               action="/localization"
               id="currency_form">
+              <input
+                type="hidden"
+                name="form_type"
+                value="localization" />
+              <input
+                type="hidden"
+                name="utf8"
+                value="✓" />
+              <input
+                type="hidden"
+                name="_method"
+                value="put" />
+              <input
+                type="hidden"
+                name="return_to"
+                value="{{ request.path }}" />
               <ul class="text-sm text-gray-700">
                 {% for currency in localization.available_currencies %}
                   <li>
