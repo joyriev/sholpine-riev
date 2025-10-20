@@ -116,7 +116,25 @@
               class="py-1"
               method="post"
               action="/localization"
+              accept-charset="UTF-8"
+              enctype="multipart/form-data"
               id="localization_form">
+              <input
+                type="hidden"
+                name="form_type"
+                value="localization" />
+              <input
+                type="hidden"
+                name="utf8"
+                value="✓" />
+              <input
+                type="hidden"
+                name="_method"
+                value="put" />
+              <input
+                type="hidden"
+                name="return_to"
+                value="{{ request.path }}" />
               <ul class="text-sm text-gray-700">
                 {% for language in localization.available_languages %}
                   <li>
@@ -157,6 +175,8 @@
               class="py-1"
               method="post"
               action="/localization"
+              accept-charset="UTF-8"
+              enctype="multipart/form-data"
               id="currency_form">
               <input
                 type="hidden"
