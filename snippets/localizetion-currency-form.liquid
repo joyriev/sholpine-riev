@@ -1,0 +1,60 @@
+<div x-data="{ open: false }" class="relative inline-block text-left">
+  <button @click="open = !open" class="flex items-center gap-2 px-3 py-2 text-sm font-medium border rounded-lg hover:bg-gray-100">
+    <span>{{ localization.currency.iso_code | upcase }}</span>
+    <svg
+      class="w-4 h-4"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      viewBox="0 0 24 24">
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div
+    x-show="open"
+    x-cloak
+    @click.away="open = false"
+    x-transition
+    class="absolute right-0 mt-2 w-40 origin-top-right bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+    <form
+      class="py-1"
+      method="post"
+      action="/localization"
+      accept-charset="UTF-8"
+      enctype="multipart/form-data"
+      id="currency_form">
+      <input
+        type="hidden"
+        name="form_type"
+        value="localization" />
+      <input
+        type="hidden"
+        name="utf8"
+        value="✓" />
+      <input
+        type="hidden"
+        name="_method"
+        value="put" />
+      <input
+        type="hidden"
+        name="return_to"
+        value="{{ request.path }}" />
+      <ul class="text-sm text-gray-700">
+        {% for currency in localization.available_currencies %}
+          <li>
+            <button
+              type="submit"
+              name="currency_code"
+              value="{{ currency.iso_code }}"
+              class="block w-full text-left px-4 py-2 hover:bg-gray-100 {% if currency.iso_code == localization.currency.iso_code %}font-semibold{% endif %}">
+              {{ currency.iso_code }} — {{ currency.symbol }}
+            </button>
+          </li>
+        {% endfor %}
+      </ul>
+    </form>
+  </div>
+</div>
