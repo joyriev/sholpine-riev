@@ -38,9 +38,9 @@
           <p class="text-center text-lg" x-html="$store.cart.progressMessage"></p>
           <div class="relative pt-5 mb-9">
             <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
-              <div class="h-full bg-teal-500 transition-all duration-300 ease-in-out" :style="{ width: $store.cart.totalItems / 8 * 100 + '%' }"></div>
+              <div class="h-full bg-teal-500 transition-all duration-300 ease-in-out" :style="{ width: $store.cart.totalItems / 6 * 100 + '%' }"></div>
             </div>
-            <div class="flex flex-col items-center absolute top-2 left-[20%]">
+            <div class="flex flex-col items-center absolute top-2 left-[26%]">
               <div class="size-8 rounded-full border-2 border-teal-500 bg-white flex items-center justify-center" :class="{ 'border-teal-500': $store.cart.totalItems >= 2 }">
                 <span class="size-6" :class="$store.cart.totalItems >= 2 ? 'fill-teal-500' : 'fill-gray-300'">
                   {{ 'icon-perfume.svg' | inline_asset_content }}
@@ -48,7 +48,7 @@
               </div>
               <span class="text-xs mt-2 font-medium" :class="$store.cart.totalItems >= 2 && 'text-teal-500'">2+1</span>
             </div>
-            <div class="flex flex-col items-center absolute top-2 left-[35%]">
+            <div class="flex flex-col items-center absolute top-2 left-[50%]">
               <div class="size-8 rounded-full border-2 border-gray-300 bg-white flex items-center justify-center" :class="$store.cart.totalItems >= 3 ? 'border-teal-500' : 'border-gray-300'">
                 <span class="size-6" :class="$store.cart.totalItems >= 3 ? 'fill-teal-500' : 'fill-gray-300'">
                   {{ 'icon-perfume.svg' | inline_asset_content }}

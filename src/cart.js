@@ -37,10 +37,6 @@ document.addEventListener("alpine:init", () => {
       if (this.totalItems === 3) return "Add your <b>2 Free bottles.</b>";
       if (this.totalItems === 4) return "Add another <b>Free bottle.</b>";
       if (this.totalItems === 5)
-        return "Add 2 more bottles to have <b>Free Shipping.</b>";
-      if (this.totalItems === 6)
-        return "Add 2 more bottles to have <b>Free Shipping.</b>";
-      if (this.totalItems >= 7)
         return "Congratulations! You have <b>Free Shipping.</b>";
     },
     updateItems(items) {
