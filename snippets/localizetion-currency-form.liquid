@@ -1,6 +1,11 @@
+{% liquid
+
+  assign currencies = localization.available_countries | map: 'currency' | map: 'iso_code' | uniq
+%}
+
 <div x-data="{ open: false }" class="relative inline-block text-left">
   <button @click="open = !open" class="flex items-center gap-2 px-3 py-2 text-sm font-medium border rounded-lg hover:bg-gray-100">
-    <span>{{ localization.currency.iso_code | upcase }}</span>
+    <span>{{ localization.country.currency.symbol }}</span>
     <svg
       class="w-4 h-4"
       fill="none"
@@ -48,14 +53,14 @@
         name="return_to"
         value="{{ request.path }}" />
       <ul class="text-sm text-gray-700">
-        {% for currency in localization.available_currencies %}
+        {% for country in localization.available_countries %}
           <li>
             <button
               type="submit"
               name="currency_code"
-              value="{{ currency.iso_code }}"
-              class="block w-full text-left px-4 py-2 hover:bg-gray-100 {% if currency.iso_code == localization.currency.iso_code %}font-semibold{% endif %}">
-              {{ currency.iso_code }} — {{ currency.symbol }}
+              value="{{ country.currency.iso_code }}"
+              class="block w-full text-left px-4 py-2 hover:bg-gray-100 {% if country.currency.iso_code == localization.currency.iso_code %}font-semibold{% endif %}">
+              {{ country.currency.iso_code }} — {{ country.currency.symbol }}
             </button>
           </li>
         {% endfor %}
