@@ -92,9 +92,7 @@
           width="">
       </a>
       <div class="w-full flex gap-4 justify-end items-center [&_svg]:size-5 [&_svg]:transition-all [&_svg]:duration-300">
-
         <div x-data="{ open: false }" class="relative inline-block text-left">
-          <!-- Trigger Button -->
           <button @click="open = !open" class="flex items-center gap-2 px-3 py-2 text-sm font-medium border rounded-lg hover:bg-gray-100">
             <span>{{ localization.language.iso_code | upcase }}</span>
             <svg
@@ -117,7 +115,7 @@
             <form
               class="py-1"
               method="post"
-              action="{{ routes.root_url }}"
+              action="/localization"
               id="localization_form">
               <input
                 type="hidden"
@@ -162,7 +160,7 @@
             <form
               class="py-1"
               method="post"
-              action="{{ routes.root_url }}"
+              action="/localization"
               id="currency_form">
               <input
                 type="hidden"
