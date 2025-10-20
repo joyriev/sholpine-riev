@@ -1084,6 +1084,9 @@ video {
 .max-w-screen-xl {
   max-width: 1280px;
 }
+.max-w-\[550px\] {
+  max-width: 550px;
+}
 .flex-1 {
   flex: 1 1 0%;
 }

@@ -1,6 +1,7 @@
 <div class="container mx-auto px-4 py-16">
   {% paginate collection.products by 12 %}
     <h2 class="text-4xl font-bold mb-12 text-center">{{ collection.title }}</h2>
+    <p>{{ collection.description }}</p>
     <div class="grid grid-cols-2 sm:col-span-3 md:grid-cols-4 gap-4 md:gap-6 mx-auto">
       {% for product in collection.products %}
         {% render 'card-product'
