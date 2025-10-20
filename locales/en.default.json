@@ -1,1 +1,11 @@
-{}
+{
+  "templates": {
+    "404": {
+      "subtext": "Page not found",
+      "message": "Sorry, we couldn't find the page you're looking for."
+    }
+  },
+  "general": {
+    "continue_shopping": "Back to Home"
+  }
+}
