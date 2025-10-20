@@ -9,7 +9,7 @@
     :class="$store.cart.isOpen ? 'right-0' : 'right-[-28rem]'"
     class="fixed top-0 h-full w-full max-w-md bg-white shadow-2xl z-50 flex flex-col transition-all duration-300">
     <!-- Header -->
-    <div class="flex items-center justify-between p-6 border-b">
+    <div class="flex items-center justify-between px-6 py-4 border-b">
       <div class="flex items-center gap-3">
         <h2 class="text-4xl font-bold">Cart</h2>
         <span class="w-2 h-2 bg-black rounded-full"></span>
@@ -32,17 +32,16 @@
 
     {% comment %} Scrollable Content {% endcomment %}
     <div class="flex-1 overflow-y-auto">
-
       {% comment %} Free Shipping Progress {% endcomment %}
       {% if settings.cart_progress %}
-        <div class="p-6 border-b">
+        <div class="px-6 py-4 border-b">
           <p class="text-center text-lg" x-html="$store.cart.progressMessage"></p>
-          <div class="relative pt-6 mb-8">
+          <div class="relative pt-5 mb-9">
             <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
               <div class="h-full bg-teal-500 transition-all duration-300 ease-in-out" :style="{ width: $store.cart.totalItems / 8 * 100 + '%' }"></div>
             </div>
             <div class="flex flex-col items-center absolute top-2 left-[20%]">
-              <div class="size-10 rounded-full border-2 border-teal-500 bg-white flex items-center justify-center" :class="{ 'border-teal-500': $store.cart.totalItems >= 2 }">
+              <div class="size-8 rounded-full border-2 border-teal-500 bg-white flex items-center justify-center" :class="{ 'border-teal-500': $store.cart.totalItems >= 2 }">
                 <span class="size-6" :class="$store.cart.totalItems >= 2 ? 'fill-teal-500' : 'fill-gray-300'">
                   {{ 'icon-perfume.svg' | inline_asset_content }}
                 </span>
@@ -50,7 +49,7 @@
               <span class="text-xs mt-2 font-medium" :class="$store.cart.totalItems >= 2 && 'text-teal-500'">2+1</span>
             </div>
             <div class="flex flex-col items-center absolute top-2 left-[35%]">
-              <div class="size-10 rounded-full border-2 border-gray-300 bg-white flex items-center justify-center" :class="$store.cart.totalItems >= 3 ? 'border-teal-500' : 'border-gray-300'">
+              <div class="size-8 rounded-full border-2 border-gray-300 bg-white flex items-center justify-center" :class="$store.cart.totalItems >= 3 ? 'border-teal-500' : 'border-gray-300'">
                 <span class="size-6" :class="$store.cart.totalItems >= 3 ? 'fill-teal-500' : 'fill-gray-300'">
                   {{ 'icon-perfume.svg' | inline_asset_content }}
                 </span>
@@ -58,7 +57,7 @@
               <span class="text-xs mt-2 font-medium" :class="$store.cart.totalItems >= 3 && 'text-teal-500'">3+2</span>
             </div>
             <div class="flex flex-col items-center absolute top-2 left-3/4">
-              <div class="size-10 rounded-full border-2 border-gray-300 bg-white flex items-center justify-center" :class="{ 'border-teal-500': $store.cart.totalItems >= 7 }">
+              <div class="size-8 rounded-full border-2 border-gray-300 bg-white flex items-center justify-center" :class="{ 'border-teal-500': $store.cart.totalItems >= 7 }">
                 <span class="size-6" :class="$store.cart.totalItems >= 7 ? 'fill-teal-500' : 'fill-gray-300'">
                   {{ 'icon-truck.svg' | inline_asset_content }}
                 </span>
@@ -66,6 +65,7 @@
               <span class="text-xs mt-2 font-medium" :class="$store.cart.totalItems >= 7 && 'text-teal-500'">Free Shipping</span>
             </div>
           </div>
+        {% comment %} <p class="text-sm text-gray-700 text-center mt-2" x-text="$store.cart.cartTotal > 50 ? '🎉 Congratulations! You have unlocked free shipping.' : '*Free shipping for orders over $50'"></p> {% endcomment %}
         </div>
       {% endif %}
 

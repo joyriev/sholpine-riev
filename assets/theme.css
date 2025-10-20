@@ -835,6 +835,12 @@ video {
 .mt-auto {
   margin-top: auto;
 }
+.mb-10 {
+  margin-bottom: 40px;
+}
+.mb-9 {
+  margin-bottom: 36px;
+}
 .line-clamp-1 {
   overflow: hidden;
   display: -webkit-box;
@@ -1731,6 +1737,9 @@ video {
 }
 .pt-8 {
   padding-top: 32px;
+}
+.pt-5 {
+  padding-top: 20px;
 }
 .\!text-left {
   text-align: left !important;
