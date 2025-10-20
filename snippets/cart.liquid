@@ -147,7 +147,7 @@
       </div>
       {% comment %} Cart Upsell {% endcomment %}
       {% if settings.cart_upsell and settings.cart_upsell.products_count > 0 %}
-        <div class="p-6">
+        <div x-show="$store.cart.upsellProducts.length > 0" class="p-6">
           <h3 class="text-2xl font-bold text-center mb-4">You'll love these</h3>
           <div class="flex flex-col gap-4">
             <template x-for="product in $store.cart.upsellProducts">
@@ -194,7 +194,7 @@
               {
                 id: {{ selected_variant.id }},
                 title: "{{ product.title }}",
-                price: "{{ selected_variant.price }}",
+                price: "{{ selected_variant.price | money }}",
                 image: "{{ product.featured_image | image_url: width: 200, height: 200 }}",
               },
             {% endfor %}
