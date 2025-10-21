@@ -43,6 +43,7 @@
                   <span>{{ block.settings.title }}</span>
                 </a>
               {% endfor %}
+              {% render 'localizetion-currency-form' %}
             </div>
           </div>
         </div>
@@ -93,7 +94,9 @@
       </a>
       <div class="w-full flex gap-4 justify-end items-center [&_svg]:size-5 [&_svg]:transition-all [&_svg]:duration-300">
         {% comment %} {% render 'localizetion-language-form' %} {% endcomment %}
-        {% comment %} {% render 'localizetion-currency-form' %} {% endcomment %}
+        <div class="hidden md:block">
+          {% render 'localizetion-currency-form' %}
+        </div>
         <button
           x-data
           @click="$store.search.open = true"

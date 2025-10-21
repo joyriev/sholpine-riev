@@ -1,3 +1,11 @@
+<style>
+  @media (max-width: 767px) {
+    .currency-modal {
+      bottom: 100%;
+    }
+  }
+</style>
+
 <div x-data="{ 
   open: false, 
   search: '',
@@ -9,9 +17,12 @@
       return text.includes(query);
     });
   }
-}" class="relative inline-block text-left">
-  <button @click="open = !open" class="flex items-center gap-2 px-3 py-2 text-sm font-medium border rounded-lg hover:bg-gray-100">
-    <span>{{ localization.country.currency.symbol }}</span>
+}" class="relative block text-left">
+  <button @click="open = !open" class="flex w-full items-center justify-between gap-2 px-3 py-2.5 md:py-2 text-sm font-medium border rounded-xl hover:bg-gray-100">
+    <span>
+      <span class="md:hidden">{{ localization.country.name }} -</span>
+      <span>{{ localization.country.currency.symbol }}</span>
+    </span>
     <svg
       class="w-4 h-4"
       fill="none"
@@ -34,7 +45,7 @@
     x-transition:leave="transition ease-in duration-100"
     x-transition:leave-start="opacity-100 scale-100"
     x-transition:leave-end="opacity-0 scale-90"
-    class="absolute right-0 mt-2 w-60 origin-top-right bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+    class="absolute right-0 mt-2 w-60 currency-modal origin-bottom-right md:origin-top-right bg-white border border-gray-200 rounded-lg shadow-lg z-50">
 
     <!-- Search Input -->
     <div class="p-2 border-b border-gray-200">
@@ -43,7 +54,7 @@
         x-model="search"
         @keydown.escape="open = false"
         placeholder="Search countries..."
-        class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+        class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400">
     </div>
 
     <form
