@@ -99,6 +99,7 @@
         "mention_bJxyEn",
         "mention_HMXdtW"
       ],
+      "disabled": true,
       "name": "Press Mentions",
       "settings": {
         "padding_top": 48,
