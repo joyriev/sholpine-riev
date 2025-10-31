@@ -14,6 +14,7 @@
       "blocks": {
         "feature_mYFyjH": {
           "type": "feature",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/icons8-replay-30-100.svg",
             "title": "Free 30-day returns"
@@ -28,6 +29,7 @@
         },
         "feature_Ag6qWp": {
           "type": "feature",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/icons8-percentage_64x_dd62c390-d3d7-4992-943f-faf7ec92d8d0.svg",
             "title": "60% to 85% cheaper"
@@ -42,6 +44,7 @@
         },
         "feature_Rbkhxf": {
           "type": "feature",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/icons8-time_2_64x_5ebb3f00-38a3-40ac-8755-3db0b3e12b81.svg",
             "title": "Long-lasting"
