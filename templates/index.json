@@ -16,7 +16,7 @@
         "mobile_background_image": "shopify://shop_images/home-hero-mobile.png",
         "title": "The Smell of Good Decisions.",
         "subtitle": "Same ingredients. Same quality. Different price tag.We cut the BS and give you the scent — not the logo.",
-        "buttons": "resources",
+        "buttons": "home-hero",
         "reviews": "4.8 from 78 reviews"
       }
     },
